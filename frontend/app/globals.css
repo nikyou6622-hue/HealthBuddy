@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
+  background-color: #FFF9E5;
+  color: #2B2208;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Warm organic healthcare ambient backdrop matching image */
+.bg-warm-canvas {
+  background-color: #FFF8E3;
+  background-image: 
+    radial-gradient(circle at 92% 8%, rgba(255, 200, 61, 0.42) 0%, rgba(255, 225, 140, 0.20) 28%, transparent 55%),
+    radial-gradient(circle at 10% 95%, rgba(255, 205, 75, 0.35) 0%, rgba(255, 235, 175, 0.15) 30%, transparent 60%),
+    radial-gradient(circle at 50% 40%, rgba(255, 248, 227, 0.8) 0%, transparent 100%);
+  background-attachment: fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

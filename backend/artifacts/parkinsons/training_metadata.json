@@ -1,0 +1,101 @@
+{
+  "disease": "parkinsons",
+  "best_model": "random_forest",
+  "best_score": 0.8851242892589223,
+  "selection_criterion": "f1_weighted",
+  "cv_results": {
+    "logistic_regression": {
+      "cv_scores": [
+        0.7624434389140272,
+        0.8644393241167435,
+        0.7966589861751151,
+        0.8709677419354839,
+        0.7500431257547008
+      ],
+      "cv_mean": 0.8089105233792141,
+      "cv_std": 0.050416677185093565
+    },
+    "decision_tree": {
+      "cv_scores": [
+        0.8401360544217686,
+        0.8165898617511519,
+        0.7819354838709677,
+        0.8423701670098375,
+        0.8064516129032258
+      ],
+      "cv_mean": 0.8174966359913902,
+      "cv_std": 0.022443912880173517
+    },
+    "random_forest": {
+      "cv_scores": [
+        0.8156089193825043,
+        0.8416613957410921,
+        0.9010295126973232,
+        0.966830404618423,
+        0.9004912138552692
+      ],
+      "cv_mean": 0.8851242892589223,
+      "cv_std": 0.052699938431297506
+    },
+    "knn": {
+      "cv_scores": [
+        0.8156089193825043,
+        0.8064516129032258,
+        0.9683322791482184,
+        0.8501240694789082,
+        0.8709677419354839
+      ],
+      "cv_mean": 0.862296924569668,
+      "cv_std": 0.05790565871990331
+    }
+  },
+  "train_samples": 156,
+  "test_samples": 0,
+  "features": [
+    "MDVP:Fo(Hz)",
+    "MDVP:Fhi(Hz)",
+    "MDVP:Flo(Hz)",
+    "MDVP:Jitter(%)",
+    "MDVP:Jitter(Abs)",
+    "MDVP:RAP",
+    "MDVP:PPQ",
+    "Jitter:DDP",
+    "MDVP:Shimmer",
+    "MDVP:Shimmer(dB)",
+    "Shimmer:APQ3",
+    "Shimmer:APQ5",
+    "MDVP:APQ",
+    "Shimmer:DDA",
+    "NHR",
+    "HNR",
+    "RPDE",
+    "DFA",
+    "spread1",
+    "spread2",
+    "D2",
+    "PPE"
+  ],
+  "target_labels": {
+    "0": "Healthy (No Parkinson's Detected)",
+    "1": "Parkinson's Disease Indicators Detected"
+  },
+  "target_mapping": {
+    "0": 0,
+    "1": 1
+  },
+  "random_state": 42,
+  "cv_folds": 5,
+  "class_balance": {
+    "disease": "parkinsons",
+    "class_counts": {
+      "0": 38,
+      "1": 118
+    },
+    "class_percentages": {
+      "0": 24.358974358974358,
+      "1": 75.64102564102564
+    },
+    "is_balanced": false,
+    "imbalance_ratio": 3.1052631578947367
+  }
+}

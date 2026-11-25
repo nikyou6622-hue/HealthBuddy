@@ -1,0 +1,87 @@
+{
+  "disease": "diabetes",
+  "best_model": "logistic_regression",
+  "best_score": 0.780774724537752,
+  "selection_criterion": "f1_weighted",
+  "cv_results": {
+    "logistic_regression": {
+      "cv_scores": [
+        0.7765707254773697,
+        0.7920029037325164,
+        0.8033838751563539,
+        0.7661038148843028,
+        0.765812303438217
+      ],
+      "cv_mean": 0.780774724537752,
+      "cv_std": 0.014792085336716653
+    },
+    "decision_tree": {
+      "cv_scores": [
+        0.7640766190943643,
+        0.7056360854270262,
+        0.6975838772472231,
+        0.6896168247012525,
+        0.7349299965986528
+      ],
+      "cv_mean": 0.7183686806137037,
+      "cv_std": 0.02751104896904734
+    },
+    "random_forest": {
+      "cv_scores": [
+        0.7639879936013804,
+        0.727818572968885,
+        0.7937575927483411,
+        0.7493969445188957,
+        0.7691096400945794
+      ],
+      "cv_mean": 0.7608141487864163,
+      "cv_std": 0.02183217599710351
+    },
+    "knn": {
+      "cv_scores": [
+        0.7178986034852035,
+        0.710976065989616,
+        0.7494266411476992,
+        0.7383461665304484,
+        0.7302487218209277
+      ],
+      "cv_mean": 0.729379239794779,
+      "cv_std": 0.013809720426261374
+    }
+  },
+  "train_samples": 614,
+  "test_samples": 0,
+  "features": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "target_labels": {
+    "0": "Non-Diabetic",
+    "1": "Diabetic Risk Detected"
+  },
+  "target_mapping": {
+    "0": 0,
+    "1": 1
+  },
+  "random_state": 42,
+  "cv_folds": 5,
+  "class_balance": {
+    "disease": "diabetes",
+    "class_counts": {
+      "0": 400,
+      "1": 214
+    },
+    "class_percentages": {
+      "0": 65.14657980456026,
+      "1": 34.85342019543974
+    },
+    "is_balanced": true,
+    "imbalance_ratio": 1.8691588785046729
+  }
+}

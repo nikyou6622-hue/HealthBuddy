@@ -1,0 +1,31 @@
+{
+  "condition": "kidney",
+  "title": "Kidney Health Care Guidance",
+  "source": "KDIGO 2024 Clinical Practice Guideline for Chronic Kidney Disease",
+  "reviewed_by": "Dr. S. Nair, DM (Nephrology Review Board)",
+  "version": "1.0.0",
+  "tiers": {
+    "low": {
+      "doctor_tests": ["Annual serum creatinine (eGFR) and urine ACR if diabetic or hypertensive"],
+      "exercise": ["Regular moderate physical activity 150 minutes/week"],
+      "food": ["Adequate hydration and balanced sodium intake"],
+      "hospital_guidance": "Primary care clinic or diagnostic lab.",
+      "followup_days": 180
+    },
+    "moderate": {
+      "doctor_tests": ["Nephrologist or Physician review within 2–4 weeks", "Repeat eGFR, Urine Albumin-to-Creatinine Ratio (ACR), and Renal Ultrasound"],
+      "exercise": ["Moderate regular exercise as tolerated; avoid dehydration"],
+      "food": ["Limit excess dietary salt and avoid unprescribed over-the-counter painkillers/herbal supplements"],
+      "hospital_guidance": "Hospital with Nephrology OPD and accredited biochemistry lab.",
+      "followup_days": 30
+    },
+    "high": {
+      "doctor_tests": ["Urgent Nephrologist consultation within 1 week", "Comprehensive Renal Panel, Electrolytes, Urine ACR, Renal Ultrasound, and BP monitoring"],
+      "exercise": ["Light supervised activity only after Nephrologist clearance"],
+      "food": ["Renal dietitian guidance on sodium, potassium, phosphorus, and protein targets"],
+      "hospital_guidance": "Tertiary hospital with Nephrology, Dialysis, and Critical Care.",
+      "followup_days": 14
+    }
+  }
+}
+

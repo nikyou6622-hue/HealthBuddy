@@ -1,0 +1,218 @@
+{
+  "decision_tree": {
+    "disease": "diabetes",
+    "model_name": "decision_tree",
+    "accuracy": 0.7922077922077922,
+    "precision_macro": 0.7718518518518518,
+    "precision_weighted": 0.7922077922077922,
+    "recall_macro": 0.7718518518518518,
+    "recall_weighted": 0.7922077922077922,
+    "f1_macro": 0.7718518518518518,
+    "f1_weighted": 0.7922077922077922,
+    "confusion_matrix": [
+      [
+        84,
+        16
+      ],
+      [
+        16,
+        38
+      ]
+    ],
+    "classification_report": {
+      "Non-Diabetic": {
+        "precision": 0.84,
+        "recall": 0.84,
+        "f1-score": 0.84,
+        "support": 100.0
+      },
+      "Diabetic Risk Detected": {
+        "precision": 0.7037037037037037,
+        "recall": 0.7037037037037037,
+        "f1-score": 0.7037037037037037,
+        "support": 54.0
+      },
+      "accuracy": 0.7922077922077922,
+      "macro avg": {
+        "precision": 0.7718518518518518,
+        "recall": 0.7718518518518518,
+        "f1-score": 0.7718518518518518,
+        "support": 154.0
+      },
+      "weighted avg": {
+        "precision": 0.7922077922077922,
+        "recall": 0.7922077922077922,
+        "f1-score": 0.7922077922077922,
+        "support": 154.0
+      }
+    },
+    "roc_auc": 0.7858333333333334,
+    "feature_importance": {
+      "Pregnancies": 0.023790758936811256,
+      "Glucose": 0.5580320851994953,
+      "BloodPressure": 0.03561111737846919,
+      "SkinThickness": 0.0,
+      "Insulin": 0.012917816277287138,
+      "BMI": 0.22813613401582863,
+      "DiabetesPedigreeFunction": 0.03680413701540251,
+      "Age": 0.1047079511767059
+    }
+  },
+  "knn": {
+    "disease": "diabetes",
+    "model_name": "knn",
+    "accuracy": 0.7012987012987013,
+    "precision_macro": 0.6690251572327044,
+    "precision_weighted": 0.6946214163195296,
+    "recall_macro": 0.6592592592592592,
+    "recall_weighted": 0.7012987012987013,
+    "f1_macro": 0.6628593184846754,
+    "f1_weighted": 0.6968633878970829,
+    "confusion_matrix": [
+      [
+        80,
+        20
+      ],
+      [
+        26,
+        28
+      ]
+    ],
+    "classification_report": {
+      "Non-Diabetic": {
+        "precision": 0.7547169811320755,
+        "recall": 0.8,
+        "f1-score": 0.7766990291262136,
+        "support": 100.0
+      },
+      "Diabetic Risk Detected": {
+        "precision": 0.5833333333333334,
+        "recall": 0.5185185185185185,
+        "f1-score": 0.5490196078431373,
+        "support": 54.0
+      },
+      "accuracy": 0.7012987012987013,
+      "macro avg": {
+        "precision": 0.6690251572327044,
+        "recall": 0.6592592592592592,
+        "f1-score": 0.6628593184846754,
+        "support": 154.0
+      },
+      "weighted avg": {
+        "precision": 0.6946214163195296,
+        "recall": 0.7012987012987013,
+        "f1-score": 0.6968633878970829,
+        "support": 154.0
+      }
+    },
+    "roc_auc": 0.7404629629629629
+  },
+  "logistic_regression": {
+    "disease": "diabetes",
+    "model_name": "logistic_regression",
+    "accuracy": 0.7142857142857143,
+    "precision_macro": 0.6839774557165862,
+    "precision_weighted": 0.7064642282033586,
+    "recall_macro": 0.6692592592592592,
+    "recall_weighted": 0.7142857142857143,
+    "f1_macro": 0.6742307692307692,
+    "f1_weighted": 0.7083516483516483,
+    "confusion_matrix": [
+      [
+        82,
+        18
+      ],
+      [
+        26,
+        28
+      ]
+    ],
+    "classification_report": {
+      "Non-Diabetic": {
+        "precision": 0.7592592592592593,
+        "recall": 0.82,
+        "f1-score": 0.7884615384615384,
+        "support": 100.0
+      },
+      "Diabetic Risk Detected": {
+        "precision": 0.6086956521739131,
+        "recall": 0.5185185185185185,
+        "f1-score": 0.56,
+        "support": 54.0
+      },
+      "accuracy": 0.7142857142857143,
+      "macro avg": {
+        "precision": 0.6839774557165862,
+        "recall": 0.6692592592592592,
+        "f1-score": 0.6742307692307692,
+        "support": 154.0
+      },
+      "weighted avg": {
+        "precision": 0.7064642282033586,
+        "recall": 0.7142857142857143,
+        "f1-score": 0.7083516483516483,
+        "support": 154.0
+      }
+    },
+    "roc_auc": 0.8229629629629629
+  },
+  "random_forest": {
+    "disease": "diabetes",
+    "model_name": "random_forest",
+    "accuracy": 0.7272727272727273,
+    "precision_macro": 0.7008928571428572,
+    "precision_weighted": 0.7182282003710575,
+    "recall_macro": 0.675,
+    "recall_weighted": 0.7272727272727273,
+    "f1_macro": 0.6821933962264151,
+    "f1_weighted": 0.7179459691252145,
+    "confusion_matrix": [
+      [
+        85,
+        15
+      ],
+      [
+        27,
+        27
+      ]
+    ],
+    "classification_report": {
+      "Non-Diabetic": {
+        "precision": 0.7589285714285714,
+        "recall": 0.85,
+        "f1-score": 0.8018867924528302,
+        "support": 100.0
+      },
+      "Diabetic Risk Detected": {
+        "precision": 0.6428571428571429,
+        "recall": 0.5,
+        "f1-score": 0.5625,
+        "support": 54.0
+      },
+      "accuracy": 0.7272727272727273,
+      "macro avg": {
+        "precision": 0.7008928571428572,
+        "recall": 0.675,
+        "f1-score": 0.6821933962264151,
+        "support": 154.0
+      },
+      "weighted avg": {
+        "precision": 0.7182282003710575,
+        "recall": 0.7272727272727273,
+        "f1-score": 0.7179459691252145,
+        "support": 154.0
+      }
+    },
+    "roc_auc": 0.8092592592592592,
+    "feature_importance": {
+      "Pregnancies": 0.07126998959763145,
+      "Glucose": 0.38598704403429923,
+      "BloodPressure": 0.05266351420741388,
+      "SkinThickness": 0.04697269648169549,
+      "Insulin": 0.06859682462406178,
+      "BMI": 0.17265999594918371,
+      "DiabetesPedigreeFunction": 0.08579881012686037,
+      "Age": 0.1160511249788541
+    }
+  }
+}

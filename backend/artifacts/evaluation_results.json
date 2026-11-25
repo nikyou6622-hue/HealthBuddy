@@ -1,0 +1,228 @@
+{
+  "decision_tree": {
+    "disease": "heart_disease",
+    "model_name": "decision_tree",
+    "accuracy": 0.7868852459016393,
+    "precision_macro": 0.7876344086021505,
+    "precision_weighted": 0.7913802221047065,
+    "recall_macro": 0.7895021645021645,
+    "recall_weighted": 0.7868852459016393,
+    "f1_macro": 0.7866559052999731,
+    "f1_weighted": 0.7872292568041388,
+    "confusion_matrix": [
+      [
+        25,
+        8
+      ],
+      [
+        5,
+        23
+      ]
+    ],
+    "classification_report": {
+      "No Heart Disease": {
+        "precision": 0.8333333333333334,
+        "recall": 0.7575757575757576,
+        "f1-score": 0.7936507936507936,
+        "support": 33.0
+      },
+      "Heart Disease": {
+        "precision": 0.7419354838709677,
+        "recall": 0.8214285714285714,
+        "f1-score": 0.7796610169491526,
+        "support": 28.0
+      },
+      "accuracy": 0.7868852459016393,
+      "macro avg": {
+        "precision": 0.7876344086021505,
+        "recall": 0.7895021645021645,
+        "f1-score": 0.7866559052999731,
+        "support": 61.0
+      },
+      "weighted avg": {
+        "precision": 0.7913802221047065,
+        "recall": 0.7868852459016393,
+        "f1-score": 0.7872292568041388,
+        "support": 61.0
+      }
+    },
+    "roc_auc": 0.8365800865800865,
+    "feature_importance": {
+      "age": 0.06757894985384529,
+      "trestbps": 0.011317084120540971,
+      "chol": 0.09342426532243389,
+      "thalach": 0.04180931855823479,
+      "oldpeak": 0.06588570266593695,
+      "sex": 0.02614246431844965,
+      "cp": 0.15159459853329318,
+      "fbs": 0.008802176538198536,
+      "restecg": 0.021125223691676485,
+      "exang": 0.0,
+      "slope": 0.020485065397989322,
+      "ca": 0.11687384110895263,
+      "thal": 0.3749613098904482
+    }
+  },
+  "knn": {
+    "disease": "heart_disease",
+    "model_name": "knn",
+    "accuracy": 0.7868852459016393,
+    "precision_macro": 0.7876344086021505,
+    "precision_weighted": 0.7913802221047065,
+    "recall_macro": 0.7895021645021645,
+    "recall_weighted": 0.7868852459016393,
+    "f1_macro": 0.7866559052999731,
+    "f1_weighted": 0.7872292568041388,
+    "confusion_matrix": [
+      [
+        25,
+        8
+      ],
+      [
+        5,
+        23
+      ]
+    ],
+    "classification_report": {
+      "No Heart Disease": {
+        "precision": 0.8333333333333334,
+        "recall": 0.7575757575757576,
+        "f1-score": 0.7936507936507936,
+        "support": 33.0
+      },
+      "Heart Disease": {
+        "precision": 0.7419354838709677,
+        "recall": 0.8214285714285714,
+        "f1-score": 0.7796610169491526,
+        "support": 28.0
+      },
+      "accuracy": 0.7868852459016393,
+      "macro avg": {
+        "precision": 0.7876344086021505,
+        "recall": 0.7895021645021645,
+        "f1-score": 0.7866559052999731,
+        "support": 61.0
+      },
+      "weighted avg": {
+        "precision": 0.7913802221047065,
+        "recall": 0.7868852459016393,
+        "f1-score": 0.7872292568041388,
+        "support": 61.0
+      }
+    },
+    "roc_auc": 0.8674242424242424
+  },
+  "logistic_regression": {
+    "disease": "heart_disease",
+    "model_name": "logistic_regression",
+    "accuracy": 0.8688524590163934,
+    "precision_macro": 0.8717672413793103,
+    "precision_weighted": 0.8766252119841718,
+    "recall_macro": 0.8733766233766234,
+    "recall_weighted": 0.8688524590163934,
+    "f1_macro": 0.8688172043010753,
+    "f1_weighted": 0.8689934778776661,
+    "confusion_matrix": [
+      [
+        27,
+        6
+      ],
+      [
+        2,
+        26
+      ]
+    ],
+    "classification_report": {
+      "No Heart Disease": {
+        "precision": 0.9310344827586207,
+        "recall": 0.8181818181818182,
+        "f1-score": 0.8709677419354839,
+        "support": 33.0
+      },
+      "Heart Disease": {
+        "precision": 0.8125,
+        "recall": 0.9285714285714286,
+        "f1-score": 0.8666666666666667,
+        "support": 28.0
+      },
+      "accuracy": 0.8688524590163934,
+      "macro avg": {
+        "precision": 0.8717672413793103,
+        "recall": 0.8733766233766234,
+        "f1-score": 0.8688172043010753,
+        "support": 61.0
+      },
+      "weighted avg": {
+        "precision": 0.8766252119841718,
+        "recall": 0.8688524590163934,
+        "f1-score": 0.8689934778776661,
+        "support": 61.0
+      }
+    },
+    "roc_auc": 0.9512987012987013
+  },
+  "random_forest": {
+    "disease": "heart_disease",
+    "model_name": "random_forest",
+    "accuracy": 0.9180327868852459,
+    "precision_macro": 0.9170258620689655,
+    "precision_weighted": 0.9187040700960996,
+    "recall_macro": 0.9188311688311688,
+    "recall_weighted": 0.9180327868852459,
+    "f1_macro": 0.9176788124156545,
+    "f1_weighted": 0.9181212805026437,
+    "confusion_matrix": [
+      [
+        30,
+        3
+      ],
+      [
+        2,
+        26
+      ]
+    ],
+    "classification_report": {
+      "No Heart Disease": {
+        "precision": 0.9375,
+        "recall": 0.9090909090909091,
+        "f1-score": 0.9230769230769231,
+        "support": 33.0
+      },
+      "Heart Disease": {
+        "precision": 0.896551724137931,
+        "recall": 0.9285714285714286,
+        "f1-score": 0.9122807017543859,
+        "support": 28.0
+      },
+      "accuracy": 0.9180327868852459,
+      "macro avg": {
+        "precision": 0.9170258620689655,
+        "recall": 0.9188311688311688,
+        "f1-score": 0.9176788124156545,
+        "support": 61.0
+      },
+      "weighted avg": {
+        "precision": 0.9187040700960996,
+        "recall": 0.9180327868852459,
+        "f1-score": 0.9181212805026437,
+        "support": 61.0
+      }
+    },
+    "roc_auc": 0.9534632034632036,
+    "feature_importance": {
+      "age": 0.06188034079680607,
+      "trestbps": 0.06049834961476988,
+      "chol": 0.06451799524784133,
+      "thalach": 0.11599156698869503,
+      "oldpeak": 0.09709267313644253,
+      "sex": 0.04121540756386145,
+      "cp": 0.1560741023936757,
+      "fbs": 0.004934443454961891,
+      "restecg": 0.016994273903221696,
+      "exang": 0.07546568067667052,
+      "slope": 0.03731167170808687,
+      "ca": 0.11137721505935588,
+      "thal": 0.15664627945561121
+    }
+  }
+}

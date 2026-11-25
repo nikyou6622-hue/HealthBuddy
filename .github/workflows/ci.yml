@@ -1,0 +1,38 @@
+name: HealthBuddy v3.0 CI
+
+on:
+  push:
+    branches: [main, restructure-v3]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+      - name: Run pytest
+        run: |
+          cd backend
+          PYTHONPATH=. pytest -v
+
+  frontend-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install and build Next.js frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+

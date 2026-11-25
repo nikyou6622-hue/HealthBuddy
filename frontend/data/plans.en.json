@@ -1,0 +1,183 @@
+{
+  "heart": {
+    "title": "Cardiovascular & Stroke Care Guidance",
+    "source": "WHO South Asia CVD Risk & ACC/AHA Guidelines",
+    "reviewer": "Dr. R. Mehta, DM (Cardiology)",
+    "version": "1.0.0",
+    "low": {
+      "doctor_tests": ["Routine primary care screening every 12 months", "Periodic blood pressure and lipid check"],
+      "eat_more": ["Dal, millets (ragi, jowar, bajra), seasonal vegetables, whole fruits, walnuts"],
+      "avoid": ["Maida snacks (samosa pastry, white bread, biscuits)", "Deep-fried items", "Pickles, papads, extra salt", "Sugary drinks and sweets"],
+      "exercise_target": "150 minutes/week of moderate aerobic activity (WHO/ICMR)",
+      "exercise": ["Brisk walking 30 min/day, 5 days/week", "Light stretching and mobility work"],
+      "followup_months": 12
+    },
+    "moderate": {
+      "doctor_tests": ["See a cardiologist or physician within 2-4 weeks", "12-lead ECG, Echocardiogram, Fasting Lipid Profile"],
+      "eat_more": ["Oats, millets, green leafy vegetables, unsalted nuts, steamed sprouts"],
+      "avoid": ["Saturated fats (ghee/butter excess, vanaspati)", "Deep-fried street food", "Pickles, papads, packaged namkeen", "Sugary beverages"],
+      "exercise_target": "150 minutes/week moderate activity after baseline BP check",
+      "exercise": ["30 min brisk walking 5 days/week", "Stop immediately if chest discomfort or dizziness occurs"],
+      "followup_months": 6
+    },
+    "high": {
+      "doctor_tests": ["Urgent cardiologist consultation within 24-72 hours", "12-lead ECG, Echocardiogram, Lipid Profile, physician-supervised evaluation"],
+      "eat_more": ["Home-cooked low-salt dal, millets, steamed vegetables, high-fiber whole grains"],
+      "avoid": ["All deep-fried items and maida snacks", "Extra salt, pickles, papads", "Sweets, bakery items, sugary drinks"],
+      "exercise_target": "Get medical clearance first before starting or increasing exercise.",
+      "exercise": ["Get medical clearance first before any exercise.", "Avoid strenuous exertion until cleared by a cardiologist."],
+      "followup_months": 3
+    }
+  },
+  "diabetes": {
+    "title": "Diabetes & Glycemic Care Guidance",
+    "source": "ICMR Type 2 Diabetes & ADA Standards of Care",
+    "reviewer": "Dr. A. Sharma, MD (Endocrinology)",
+    "version": "1.0.0",
+    "low": {
+      "doctor_tests": ["Routine fasting glucose or HbA1c every 12 months"],
+      "eat_more": ["Whole grains, millets, dal, non-starchy vegetables, fenugreek/methi"],
+      "avoid": ["Sugary drinks and fruit juices", "Sweets (mithai) and refined flour (maida)", "Deep-fried snacks"],
+      "exercise_target": "150 minutes/week moderate aerobic + 2 days light resistance",
+      "exercise": ["Brisk walking 30 min/day", "2 days/week bodyweight strength exercises"],
+      "followup_months": 12
+    },
+    "moderate": {
+      "doctor_tests": ["See a diabetologist or physician within 2-4 weeks", "Confirm with HbA1c and Fasting Plasma Glucose"],
+      "eat_more": ["Low-GI millets (jowar, bajra), dal, palak/bhindi/lauki, chia/flax seeds"],
+      "avoid": ["White rice excess, maida snacks, biscuits", "Sweets, jaggery excess, sugary tea/coffee", "Deep-fried items"],
+      "exercise_target": "150-200 minutes/week brisk walking + post-meal 15 min walks",
+      "exercise": ["15-minute walk after main meals", "Avoid sitting >30 minutes continuously"],
+      "followup_months": 6
+    },
+    "high": {
+      "doctor_tests": ["Urgent endocrinologist / diabetologist visit within 1 week", "HbA1c, FPG, Kidney Function Test, Lipid Profile, Retinal exam"],
+      "eat_more": ["Portion-controlled dal, high-fiber vegetables, unsweetened buttermilk, millets"],
+      "avoid": ["All sweets, sugary drinks, honey/jaggery", "Maida snacks and deep-fried foods", "High-salt pickles and packaged snacks"],
+      "exercise_target": "150 min/week gentle walking after physician glucose check",
+      "exercise": ["Gentle walking after doctor review", "Check feet daily for blisters or sores"],
+      "followup_months": 3
+    }
+  },
+  "hypertension": {
+    "title": "Blood Pressure Care Guidance",
+    "source": "Indian Guidelines on Hypertension (IGH-IV) & ACC/AHA",
+    "reviewer": "Dr. R. Mehta, DM (Cardiology)",
+    "version": "1.0.0",
+    "low": {
+      "doctor_tests": ["Annual blood pressure check"],
+      "eat_more": ["Potassium-rich vegetables, fruits, dal, unsalted curd, millets"],
+      "avoid": ["Extra table salt", "Pickles, papads, salted namkeen", "Processed packaged foods"],
+      "exercise_target": "150 minutes/week moderate aerobic activity",
+      "exercise": ["Brisk walking or cycling 30 min/day"],
+      "followup_months": 12
+    },
+    "moderate": {
+      "doctor_tests": ["Physician or cardiologist review within 2-4 weeks", "7-day home BP log, Serum Creatinine, Urine ACR"],
+      "eat_more": ["DASH-style home meals, leafy greens, bananas, dal without extra tadka salt"],
+      "avoid": ["Low salt strictly: avoid pickles, papads, chutneys with salt, chips", "Deep-fried snacks and maida", "Sugary drinks"],
+      "exercise_target": "150 minutes/week moderate walking + breathing exercises",
+      "exercise": ["30 min brisk walk 5 days/week", "10 min daily slow breathing / stress reduction"],
+      "followup_months": 6
+    },
+    "high": {
+      "doctor_tests": ["Urgent physician / cardiologist visit within 24-72 hours", "ECG, Kidney Function Test, Electrolytes, Fundoscopy"],
+      "eat_more": ["Strict low-salt home meals (<1.5-2g sodium/day), steamed vegetables, dal, fruits"],
+      "avoid": ["Extra salt, pickles, papads, salted butter", "Deep-fried items, maida snacks", "Sweets and sugary drinks"],
+      "exercise_target": "Get medical clearance first before starting or intensifying exercise.",
+      "exercise": ["Get medical clearance first before exercise.", "Avoid heavy lifting until BP is controlled."],
+      "followup_months": 3
+    }
+  },
+  "obesity": {
+    "title": "Weight & Anthropometry Care Guidance",
+    "source": "Indian Consensus on Obesity & Abdominal Obesity",
+    "reviewer": "Dr. A. Sharma, MD (Endocrinology)",
+    "version": "1.0.0",
+    "low": {
+      "doctor_tests": ["Annual height, weight, and waist circumference check"],
+      "eat_more": ["Balanced dal, vegetables, millets, whole fruits, adequate protein"],
+      "avoid": ["Sugary drinks, sweets, deep-fried snacks", "Maida bakery items"],
+      "exercise_target": "150 minutes/week moderate activity",
+      "exercise": ["Brisk walking 30 min/day"],
+      "followup_months": 12
+    },
+    "moderate": {
+      "doctor_tests": ["Primary care review within 4 weeks", "Fasting glucose and lipid profile"],
+      "eat_more": ["High-fiber vegetables, sprouts, dal, millets, roasted chana"],
+      "avoid": ["Maida snacks, biscuits, deep-fried items", "Sweets and sweetened tea/drinks", "Late-night heavy meals"],
+      "exercise_target": "200-250 minutes/week brisk walking + 2 days strength",
+      "exercise": ["40 min brisk walking 5-6 days/week", "Light resistance training twice weekly"],
+      "followup_months": 6
+    },
+    "high": {
+      "doctor_tests": ["Endocrinologist / metabolic physician visit within 2-4 weeks", "FPG, HbA1c, Lipid Profile, LFT, Thyroid profile"],
+      "eat_more": ["Structured high-protein, high-fiber vegetarian/lean meals with millets and vegetables"],
+      "avoid": ["Deep-fried foods, maida snacks, sweets", "Sugary drinks and excess oil/ghee", "Pickles and salty packaged snacks"],
+      "exercise_target": "Low-impact joint-friendly activity 150-200 min/week",
+      "exercise": ["Low-impact walking, cycling, or water aerobics", "Increase duration gradually"],
+      "followup_months": 3
+    }
+  },
+  "kidney": {
+    "title": "Kidney Health Care Guidance",
+    "source": "KDIGO 2024 Chronic Kidney Disease Guideline",
+    "reviewer": "Dr. S. Nair, DM (Nephrology)",
+    "version": "1.0.0",
+    "low": {
+      "doctor_tests": ["Annual serum creatinine (eGFR) and urine ACR if diabetic or hypertensive"],
+      "eat_more": ["Fresh vegetables, balanced home-cooked meals, adequate water"],
+      "avoid": ["Excess salt, pickles, papads", "Unprescribed painkillers", "Sugary drinks"],
+      "exercise_target": "150 minutes/week moderate activity",
+      "exercise": ["Regular walking or cycling"],
+      "followup_months": 12
+    },
+    "moderate": {
+      "doctor_tests": ["See a nephrologist or physician within 2-4 weeks", "Repeat eGFR, Urine ACR, Renal Ultrasound"],
+      "eat_more": ["See a dietitian for personalized kidney-friendly Indian meal targets"],
+      "avoid": ["Extra salt, pickles, papads, processed foods", "Deep-fried snacks, maida", "Unprescribed NSAIDs/herbal pills"],
+      "exercise_target": "150 minutes/week moderate activity; stay hydrated",
+      "exercise": ["Moderate walking as tolerated", "Avoid dehydration during exercise"],
+      "followup_months": 6
+    },
+    "high": {
+      "doctor_tests": ["Urgent nephrologist consultation within 1 week", "Renal Panel, Electrolytes, Urine ACR, Renal Ultrasound"],
+      "eat_more": ["See a dietitian for strict sodium, potassium, phosphorus, and protein guidance"],
+      "avoid": ["All high-salt pickles, papads, packaged snacks", "Deep-fried foods, sweets, sugary drinks"],
+      "exercise_target": "Light supervised activity only after nephrologist clearance",
+      "exercise": ["Light walking only after nephrologist clearance"],
+      "followup_months": 3
+    }
+  },
+  "metabolic": {
+    "title": "Metabolic Syndrome Care Guidance",
+    "source": "IDF / Harmonized South Asian Criteria",
+    "reviewer": "Dr. A. Sharma, MD (Endocrinology)",
+    "version": "1.0.0",
+    "low": {
+      "doctor_tests": ["Annual BP, waist, fasting glucose, and lipid screening"],
+      "eat_more": ["Dal, millets, vegetables, whole fruits"],
+      "avoid": ["Maida snacks, deep-fried items, sweets, sugary drinks"],
+      "exercise_target": "150 minutes/week moderate activity",
+      "exercise": ["Brisk walking 30 min/day"],
+      "followup_months": 12
+    },
+    "moderate": {
+      "doctor_tests": ["Physician / endocrinologist visit within 2-4 weeks", "Fasting Lipid Profile, FPG, HbA1c"],
+      "eat_more": ["Millets, dal, green vegetables, nuts, salads before meals"],
+      "avoid": ["Maida snacks, deep-fried foods, sweets", "Pickles, extra salt, sugary drinks"],
+      "exercise_target": "200 minutes/week combined aerobic + resistance",
+      "exercise": ["35-40 min brisk walking 5 days/week", "Twice-weekly strength exercises"],
+      "followup_months": 6
+    },
+    "high": {
+      "doctor_tests": ["Endocrinologist / internal medicine visit within 1-2 weeks", "Full Metabolic Panel, HbA1c, Lipids, LFT"],
+      "eat_more": ["Structured high-fiber, low-GI, low-salt Indian meals"],
+      "avoid": ["Deep-fried items, maida snacks, sweets", "Pickles, papads, extra salt, sugary drinks"],
+      "exercise_target": "Get medical clearance first if BP or cardiac risk is also elevated.",
+      "exercise": ["Get medical clearance first if BP or heart risk is elevated.", "Graduated walking program"],
+      "followup_months": 3
+    }
+  }
+}
+

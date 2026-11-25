@@ -1,0 +1,31 @@
+{
+  "condition": "heart",
+  "title": "Cardiovascular & Stroke Care Guidance",
+  "source": "WHO South Asia CVD Risk Guidelines & ACC/AHA Primary Prevention Guidelines",
+  "reviewed_by": "Dr. R. Mehta, DM (Cardiology Review Board)",
+  "version": "1.0.0",
+  "tiers": {
+    "low": {
+      "doctor_tests": ["Routine primary care screening every 6–12 months", "Periodic blood pressure and lipid check"],
+      "exercise": ["150 minutes/week of moderate-intensity aerobic activity", "Include flexibility and light strength training"],
+      "food": ["Heart-healthy diet rich in vegetables, fruits, whole grains, and nuts", "Keep sodium <5 g/day and avoid trans fats"],
+      "hospital_guidance": "Primary care clinic or preventive health center.",
+      "followup_days": 180
+    },
+    "moderate": {
+      "doctor_tests": ["Cardiologist OPD consultation within 2–4 weeks", "12-lead ECG, Echocardiogram, and Fasting Lipid Profile"],
+      "exercise": ["Moderate walking 30 min/day, 5 days/week after baseline BP check", "Stop immediately if chest discomfort or dizziness occurs"],
+      "food": ["DASH-style low-sodium, low-saturated-fat eating pattern", "Increase soluble fiber and omega-3 rich foods"],
+      "hospital_guidance": "Hospital with ECG, Echocardiography, and Cardiology OPD.",
+      "followup_days": 30
+    },
+    "high": {
+      "doctor_tests": ["Urgent Cardiologist consultation within 24–72 hours", "12-lead ECG, Echocardiogram, Lipid Profile, and physician-supervised stress evaluation"],
+      "exercise": ["Get medical clearance first before starting or increasing any exercise program.", "Avoid strenuous exertion until cleared by a cardiologist."],
+      "food": ["Strict sodium restriction and elimination of fried/processed foods", "Clinical dietitian review for cardioprotective nutrition"],
+      "hospital_guidance": "24x7 emergency-capable hospital with Cath Lab, ECG, Echo, and Cardiac ICU.",
+      "followup_days": 7
+    }
+  }
+}
+

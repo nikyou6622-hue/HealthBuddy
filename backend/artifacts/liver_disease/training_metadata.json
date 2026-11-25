@@ -1,0 +1,89 @@
+{
+  "disease": "liver_disease",
+  "best_model": "logistic_regression",
+  "best_score": 0.6749827412320756,
+  "selection_criterion": "f1_weighted",
+  "cv_results": {
+    "logistic_regression": {
+      "cv_scores": [
+        0.655304217991788,
+        0.7048771121351766,
+        0.6821532908120345,
+        0.6231513412884915,
+        0.7094277439328872
+      ],
+      "cv_mean": 0.6749827412320756,
+      "cv_std": 0.03226542019270801
+    },
+    "decision_tree": {
+      "cv_scores": [
+        0.6153593842251427,
+        0.7217188500400777,
+        0.6211115509724565,
+        0.6518148029183684,
+        0.5905376344086021
+      ],
+      "cv_mean": 0.6401084445129295,
+      "cv_std": 0.0452282218999112
+    },
+    "random_forest": {
+      "cv_scores": [
+        0.5990948933973352,
+        0.6555131687368388,
+        0.6983512544802868,
+        0.6565964246479576,
+        0.6830120842904225
+      ],
+      "cv_mean": 0.6585135651105681,
+      "cv_std": 0.03385402572942159
+    },
+    "knn": {
+      "cv_scores": [
+        0.6812977755008325,
+        0.6716591677470196,
+        0.6632939290723301,
+        0.5903025445802444,
+        0.6669412033859529
+      ],
+      "cv_mean": 0.6546989240572759,
+      "cv_std": 0.03275909024454702
+    }
+  },
+  "train_samples": 466,
+  "test_samples": 0,
+  "features": [
+    "Age",
+    "Gender",
+    "Total_Bilirubin",
+    "Direct_Bilirubin",
+    "Alkaline_Phosphotase",
+    "Alamine_Aminotransferase",
+    "Aspartate_Aminotransferase",
+    "Total_Proteins",
+    "Albumin",
+    "Albumin_and_Globulin_Ratio"
+  ],
+  "target_labels": {
+    "0": "No Liver Disease Detected",
+    "1": "Liver Disease Detected"
+  },
+  "target_mapping": {
+    "1": 1,
+    "0": 0
+  },
+  "random_state": 42,
+  "cv_folds": 5,
+  "class_balance": {
+    "disease": "liver_disease",
+    "class_counts": {
+      "0": 133,
+      "1": 333
+    },
+    "class_percentages": {
+      "0": 28.54077253218884,
+      "1": 71.45922746781116
+    },
+    "is_balanced": false,
+    "imbalance_ratio": 2.5037593984962405
+  }
+}

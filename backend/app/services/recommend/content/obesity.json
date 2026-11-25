@@ -1,0 +1,31 @@
+{
+  "condition": "obesity",
+  "title": "Weight & Anthropometry Care Guidance",
+  "source": "Consensus Statement for Diagnosis of Obesity & Abdominal Obesity in Asian Indians",
+  "reviewed_by": "Dr. A. Sharma, MD (Endocrinology Review Board)",
+  "version": "1.0.0",
+  "tiers": {
+    "low": {
+      "doctor_tests": ["Annual height, weight, and waist circumference check"],
+      "exercise": ["150 minutes/week of moderate physical activity"],
+      "food": ["Maintain balanced calorie intake with whole foods and adequate protein"],
+      "hospital_guidance": "Preventive wellness or primary care clinic.",
+      "followup_days": 180
+    },
+    "moderate": {
+      "doctor_tests": ["Primary care or lifestyle clinic review within 4 weeks", "Screen for fasting glucose and lipid profile"],
+      "exercise": ["Gradually build up to 200–250 minutes/week of brisk walking + 2 days strength training"],
+      "food": ["Modest calorie deficit (300–500 kcal/day)", "Replace refined carbs with high-fiber vegetables and lean protein"],
+      "hospital_guidance": "Lifestyle / Nutrition & Preventive Medicine OPD.",
+      "followup_days": 45
+    },
+    "high": {
+      "doctor_tests": ["Endocrinologist / Bariatric & Metabolic Physician evaluation within 2–4 weeks", "Fasting Glucose, HbA1c, Lipid Profile, Liver Function Tests, and Thyroid Profile"],
+      "exercise": ["Low-impact joint-friendly activity (walking, water aerobics, stationary cycling) starting slowly"],
+      "food": ["Structured dietitian-guided meal plan", "Avoid late-night heavy meals and sugar-sweetened drinks"],
+      "hospital_guidance": "Multi-specialty hospital with Endocrinology & Clinical Nutrition.",
+      "followup_days": 30
+    }
+  }
+}
+

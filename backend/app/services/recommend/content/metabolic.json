@@ -1,0 +1,31 @@
+{
+  "condition": "metabolic",
+  "title": "Metabolic Syndrome Care Guidance",
+  "source": "IDF / Harmonized Consensus Criteria for Metabolic Syndrome in South Asians",
+  "reviewed_by": "Dr. A. Sharma, MD (Endocrinology Review Board)",
+  "version": "1.0.0",
+  "tiers": {
+    "low": {
+      "doctor_tests": ["Annual preventive metabolic screening (BP, waist, fasting glucose, lipids)"],
+      "exercise": ["150 minutes/week of moderate aerobic exercise"],
+      "food": ["Whole-food, fiber-rich diet with limited refined carbohydrates"],
+      "hospital_guidance": "Primary care clinic.",
+      "followup_days": 180
+    },
+    "moderate": {
+      "doctor_tests": ["Physician or Endocrinologist review within 2–4 weeks", "Fasting Lipid Profile, Fasting Glucose, HbA1c, and Liver Ultrasound"],
+      "exercise": ["200 minutes/week of combined aerobic + resistance training"],
+      "food": ["Target 5–7% gradual weight reduction if overweight", "Eliminate sugary beverages and trans fats"],
+      "hospital_guidance": "Diabetes / Metabolic Clinic with diagnostic lab.",
+      "followup_days": 30
+    },
+    "high": {
+      "doctor_tests": ["Endocrinologist / Internal Medicine consultation within 1–2 weeks", "Full Metabolic Panel, HbA1c, Lipid Profile, LFT, and Cardiovascular Risk Review"],
+      "exercise": ["Get medical clearance first if blood pressure or cardiac risk is also elevated.", "Graduated structured physical activity."],
+      "food": ["Medical nutrition therapy targeting abdominal obesity, triglycerides, and glycemic control"],
+      "hospital_guidance": "Multi-specialty center with Endocrinology, Cardiology, and Nutrition support.",
+      "followup_days": 14
+    }
+  }
+}
+
