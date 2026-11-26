@@ -8,6 +8,7 @@ interface HospitalListProps {
   allHospitals?: any[];
   specialistTypes: string[];
   urgency?: string;
+  defaultShowAll?: boolean;
   t: Record<string, string>;
   onOpenMap: (hospital: any) => void;
 }
@@ -17,19 +18,22 @@ export function HospitalList({
   allHospitals = [],
   specialistTypes,
   urgency,
+  defaultShowAll = false,
   t,
   onOpenMap,
 }: HospitalListProps) {
-  const [sector, setSector] = useState<"all" | "government" | "private">("all");
+  const [sector, setSector] = useState<"all" | "government" | "private" | "emergency">("all");
   const [scope, setScope] = useState<"matched" | "all_verified">("matched");
   const [query, setQuery] = useState("");
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(defaultShowAll);
 
   const sourceList =
     scope === "all_verified" && allHospitals.length > 0 ? allHospitals : hospitals;
 
   const filtered = sourceList.filter((h) => {
-    if (sector !== "all") {
+    if (sector === "emergency") {
+      if (!h.emergency_24x7) return false;
+    } else if (sector !== "all") {
       const notes = `${h.insurance_notes || ""} ${h.name || ""}`.toLowerCase();
       const isGovt =
         notes.includes("public") ||
@@ -57,7 +61,7 @@ export function HospitalList({
     );
   });
 
-  const visibleHospitals = showAll || query.trim() ? filtered : filtered.slice(0, 6);
+  const visibleHospitals = showAll || query.trim() ? filtered : filtered.slice(0, 10);
 
   return (
     <div className="rounded-lg bg-hb-surface border border-hb-border p-5 shadow-sm flex flex-col justify-between gap-4">
@@ -119,12 +123,13 @@ export function HospitalList({
           )}
         </div>
 
-        <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter hospital sector">
+        <div className="flex flex-nowrap overflow-x-auto no-scrollbar sm:flex-wrap gap-1.5 pb-1 sm:pb-0" role="group" aria-label="Filter hospital sector">
           {(
             [
               ["all", t.filter_all || "All"],
               ["government", t.filter_govt || "Government / Public"],
               ["private", t.filter_private || "Private / Non-Profit"],
+              ["emergency", "24x7 Emergency"],
             ] as const
           ).map(([k, lbl]) => (
             <button
@@ -166,7 +171,14 @@ export function HospitalList({
                 <div className="text-xs text-hb-muted tabular-nums">
                   {h.city} ({h.pincode})
                   {h.distance_km != null ? ` • ${h.distance_km} km` : ""}
+                  {h.phone ? ` • ${h.phone}` : ""}
                 </div>
+                {h.insurance_notes && (
+                  <div className="text-[11px] text-hb-muted">
+                    Schemes: <span className="font-semibold text-hb-ink">{h.insurance_notes}</span>
+                    {h.teleconsult ? " • Teleconsult available" : ""}
+                  </div>
+                )}
                 {h.match_reasons && h.match_reasons.length > 0 && (
                   <div className="text-xs text-hb-muted">{h.match_reasons[0]}</div>
                 )}
@@ -187,7 +199,7 @@ export function HospitalList({
           )}
         </div>
 
-        {filtered.length > 6 && !query.trim() && (
+        {filtered.length > 10 && !query.trim() && (
           <button
             type="button"
             onClick={() => setShowAll((v) => !v)}

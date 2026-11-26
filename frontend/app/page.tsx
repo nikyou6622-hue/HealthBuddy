@@ -845,6 +845,8 @@ export default function HealthBuddyPage() {
           <div className="lg:col-span-7">
             <HospitalList
               hospitals={hospitals}
+              allHospitals={hospitals}
+              defaultShowAll
               specialistTypes={["Cardiologist", "Endocrinologist", "Neurologist", "Hepatologist"]}
               t={t}
               onOpenMap={(h) => setFocusedHospital(h)}
