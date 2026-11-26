@@ -415,7 +415,7 @@ Consumes the complete assessment JSON and returns a multi-page, vector-rendered 
    - Consent checkbox: *"Save my results to History"* (defaults to unchecked).
 
 ### 7.2 Phase B: Snapshot Dashboard & Hero Layout
-- **Brand Lockup**: `HeartBuddy` with signature yellow-square dark heart and ECG wave.
+- **Brand Lockup**: `HealthBuddy` with signature yellow-square dark heart and ECG wave.
 - **Top Utility Bar**: Health search input, `Download PDF`, `Re-check my health`, and user avatar badge.
 - **Hero Grid (Two Cards)**:
   - *Left Card (Yellow Gradient)*: Circular SVG progress ring showing `5/6 checks done`, vertical separator line, `✔ Overall Summary` pill, and synthesis text.
@@ -425,7 +425,7 @@ Consumes the complete assessment JSON and returns a multi-page, vector-rendered 
   2. **Prediabetes**: Purple droplet icon, `40/100`, `Moderate Risk` amber chip, smooth purple sparkline wave.
   3. **Diabetes Risk**: Red droplet icon, `Moderate`, `Needs Attention` orange chip, smooth orange sparkline wave.
   4. **Blood Pressure**: Blue gauge icon, `135/85 mmHg`, `Normal Range` green chip, smooth cyan/blue sparkline wave.
-- **Bottom Motivational Banner**: Runner silhouette in white circular badge, motivational text, and golden `♥ HeartBuddy` button with pine tree landscape background.
+- **Bottom Motivational Banner**: Runner silhouette in white circular badge, motivational text, and golden `♥ HealthBuddy` button with pine tree landscape background.
 
 ### 7.3 Care Guidance: Food Precautions & Exercise Guidelines
 - Condition-specific guidance loaded from localized JSON files (`plans.en.json` and `plans.hi.json`).

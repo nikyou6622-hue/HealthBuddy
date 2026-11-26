@@ -147,3 +147,59 @@ def test_assess_missing_labs_produce_skipped_modules_and_ml_needs_more_info():
         assert rec.status_code == 200
         assert any("get medical clearance first" in ex.lower() for ex in rec.json()["exercise"])
 
+
+def test_healthbuddy_ml_chatbot():
+    with TestClient(app) as client:
+        st = client.get("/api/v1/chat/status")
+        assert st.status_code == 200
+        st_data = st.json()
+        assert st_data["name"] == "HealthBuddy"
+        assert st_data["doc_count"] >= 20
+
+        # Normal ML knowledgebase retrieval with personalized context
+        res = client.post(
+            "/api/v1/chat",
+            json={
+                "message": "What foods should I eat and avoid for my heart?",
+                "lang": "en",
+                "assessment_context": {"heart": "moderate", "diabetes": "low"},
+            },
+        )
+        assert res.status_code == 200
+        data = res.json()
+        assert data["emergency"] is False
+        assert data["confidence"] > 0.08
+        assert len(data["sources"]) > 0
+        assert "not a medical device" in data["disclaimer"].lower()
+
+        # Emergency red-flag override in chat
+        em = client.post(
+            "/api/v1/chat",
+            json={"message": "I have severe chest pain and shortness of breath", "lang": "en"},
+        )
+        assert em.status_code == 200
+        em_data = em.json()
+        assert em_data["emergency"] is True
+        assert "112" in em_data["reply"]
+
+
+def test_knowledge_base_records_endpoint():
+    with TestClient(app) as client:
+        r = client.get("/api/v1/kb")
+        assert r.status_code == 200
+        data = r.json()
+        assert data["counts"]["hospitals"] >= 20
+        assert data["counts"]["doctors"] >= 15
+        assert data["counts"]["guidance"] >= 18
+        assert data["counts"]["care"] >= 25
+        assert data["counts"]["risk_modules"] >= 6
+        assert data["counts"]["faqs"] >= 10
+
+        filtered = client.get("/api/v1/kb?category=doctors&q=Cardiologist")
+        assert filtered.status_code == 200
+        fdata = filtered.json()
+        assert len(fdata["doctors"]) >= 1
+        assert len(fdata["hospitals"]) == 0
+
+
+

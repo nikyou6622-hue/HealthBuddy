@@ -123,3 +123,10 @@ class ReportPdfRequest(BaseModel):
     plan: Optional[Dict[str, Any]] = None
     followups: List[Dict[str, Any]] = []
 
+
+class ChatRequest(BaseModel):
+    message: str = Field(..., min_length=1, max_length=2000)
+    lang: str = Field(default="en", pattern="^(en|hi)$")
+    assessment_context: Optional[Dict[str, Any]] = None
+
+

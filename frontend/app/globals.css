@@ -1,30 +1,100 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: light;
+  --hb-canvas: #FFF6D6;
+  --hb-surface: #FFFFFF;
+  --hb-subtle: #FFF7DB;
+  --hb-border: #F2DF9F;
+
+  --hb-ink: #2B2208;
+  --hb-ink-muted: #6B5B2E;
+
+  --hb-accent: #F5B81D;
+  --hb-accent-ink: #78350F;
+  --hb-accent-soft: #FFE48F;
+  --hb-cta-bg: #FFC83D;
+  --hb-cta-ink: #2B2208;
+
+  --hb-low-bg: #DCFCE7;
+  --hb-low-ink: #14532D;
+  --hb-low-border: #BBF7D0;
+
+  --hb-mod-bg: #FEF3C7;
+  --hb-mod-ink: #78350F;
+  --hb-mod-border: #FDE68A;
+
+  --hb-high-bg: #FEE2E2;
+  --hb-high-ink: #7F1D1D;
+  --hb-high-border: #FECACA;
+
+  --hb-skip-bg: #F1F5F9;
+  --hb-skip-ink: #475569;
+  --hb-skip-border: #CBD5E1;
+
+  --hb-radius-md: 12px;
+  --hb-radius-lg: 20px;
+  --hb-shadow-sm: 0 10px 30px -10px rgba(43, 34, 8, 0.08), 0 2px 8px -2px rgba(43, 34, 8, 0.04);
+  --hb-shadow-md: 0 14px 34px -10px rgba(43, 34, 8, 0.12), 0 4px 10px -2px rgba(43, 34, 8, 0.06);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --hb-canvas: #141210;
+  --hb-surface: #1E1B18;
+  --hb-subtle: #292521;
+  --hb-border: #3A342D;
+
+  --hb-ink: #F5F5F4;
+  --hb-ink-muted: #A8A29E;
+
+  --hb-accent: #F59E0B;
+  --hb-accent-ink: #FCD34D;
+  --hb-accent-soft: #451A03;
+  --hb-cta-bg: #F59E0B;
+  --hb-cta-ink: #1C1917;
+
+  --hb-low-bg: #064E3B;
+  --hb-low-ink: #A7F3D0;
+  --hb-low-border: #059669;
+
+  --hb-mod-bg: #451A03;
+  --hb-mod-ink: #FDE68A;
+  --hb-mod-border: #D97706;
+
+  --hb-high-bg: #450A0A;
+  --hb-high-ink: #FECACA;
+  --hb-high-border: #DC2626;
+
+  --hb-skip-bg: #1E293B;
+  --hb-skip-ink: #CBD5E1;
+  --hb-skip-border: #475569;
+
+  --hb-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --hb-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.45);
 }
 
 body {
-  font-family: "Plus Jakarta Sans", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
-  background-color: #FFF9E5;
-  color: #2B2208;
+  background-color: var(--hb-canvas);
+  color: var(--hb-ink);
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
-/* Warm organic healthcare ambient backdrop matching image */
 .bg-warm-canvas {
-  background-color: #FFF8E3;
-  background-image: 
-    radial-gradient(circle at 92% 8%, rgba(255, 200, 61, 0.42) 0%, rgba(255, 225, 140, 0.20) 28%, transparent 55%),
-    radial-gradient(circle at 10% 95%, rgba(255, 205, 75, 0.35) 0%, rgba(255, 235, 175, 0.15) 30%, transparent 60%),
-    radial-gradient(circle at 50% 40%, rgba(255, 248, 227, 0.8) 0%, transparent 100%);
+  background-color: var(--hb-canvas);
+  background-image:
+    radial-gradient(circle at 92% 6%, rgba(255, 200, 61, 0.58) 0%, rgba(255, 218, 110, 0.30) 30%, transparent 58%),
+    radial-gradient(circle at 8% 94%, rgba(255, 200, 61, 0.48) 0%, rgba(255, 228, 145, 0.22) 32%, transparent 62%),
+    radial-gradient(circle at 50% 42%, rgba(255, 249, 225, 0.85) 0%, transparent 100%);
   background-attachment: fixed;
+}
+
+[data-theme="dark"] .bg-warm-canvas {
+  background-image: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -33,5 +103,21 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  aside,
+  nav,
+  button,
+  [data-no-print="true"] {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .print-only {
+    display: block !important;
   }
 }

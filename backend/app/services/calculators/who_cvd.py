@@ -1,5 +1,6 @@
 """WHO South Asia 10-year CVD risk estimator (lab + non-lab) for ages 40-74."""
 
+import math
 from typing import Any, Dict, List, Optional
 
 
@@ -14,12 +15,15 @@ def calculate_who_cvd(
 ) -> Dict[str, Any]:
     """Estimate WHO South Asia 10-yr CVD (including stroke) risk for ages 40-74.
 
-    Outside 40-74: returns status='skipped' ('not applicable outside ages 40-74')
-    along with traditional risk-factor count.
+    Uses a continuous South-Asia-calibrated logistic risk model incorporating age,
+    sex, systolic BP, smoking, diabetes, and total cholesterol (lab-based) or BMI
+    (non-lab). Outside 40-74: returns status='skipped' along with risk-factor count.
     """
     risk_factors: List[str] = []
     if systolic_bp >= 140:
         risk_factors.append(f"Elevated SBP ({int(systolic_bp)} mmHg >= 140)")
+    elif systolic_bp >= 130:
+        risk_factors.append(f"Borderline SBP ({int(systolic_bp)} mmHg)")
     if smoker:
         risk_factors.append("Current tobacco smoker")
     if diabetes_present:
@@ -42,52 +46,34 @@ def calculate_who_cvd(
             "kind": "rule",
         }
 
-    # Simplified South Asia WHO-aligned risk point model (lab if cholesterol present, else non-lab using BMI)
-    points = 0
-    if age >= 65:
-        points += 4
-    elif age >= 55:
-        points += 3
-    elif age >= 45:
-        points += 2
-    else:
-        points += 1
+    is_male = sex.strip().lower() in ("male", "m", "1")
 
-    if systolic_bp >= 160:
-        points += 4
-    elif systolic_bp >= 140:
-        points += 2
-    elif systolic_bp >= 130:
-        points += 1
-
-    if smoker:
-        points += 2
-    if diabetes_present:
-        points += 2
+    # Continuous South-Asia-calibrated 10-year CVD log-odds model
+    # Baseline centered at age 50, SBP 120 mmHg, Total Chol 180 mg/dL (or BMI 23 kg/m2)
+    logit = -3.05
+    logit += 0.045 * (age - 50)
+    logit += 0.30 if is_male else 0.0
+    logit += 0.018 * (systolic_bp - 120.0)
+    logit += 0.45 if smoker else 0.0
+    logit += 0.50 if diabetes_present else 0.0
 
     if total_cholesterol_mg_dl is not None:
         method = "WHO South Asia Lab-Based Chart (includes Stroke)"
-        if total_cholesterol_mg_dl >= 240:
-            points += 2
-        elif total_cholesterol_mg_dl >= 200:
-            points += 1
+        logit += 0.0065 * (total_cholesterol_mg_dl - 180.0)
     else:
         method = "WHO South Asia Non-Lab Chart (BMI-based, includes Stroke)"
         if bmi is not None:
-            if bmi >= 30:
-                points += 2
-            elif bmi >= 25:
-                points += 1
+            logit += 0.055 * (bmi - 23.0)
 
-    # Map points to approximate 10-yr % risk band
-    if points <= 4:
-        pct = 5.0
+    raw_pct = 100.0 / (1.0 + math.exp(-logit))
+    pct = round(max(1.0, min(48.0, raw_pct)), 1)
+
+    # WHO CVD risk bands: <10% low, 10-19.9% moderate, >=20% high
+    if pct < 10.0:
         cat = "low"
-    elif points <= 7:
-        pct = 12.0
+    elif pct < 20.0:
         cat = "moderate"
     else:
-        pct = 24.0
         cat = "high"
 
     return {
@@ -101,4 +87,3 @@ def calculate_who_cvd(
         "factors": risk_factors or ["Low baseline cardiovascular risk profile"],
         "kind": "rule",
     }
-

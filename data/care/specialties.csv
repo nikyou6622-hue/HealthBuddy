@@ -1,9 +1,19 @@
 id,name,subspecialty
-1,Cardiologist,General Cardiology
-2,Interventional Cardiologist,Coronary Interventions
-3,Endocrinologist,Diabetes and Metabolic Disorders
-4,Diabetologist,Diabetes Care
-5,Neurologist,Movement Disorder Specialist
-6,Hepatologist,Liver and Transplant Medicine
-7,Gastroenterologist,Digestive and Hepatic Care
-
+1,Cardiologist,General Cardiology & Heart Failure
+2,Interventional Cardiologist,Coronary Interventions & Cath Lab
+3,Endocrinologist,Diabetes Thyroid & Metabolic Disorders
+4,Diabetologist,Comprehensive Diabetes & Glycemic Care
+5,Neurologist,Stroke & Movement Disorder Specialist
+6,Hepatologist,Liver & Fatty Liver Medicine
+7,Gastroenterologist,Digestive & Hepatic Care
+8,Nephrologist,Chronic Kidney Disease & Dialysis Care
+9,General Physician,Internal & Family Medicine
+10,Preventive Cardiologist,Lipid Risk & Lifestyle Cardiology
+11,Clinical Dietitian,Medical Nutrition Therapy (Indian Diets)
+12,Physiotherapist,Cardiac Rehab & Functional Mobility
+13,Pulmonologist,Respiratory & Sleep Apnea Care
+14,Ophthalmologist,Diabetic Retinopathy & Hypertensive Eye Care
+15,Psychiatrist,Stress Sleep & Chronic Illness Behavioral Care
+16,Bariatric & Metabolic Specialist,Severe Obesity & Metabolic Care
+17,Emergency Medicine,24x7 Acute Triage & Resuscitation
+18,Yoga Therapist,Therapeutic Pranayama & Metabolic Wellness

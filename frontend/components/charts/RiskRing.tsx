@@ -12,7 +12,7 @@ interface RiskRingProps {
 export function RiskRing({ completed, total, label }: RiskRingProps) {
   const safeTotal = Math.max(total, 1);
   const ratio = Math.max(0, Math.min(1, completed / safeTotal));
-  const radius = 48;
+  const radius = 44;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference * (1 - ratio);
 
@@ -20,41 +20,41 @@ export function RiskRing({ completed, total, label }: RiskRingProps) {
     <div
       role="img"
       aria-label={`${completed} of ${total} ${label}`}
-      className="relative w-32 h-32 shrink-0 flex items-center justify-center"
+      className="relative w-28 h-28 shrink-0 flex items-center justify-center"
     >
-      <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90" aria-hidden="true">
+      <svg viewBox="0 0 112 112" className="w-full h-full -rotate-90" aria-hidden="true">
         <circle
-          cx="60"
-          cy="60"
+          cx="56"
+          cy="56"
           r={radius}
-          fill="rgba(255, 255, 255, 0.45)"
-          stroke="rgba(43, 34, 8, 0.12)"
-          strokeWidth="11"
+          fill="var(--hb-subtle)"
+          stroke="var(--hb-border)"
+          strokeWidth="10"
         />
         <circle
-          cx="60"
-          cy="60"
+          cx="56"
+          cy="56"
           r={radius}
           fill="none"
-          stroke="#E59A00"
-          strokeWidth="11"
+          stroke="var(--hb-accent)"
+          strokeWidth="10"
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          style={{ transition: "stroke-dashoffset 0.6s ease" }}
+          style={{ transition: "stroke-dashoffset 0.5s ease" }}
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center tabular-nums">
-        <span className="text-2xl font-extrabold text-[#2B2208] leading-none">
+        <span className="text-xl font-extrabold text-hb-ink leading-none">
           {completed}/{total}
         </span>
-        <span className="text-[11px] font-bold text-[#6B5B2E] mt-1">
+        <span className="text-[11px] font-semibold text-hb-muted mt-1 px-2 leading-tight">
           {label}
         </span>
       </div>
       <div
         aria-hidden="true"
-        className="absolute -bottom-1 w-6 h-6 rounded-full bg-[#2B2208] text-[#FFC83D] flex items-center justify-center shadow"
+        className="absolute -bottom-1 w-6 h-6 rounded-full bg-hb-cta text-hb-ctaInk border border-hb-border flex items-center justify-center shadow-sm"
       >
         <Check className="w-3.5 h-3.5" strokeWidth={3} />
       </div>

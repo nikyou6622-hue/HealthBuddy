@@ -1,0 +1,2743 @@
+{
+  "name": "HealthBuddy Clinical Knowledge Base",
+  "version": "3.1.0",
+  "generated_at": "2026-11-26T05:05:30.075201+00:00",
+  "counts": {
+    "hospitals": 25,
+    "doctors": 18,
+    "guidance": 18,
+    "care": 31,
+    "risk_modules": 6,
+    "faqs": 12,
+    "total": 110
+  },
+  "hospitals": [
+    {
+      "id": "1",
+      "name": "AIIMS New Delhi",
+      "address": "Sri Aurobindo Marg Ansari Nagar",
+      "city": "New Delhi",
+      "pincode": "110029",
+      "phone": "+91-11-26588500",
+      "website": "https://www.aiims.edu",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Ayushman Bharat / Public",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Hepatologist",
+        "Nephrologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "eye and nephrology support",
+        "MRI",
+        "physiotherapy",
+        "speech therapy",
+        "liver clinic",
+        "ultrasound",
+        "FibroScan",
+        "endoscopy",
+        "transplant capability",
+        "dialysis unit",
+        "PMJAY / CGHS insurance desk",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "2",
+      "name": "Safdarjung Hospital",
+      "address": "Ansari Nagar West",
+      "city": "New Delhi",
+      "pincode": "110029",
+      "phone": "+91-11-26707437",
+      "website": "https://www.vmmc-sjh.nic.in",
+      "emergency_24x7": true,
+      "teleconsult": false,
+      "insurance_notes": "CGHS / Public Hospital",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Gastroenterologist",
+        "General Physician",
+        "Pulmonologist"
+      ],
+      "facilities": [
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "ultrasound",
+        "endoscopy",
+        "24x7 emergency triage",
+        "PMJAY / CGHS insurance desk"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "3",
+      "name": "KEM Hospital Mumbai",
+      "address": "Acharya Donde Marg Parel",
+      "city": "Mumbai",
+      "pincode": "400012",
+      "phone": "+91-22-24107000",
+      "website": "https://www.kem.edu",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "MJPJAY / Public Hospital",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Hepatologist",
+        "Nephrologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "physiotherapy",
+        "liver clinic",
+        "ultrasound",
+        "endoscopy",
+        "dialysis unit",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "4",
+      "name": "NIMHANS Bengaluru",
+      "address": "Hosur Road Lakkasandra",
+      "city": "Bengaluru",
+      "pincode": "560029",
+      "phone": "+91-80-26995000",
+      "website": "https://nimhans.ac.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Public / Ayushman Bharat",
+      "specialties": [
+        "Neurologist",
+        "Psychiatrist",
+        "Emergency Medicine"
+      ],
+      "facilities": [
+        "MRI",
+        "physiotherapy",
+        "speech therapy",
+        "lab",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "verified": true
+    },
+    {
+      "id": "5",
+      "name": "PGIMER Chandigarh",
+      "address": "Sector 12",
+      "city": "Chandigarh",
+      "pincode": "160012",
+      "phone": "+91-172-2746018",
+      "website": "https://pgimer.edu.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Public Hospital",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Hepatologist",
+        "Nephrologist",
+        "Ophthalmologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "ultrasound",
+        "FibroScan",
+        "endoscopy",
+        "dialysis unit",
+        "PMJAY / CGHS insurance desk"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "6",
+      "name": "CMC Vellore",
+      "address": "Ida Scudder Road",
+      "city": "Vellore",
+      "pincode": "632004",
+      "phone": "+91-416-2281000",
+      "website": "https://www.cmch-vellore.edu",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Private Non-Profit / Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Hepatologist",
+        "Nephrologist",
+        "Clinical Dietitian"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "eye and nephrology support",
+        "MRI",
+        "physiotherapy",
+        "speech therapy",
+        "liver clinic",
+        "ultrasound",
+        "FibroScan",
+        "endoscopy",
+        "transplant capability",
+        "nutrition counseling",
+        "cardiac rehabilitation",
+        "tele-consultation"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Tamil"
+      ],
+      "verified": true
+    },
+    {
+      "id": "7",
+      "name": "JIPMER Puducherry",
+      "address": "Dhanvantari Nagar",
+      "city": "Puducherry",
+      "pincode": "605006",
+      "phone": "+91-413-2296000",
+      "website": "https://jipmer.edu.in",
+      "emergency_24x7": true,
+      "teleconsult": false,
+      "insurance_notes": "Public / Ayushman Bharat",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Gastroenterologist",
+        "General Physician"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "ultrasound",
+        "endoscopy",
+        "PMJAY / CGHS insurance desk"
+      ],
+      "languages": [
+        "English",
+        "Tamil"
+      ],
+      "verified": true
+    },
+    {
+      "id": "9",
+      "name": "Apollo Hospitals Sarita Vihar",
+      "address": "Delhi Mathura Road Sarita Vihar",
+      "city": "New Delhi",
+      "pincode": "110076",
+      "phone": "+91-11-26925858",
+      "website": "https://www.apollohospitals.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Private Insurance / TPA",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Hepatologist",
+        "Preventive Cardiologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "FibroScan",
+        "endoscopy",
+        "transplant capability",
+        "tele-consultation",
+        "cardiac rehabilitation",
+        "nutrition counseling",
+        "24x7 emergency triage",
+        "24x7 pharmacy"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "10",
+      "name": "Fortis Escorts Heart Institute",
+      "address": "Okhla Road Sukhdev Vihar",
+      "city": "New Delhi",
+      "pincode": "110025",
+      "phone": "+91-11-47135000",
+      "website": "https://www.fortishealthcare.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / ECHS / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Preventive Cardiologist",
+        "Pulmonologist",
+        "Physiotherapist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "lab",
+        "cardiac rehabilitation",
+        "smoking cessation clinic",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "11",
+      "name": "Medanta The Medicity",
+      "address": "CH Baktawar Singh Road Sector 38",
+      "city": "Gurugram",
+      "pincode": "122001",
+      "phone": "+91-124-4141414",
+      "website": "https://www.medanta.org",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Private Insurance / TPA",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Hepatologist",
+        "Nephrologist",
+        "Neurologist",
+        "Bariatric & Metabolic Specialist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "FibroScan",
+        "endoscopy",
+        "transplant capability",
+        "dialysis unit",
+        "cardiac rehabilitation",
+        "CGMS blood sugar monitoring",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "12",
+      "name": "Max Super Speciality Hospital Saket",
+      "address": "1 2 Press Enclave Marg Saket",
+      "city": "New Delhi",
+      "pincode": "110017",
+      "phone": "+91-11-26515050",
+      "website": "https://www.maxhealthcare.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Neurologist",
+        "Clinical Dietitian"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "dialysis unit",
+        "nutrition counseling",
+        "tele-consultation",
+        "home sample collection",
+        "24x7 pharmacy"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "13",
+      "name": "Kokilaben Dhirubhai Ambani Hospital",
+      "address": "Rao Saheb Achutrao Patwardhan Marg Four Bungalows",
+      "city": "Mumbai",
+      "pincode": "400053",
+      "phone": "+91-22-42696969",
+      "website": "https://www.kokilabenhospital.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Private Insurance / Cashless TPA",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Nephrologist",
+        "Hepatologist",
+        "Physiotherapist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "physiotherapy",
+        "liver clinic",
+        "FibroScan",
+        "endoscopy",
+        "dialysis unit",
+        "cardiac rehabilitation",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "14",
+      "name": "Lilavati Hospital & Research Centre",
+      "address": "A-791 Bandra Reclamation Bandra West",
+      "city": "Mumbai",
+      "pincode": "400050",
+      "phone": "+91-22-69318000",
+      "website": "https://www.lilavatihospital.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Private Insurance / Cashless TPA",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Gastroenterologist",
+        "Ophthalmologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "eye and nephrology support",
+        "MRI",
+        "endoscopy",
+        "dialysis unit",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "15",
+      "name": "Narayana Institute of Cardiac Sciences",
+      "address": "258/A Bommasandra Industrial Area Hosur Road",
+      "city": "Bengaluru",
+      "pincode": "560099",
+      "phone": "+91-80-71222222",
+      "website": "https://www.narayanahealth.org",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Ayushman Bharat / Yeshasvini / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Preventive Cardiologist",
+        "Nephrologist",
+        "Endocrinologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "lab",
+        "dialysis unit",
+        "cardiac rehabilitation",
+        "PMJAY / CGHS insurance desk",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Tamil"
+      ],
+      "verified": true
+    },
+    {
+      "id": "16",
+      "name": "Manipal Hospital Old Airport Road",
+      "address": "98 HAL Old Airport Road",
+      "city": "Bengaluru",
+      "pincode": "560017",
+      "phone": "+91-80-25024444",
+      "website": "https://www.manipalhospitals.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Private Insurance / Corporate TPA",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Hepatologist",
+        "Clinical Dietitian",
+        "Yoga Therapist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "FibroScan",
+        "nutrition counseling",
+        "yoga therapy",
+        "CGMS blood sugar monitoring",
+        "tele-consultation",
+        "home sample collection"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "verified": true
+    },
+    {
+      "id": "17",
+      "name": "Apollo Hospitals Greams Road",
+      "address": "21 Greams Lane Off Greams Road",
+      "city": "Chennai",
+      "pincode": "600006",
+      "phone": "+91-44-28293333",
+      "website": "https://www.apollohospitals.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Private Insurance / CGHS / CMCHIS",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Hepatologist",
+        "Ophthalmologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "eye and nephrology support",
+        "MRI",
+        "FibroScan",
+        "transplant capability",
+        "dialysis unit",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Tamil",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "18",
+      "name": "Madras Medical Mission",
+      "address": "4A Dr J Jayalalitha Nagar Mogappair",
+      "city": "Chennai",
+      "pincode": "600037",
+      "phone": "+91-44-26565961",
+      "website": "https://www.mmm.org.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CMCHIS / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Preventive Cardiologist",
+        "Nephrologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "lab",
+        "cardiac rehabilitation",
+        "smoking cessation clinic",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Tamil"
+      ],
+      "verified": true
+    },
+    {
+      "id": "19",
+      "name": "Yashoda Hospitals Somajiguda",
+      "address": "Raj Bhavan Road Somajiguda",
+      "city": "Hyderabad",
+      "pincode": "500082",
+      "phone": "+91-40-45674567",
+      "website": "https://www.yashodahospitals.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Aarogyasri / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Neurologist",
+        "Hepatologist",
+        "Nephrologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "FibroScan",
+        "endoscopy",
+        "dialysis unit",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Telugu"
+      ],
+      "verified": true
+    },
+    {
+      "id": "20",
+      "name": "NIMS Hyderabad",
+      "address": "Punjagutta",
+      "city": "Hyderabad",
+      "pincode": "500082",
+      "phone": "+91-40-23489000",
+      "website": "https://www.nims.edu.in",
+      "emergency_24x7": true,
+      "teleconsult": false,
+      "insurance_notes": "Aarogyasri / CGHS / Public",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Nephrologist",
+        "General Physician"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "dialysis unit",
+        "PMJAY / CGHS insurance desk",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Telugu"
+      ],
+      "verified": true
+    },
+    {
+      "id": "21",
+      "name": "SSKM IPGMER Kolkata",
+      "address": "244 AJC Bose Road",
+      "city": "Kolkata",
+      "pincode": "700020",
+      "phone": "+91-33-22041100",
+      "website": "https://www.ipgmer.gov.in",
+      "emergency_24x7": true,
+      "teleconsult": false,
+      "insurance_notes": "Swasthya Sathi / Public Hospital",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Neurologist",
+        "Hepatologist",
+        "Nephrologist",
+        "Gastroenterologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "endoscopy",
+        "dialysis unit",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Bengali"
+      ],
+      "verified": true
+    },
+    {
+      "id": "22",
+      "name": "Ruby Hall Clinic Pune",
+      "address": "40 Sassoon Road Sangamvadi",
+      "city": "Pune",
+      "pincode": "411001",
+      "phone": "+91-20-66455100",
+      "website": "https://www.rubyhall.com",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "MJPJAY / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Interventional Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Physiotherapist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "physiotherapy",
+        "dialysis unit",
+        "cardiac rehabilitation",
+        "tele-consultation"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "23",
+      "name": "Aster Medcity Kochi",
+      "address": "Kuttisahib Road Cheranelloor",
+      "city": "Kochi",
+      "pincode": "682027",
+      "phone": "+91-484-6699999",
+      "website": "https://www.asterhospitals.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "Karunya / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Hepatologist",
+        "Nephrologist",
+        "Neurologist",
+        "Bariatric & Metabolic Specialist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "FibroScan",
+        "transplant capability",
+        "dialysis unit",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Malayalam",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "24",
+      "name": "AIIMS Bhopal",
+      "address": "Saket Nagar Habibganj",
+      "city": "Bhopal",
+      "pincode": "462020",
+      "phone": "+91-755-2672317",
+      "website": "https://www.aiimsbhopal.edu.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Ayushman Bharat / Public",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "General Physician",
+        "Nephrologist",
+        "Neurologist",
+        "Pulmonologist"
+      ],
+      "facilities": [
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "ultrasound",
+        "endoscopy",
+        "PMJAY / CGHS insurance desk",
+        "ABDM health record desk",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "25",
+      "name": "SGPGIMS Lucknow",
+      "address": "Raebareli Road",
+      "city": "Lucknow",
+      "pincode": "226014",
+      "phone": "+91-522-2494000",
+      "website": "https://sgpgims.org.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "CGHS / Ayushman Bharat / Public",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Gastroenterologist",
+        "Hepatologist",
+        "Nephrologist",
+        "Neurologist"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "MRI",
+        "liver clinic",
+        "FibroScan",
+        "endoscopy",
+        "transplant capability",
+        "dialysis unit",
+        "PMJAY / CGHS insurance desk"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "verified": true
+    },
+    {
+      "id": "26",
+      "name": "KD Hospital Ahmedabad",
+      "address": "Vaishnodevi Circle SG Highway",
+      "city": "Ahmedabad",
+      "pincode": "382421",
+      "phone": "+91-79-66770000",
+      "website": "https://kdhospital.co.in",
+      "emergency_24x7": true,
+      "teleconsult": true,
+      "insurance_notes": "PMJAY / Private Insurance",
+      "specialties": [
+        "Cardiologist",
+        "Endocrinologist",
+        "Diabetologist",
+        "Nephrologist",
+        "Clinical Dietitian"
+      ],
+      "facilities": [
+        "cath lab",
+        "ECG",
+        "echo",
+        "cardiac ICU",
+        "diabetes clinic",
+        "lab",
+        "dialysis unit",
+        "nutrition counseling",
+        "yoga therapy",
+        "tele-consultation",
+        "24x7 emergency triage"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Gujarati"
+      ],
+      "verified": true
+    }
+  ],
+  "doctors": [
+    {
+      "id": "1",
+      "name": "Cardiologist",
+      "subspecialty": "General Cardiology & Heart Failure",
+      "conditions_covered": [
+        "Heart Disease",
+        "Hypertension",
+        "Metabolic Syndrome"
+      ],
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Interventional Cardiologist",
+      "subspecialty": "Coronary Interventions & Cath Lab",
+      "conditions_covered": [
+        "Acute Coronary Care",
+        "High-Risk Heart Disease"
+      ],
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Narayana Institute of Cardiac Sciences",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Ruby Hall Clinic Pune"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Endocrinologist",
+      "subspecialty": "Diabetes Thyroid & Metabolic Disorders",
+      "conditions_covered": [
+        "Diabetes",
+        "Prediabetes",
+        "Metabolic Syndrome",
+        "Obesity"
+      ],
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Diabetologist",
+      "subspecialty": "Comprehensive Diabetes & Glycemic Care",
+      "conditions_covered": [
+        "Diabetes",
+        "Prediabetes"
+      ],
+      "available_at_hospitals": [
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Lilavati Hospital & Research Centre",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "Ruby Hall Clinic Pune",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Neurologist",
+      "subspecialty": "Stroke & Movement Disorder Specialist",
+      "conditions_covered": [
+        "Parkinson's Disease",
+        "Stroke Red-Flag Evaluation"
+      ],
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "NIMHANS Bengaluru",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Hepatologist",
+      "subspecialty": "Liver & Fatty Liver Medicine",
+      "conditions_covered": [
+        "Liver Disease",
+        "Fatty Liver / Fibrosis"
+      ],
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "SSKM IPGMER Kolkata",
+        "Aster Medcity Kochi",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Gastroenterologist",
+      "subspecialty": "Digestive & Hepatic Care",
+      "conditions_covered": [
+        "Liver Disease",
+        "GI Bleeding Evaluation"
+      ],
+      "available_at_hospitals": [
+        "Safdarjung Hospital",
+        "JIPMER Puducherry",
+        "Lilavati Hospital & Research Centre",
+        "SSKM IPGMER Kolkata",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Nephrologist",
+      "subspecialty": "Chronic Kidney Disease & Dialysis Care",
+      "conditions_covered": [
+        "Kidney Health (CKD)",
+        "Proteinuria / Albuminuria",
+        "Resistant Hypertension"
+      ],
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "General Physician",
+      "subspecialty": "Internal & Family Medicine",
+      "conditions_covered": [
+        "Primary Risk Assessment",
+        "Diabetes",
+        "Hypertension",
+        "Preventive Screening"
+      ],
+      "available_at_hospitals": [
+        "Safdarjung Hospital",
+        "JIPMER Puducherry",
+        "NIMS Hyderabad",
+        "AIIMS Bhopal"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Preventive Cardiologist",
+      "subspecialty": "Lipid Risk & Lifestyle Cardiology",
+      "conditions_covered": [
+        "Cholesterol / Lipids",
+        "Heart Disease Prevention",
+        "Hypertension"
+      ],
+      "available_at_hospitals": [
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Narayana Institute of Cardiac Sciences",
+        "Madras Medical Mission"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Clinical Dietitian",
+      "subspecialty": "Medical Nutrition Therapy (Indian Diets)",
+      "conditions_covered": [
+        "Indian Medical Nutrition",
+        "Diabetes Diet",
+        "DASH Low-Sodium Diet",
+        "Weight Management"
+      ],
+      "available_at_hospitals": [
+        "CMC Vellore",
+        "Max Super Speciality Hospital Saket",
+        "Manipal Hospital Old Airport Road",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Physiotherapist",
+      "subspecialty": "Cardiac Rehab & Functional Mobility",
+      "conditions_covered": [
+        "Cardiac Rehabilitation",
+        "Safe Exercise Progression",
+        "Obesity Mobility"
+      ],
+      "available_at_hospitals": [
+        "Fortis Escorts Heart Institute",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Ruby Hall Clinic Pune"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Pulmonologist",
+      "subspecialty": "Respiratory & Sleep Apnea Care",
+      "conditions_covered": [
+        "Tobacco Cessation",
+        "Sleep Apnea",
+        "Breathlessness Evaluation"
+      ],
+      "available_at_hospitals": [
+        "Safdarjung Hospital",
+        "Fortis Escorts Heart Institute",
+        "AIIMS Bhopal"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Ophthalmologist",
+      "subspecialty": "Diabetic Retinopathy & Hypertensive Eye Care",
+      "conditions_covered": [
+        "Diabetic Retinopathy Screening",
+        "Hypertensive Retinopathy"
+      ],
+      "available_at_hospitals": [
+        "PGIMER Chandigarh",
+        "Lilavati Hospital & Research Centre",
+        "Apollo Hospitals Greams Road"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Psychiatrist",
+      "subspecialty": "Stress Sleep & Chronic Illness Behavioral Care",
+      "conditions_covered": [
+        "Stress & Sleep Health",
+        "Chronic Illness Adherence"
+      ],
+      "available_at_hospitals": [
+        "NIMHANS Bengaluru"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Bariatric & Metabolic Specialist",
+      "subspecialty": "Severe Obesity & Metabolic Care",
+      "conditions_covered": [
+        "Severe Obesity",
+        "Metabolic Syndrome"
+      ],
+      "available_at_hospitals": [
+        "Medanta The Medicity",
+        "Aster Medcity Kochi"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Emergency Medicine",
+      "subspecialty": "24x7 Acute Triage & Resuscitation",
+      "conditions_covered": [
+        "Chest Pain",
+        "FAST Stroke",
+        "Hypertensive Crisis",
+        "Hyperglycemic Crisis"
+      ],
+      "available_at_hospitals": [
+        "NIMHANS Bengaluru"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Yoga Therapist",
+      "subspecialty": "Therapeutic Pranayama & Metabolic Wellness",
+      "conditions_covered": [
+        "Stress Reduction",
+        "Blood Pressure & Glycemic Support"
+      ],
+      "available_at_hospitals": [
+        "Manipal Hospital Old Airport Road"
+      ]
+    }
+  ],
+  "guidance": [
+    {
+      "id": "diabetes_low",
+      "condition": "diabetes",
+      "title": "Diabetes & Glycemic Care Guidance",
+      "tier": "low",
+      "eat_more": [
+        "Whole grains, millets, dal, non-starchy vegetables, fenugreek/methi"
+      ],
+      "avoid": [
+        "Sugary drinks and fruit juices",
+        "Sweets (mithai) and refined flour (maida)",
+        "Deep-fried snacks"
+      ],
+      "food_notes": [
+        "Balanced whole-grain, high-fiber meals",
+        "Limit refined sugars and sweetened beverages"
+      ],
+      "exercise_target": "150 minutes/week moderate aerobic + 2 days light resistance",
+      "exercise": [
+        "150 minutes/week of moderate aerobic activity (brisk walking, cycling)",
+        "2 days/week of light resistance exercises"
+      ],
+      "doctor_tests": [
+        "Routine primary care checkup",
+        "Fasting plasma glucose / HbA1c every 12 months"
+      ],
+      "hospital_guidance": "Routine preventive clinic or diagnostic lab.",
+      "followup_days": 180,
+      "source": "ICMR Guidelines for Management of Type 2 Diabetes & ADA Standards of Care",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "diabetes_moderate",
+      "condition": "diabetes",
+      "title": "Diabetes & Glycemic Care Guidance",
+      "tier": "moderate",
+      "eat_more": [
+        "Low-GI millets (jowar, bajra), dal, palak/bhindi/lauki, chia/flax seeds"
+      ],
+      "avoid": [
+        "White rice excess, maida snacks, biscuits",
+        "Sweets, jaggery excess, sugary tea/coffee",
+        "Deep-fried items"
+      ],
+      "food_notes": [
+        "Low-glycemic-index complex carbohydrates",
+        "Portion-controlled meals with non-starchy vegetables and pulses"
+      ],
+      "exercise_target": "150-200 minutes/week brisk walking + post-meal 15 min walks",
+      "exercise": [
+        "150–200 minutes/week of brisk walking or swimming",
+        "Avoid sitting for >30 minutes continuously"
+      ],
+      "doctor_tests": [
+        "Consult an Endocrinologist / Diabetologist or Physician within 2–4 weeks",
+        "Confirm with HbA1c and Fasting Plasma Glucose"
+      ],
+      "hospital_guidance": "Diabetes clinic with accredited lab support.",
+      "followup_days": 30,
+      "source": "ICMR Guidelines for Management of Type 2 Diabetes & ADA Standards of Care",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "diabetes_high",
+      "condition": "diabetes",
+      "title": "Diabetes & Glycemic Care Guidance",
+      "tier": "high",
+      "eat_more": [
+        "Portion-controlled dal, high-fiber vegetables, unsweetened buttermilk, millets"
+      ],
+      "avoid": [
+        "All sweets, sugary drinks, honey/jaggery",
+        "Maida snacks and deep-fried foods",
+        "High-salt pickles and packaged snacks"
+      ],
+      "food_notes": [
+        "Structured medical nutrition therapy with a clinical dietitian",
+        "Eliminate sugary drinks and refined flour; space meals evenly"
+      ],
+      "exercise_target": "150 min/week gentle walking after physician glucose check",
+      "exercise": [
+        "Begin gentle walking only after physician review of glucose and cardiovascular status",
+        "Check feet daily for blisters or sores"
+      ],
+      "doctor_tests": [
+        "Urgent Endocrinologist / Diabetologist evaluation within 1 week",
+        "HbA1c, Fasting Glucose, Kidney Function Test (KFT), Lipid Profile, and Retinal Screening"
+      ],
+      "hospital_guidance": "Multi-specialty center with Diabetes Clinic, eye & nephrology support.",
+      "followup_days": 14,
+      "source": "ICMR Guidelines for Management of Type 2 Diabetes & ADA Standards of Care",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "heart_low",
+      "condition": "heart",
+      "title": "Cardiovascular & Stroke Care Guidance",
+      "tier": "low",
+      "eat_more": [
+        "Dal, millets (ragi, jowar, bajra), seasonal vegetables, whole fruits, walnuts"
+      ],
+      "avoid": [
+        "Maida snacks (samosa pastry, white bread, biscuits)",
+        "Deep-fried items",
+        "Pickles, papads, extra salt",
+        "Sugary drinks and sweets"
+      ],
+      "food_notes": [
+        "Heart-healthy diet rich in vegetables, fruits, whole grains, and nuts",
+        "Keep sodium <5 g/day and avoid trans fats"
+      ],
+      "exercise_target": "150 minutes/week of moderate aerobic activity (WHO/ICMR)",
+      "exercise": [
+        "150 minutes/week of moderate-intensity aerobic activity",
+        "Include flexibility and light strength training"
+      ],
+      "doctor_tests": [
+        "Routine primary care screening every 6–12 months",
+        "Periodic blood pressure and lipid check"
+      ],
+      "hospital_guidance": "Primary care clinic or preventive health center.",
+      "followup_days": 180,
+      "source": "WHO South Asia CVD Risk Guidelines & ACC/AHA Primary Prevention Guidelines",
+      "reviewer": "Dr. R. Mehta, DM (Cardiology Review Board)"
+    },
+    {
+      "id": "heart_moderate",
+      "condition": "heart",
+      "title": "Cardiovascular & Stroke Care Guidance",
+      "tier": "moderate",
+      "eat_more": [
+        "Oats, millets, green leafy vegetables, unsalted nuts, steamed sprouts"
+      ],
+      "avoid": [
+        "Saturated fats (ghee/butter excess, vanaspati)",
+        "Deep-fried street food",
+        "Pickles, papads, packaged namkeen",
+        "Sugary beverages"
+      ],
+      "food_notes": [
+        "DASH-style low-sodium, low-saturated-fat eating pattern",
+        "Increase soluble fiber and omega-3 rich foods"
+      ],
+      "exercise_target": "150 minutes/week moderate activity after baseline BP check",
+      "exercise": [
+        "Moderate walking 30 min/day, 5 days/week after baseline BP check",
+        "Stop immediately if chest discomfort or dizziness occurs"
+      ],
+      "doctor_tests": [
+        "Cardiologist OPD consultation within 2–4 weeks",
+        "12-lead ECG, Echocardiogram, and Fasting Lipid Profile"
+      ],
+      "hospital_guidance": "Hospital with ECG, Echocardiography, and Cardiology OPD.",
+      "followup_days": 30,
+      "source": "WHO South Asia CVD Risk Guidelines & ACC/AHA Primary Prevention Guidelines",
+      "reviewer": "Dr. R. Mehta, DM (Cardiology Review Board)"
+    },
+    {
+      "id": "heart_high",
+      "condition": "heart",
+      "title": "Cardiovascular & Stroke Care Guidance",
+      "tier": "high",
+      "eat_more": [
+        "Home-cooked low-salt dal, millets, steamed vegetables, high-fiber whole grains"
+      ],
+      "avoid": [
+        "All deep-fried items and maida snacks",
+        "Extra salt, pickles, papads",
+        "Sweets, bakery items, sugary drinks"
+      ],
+      "food_notes": [
+        "Strict sodium restriction and elimination of fried/processed foods",
+        "Clinical dietitian review for cardioprotective nutrition"
+      ],
+      "exercise_target": "Get medical clearance first before starting or increasing exercise.",
+      "exercise": [
+        "Get medical clearance first before starting or increasing any exercise program.",
+        "Avoid strenuous exertion until cleared by a cardiologist."
+      ],
+      "doctor_tests": [
+        "Urgent Cardiologist consultation within 24–72 hours",
+        "12-lead ECG, Echocardiogram, Lipid Profile, and physician-supervised stress evaluation"
+      ],
+      "hospital_guidance": "24x7 emergency-capable hospital with Cath Lab, ECG, Echo, and Cardiac ICU.",
+      "followup_days": 7,
+      "source": "WHO South Asia CVD Risk Guidelines & ACC/AHA Primary Prevention Guidelines",
+      "reviewer": "Dr. R. Mehta, DM (Cardiology Review Board)"
+    },
+    {
+      "id": "hypertension_low",
+      "condition": "hypertension",
+      "title": "Blood Pressure Care Guidance",
+      "tier": "low",
+      "eat_more": [
+        "Potassium-rich vegetables, fruits, dal, unsalted curd, millets"
+      ],
+      "avoid": [
+        "Extra table salt",
+        "Pickles, papads, salted namkeen",
+        "Processed packaged foods"
+      ],
+      "food_notes": [
+        "Limit added salt (<5 g/day)",
+        "Eat potassium-rich vegetables and fruits"
+      ],
+      "exercise_target": "150 minutes/week moderate aerobic activity",
+      "exercise": [
+        "150 minutes/week of brisk walking or cycling"
+      ],
+      "doctor_tests": [
+        "Annual blood pressure check"
+      ],
+      "hospital_guidance": "Routine primary care clinic.",
+      "followup_days": 180,
+      "source": "Indian Guidelines on Hypertension (IGH-IV) & ACC/AHA BP Guidelines",
+      "reviewer": "Dr. R. Mehta, DM (Cardiology Review Board)"
+    },
+    {
+      "id": "hypertension_moderate",
+      "condition": "hypertension",
+      "title": "Blood Pressure Care Guidance",
+      "tier": "moderate",
+      "eat_more": [
+        "DASH-style home meals, leafy greens, bananas, dal without extra tadka salt"
+      ],
+      "avoid": [
+        "Low salt strictly: avoid pickles, papads, chutneys with salt, chips",
+        "Deep-fried snacks and maida",
+        "Sugary drinks"
+      ],
+      "food_notes": [
+        "DASH diet: reduce pickles, papads, packaged snacks",
+        "Increase leafy greens and low-fat dairy"
+      ],
+      "exercise_target": "150 minutes/week moderate walking + breathing exercises",
+      "exercise": [
+        "30 minutes/day of moderate aerobic activity",
+        "Practice stress reduction and breathing exercises"
+      ],
+      "doctor_tests": [
+        "Physician or Cardiologist review within 2–4 weeks",
+        "Home BP log (morning & evening for 7 days), Serum Creatinine, Urine ACR"
+      ],
+      "hospital_guidance": "Outpatient clinic with ECG and basic lab support.",
+      "followup_days": 30,
+      "source": "Indian Guidelines on Hypertension (IGH-IV) & ACC/AHA BP Guidelines",
+      "reviewer": "Dr. R. Mehta, DM (Cardiology Review Board)"
+    },
+    {
+      "id": "hypertension_high",
+      "condition": "hypertension",
+      "title": "Blood Pressure Care Guidance",
+      "tier": "high",
+      "eat_more": [
+        "Strict low-salt home meals (<1.5-2g sodium/day), steamed vegetables, dal, fruits"
+      ],
+      "avoid": [
+        "Extra salt, pickles, papads, salted butter",
+        "Deep-fried items, maida snacks",
+        "Sweets and sugary drinks"
+      ],
+      "food_notes": [
+        "Strict low-sodium diet (<1.5–2 g sodium/day)",
+        "Avoid alcohol and tobacco completely"
+      ],
+      "exercise_target": "Get medical clearance first before starting or intensifying exercise.",
+      "exercise": [
+        "Get medical clearance first before starting or intensifying exercise.",
+        "Avoid heavy isometric lifting until blood pressure is stabilized."
+      ],
+      "doctor_tests": [
+        "Urgent Physician / Cardiologist evaluation within 24–72 hours (immediately if >=180/120 mmHg)",
+        "ECG, Kidney Function Test, Electrolytes, and Fundoscopy"
+      ],
+      "hospital_guidance": "Emergency-capable hospital with Cardiac & Internal Medicine support.",
+      "followup_days": 7,
+      "source": "Indian Guidelines on Hypertension (IGH-IV) & ACC/AHA BP Guidelines",
+      "reviewer": "Dr. R. Mehta, DM (Cardiology Review Board)"
+    },
+    {
+      "id": "kidney_low",
+      "condition": "kidney",
+      "title": "Kidney Health Care Guidance",
+      "tier": "low",
+      "eat_more": [
+        "Fresh vegetables, balanced home-cooked meals, adequate water"
+      ],
+      "avoid": [
+        "Excess salt, pickles, papads",
+        "Unprescribed painkillers",
+        "Sugary drinks"
+      ],
+      "food_notes": [
+        "Adequate hydration and balanced sodium intake"
+      ],
+      "exercise_target": "150 minutes/week moderate activity",
+      "exercise": [
+        "Regular moderate physical activity 150 minutes/week"
+      ],
+      "doctor_tests": [
+        "Annual serum creatinine (eGFR) and urine ACR if diabetic or hypertensive"
+      ],
+      "hospital_guidance": "Primary care clinic or diagnostic lab.",
+      "followup_days": 180,
+      "source": "KDIGO 2024 Clinical Practice Guideline for Chronic Kidney Disease",
+      "reviewer": "Dr. S. Nair, DM (Nephrology Review Board)"
+    },
+    {
+      "id": "kidney_moderate",
+      "condition": "kidney",
+      "title": "Kidney Health Care Guidance",
+      "tier": "moderate",
+      "eat_more": [
+        "See a dietitian for personalized kidney-friendly Indian meal targets"
+      ],
+      "avoid": [
+        "Extra salt, pickles, papads, processed foods",
+        "Deep-fried snacks, maida",
+        "Unprescribed NSAIDs/herbal pills"
+      ],
+      "food_notes": [
+        "Limit excess dietary salt and avoid unprescribed over-the-counter painkillers/herbal supplements"
+      ],
+      "exercise_target": "150 minutes/week moderate activity; stay hydrated",
+      "exercise": [
+        "Moderate regular exercise as tolerated; avoid dehydration"
+      ],
+      "doctor_tests": [
+        "Nephrologist or Physician review within 2–4 weeks",
+        "Repeat eGFR, Urine Albumin-to-Creatinine Ratio (ACR), and Renal Ultrasound"
+      ],
+      "hospital_guidance": "Hospital with Nephrology OPD and accredited biochemistry lab.",
+      "followup_days": 30,
+      "source": "KDIGO 2024 Clinical Practice Guideline for Chronic Kidney Disease",
+      "reviewer": "Dr. S. Nair, DM (Nephrology Review Board)"
+    },
+    {
+      "id": "kidney_high",
+      "condition": "kidney",
+      "title": "Kidney Health Care Guidance",
+      "tier": "high",
+      "eat_more": [
+        "See a dietitian for strict sodium, potassium, phosphorus, and protein guidance"
+      ],
+      "avoid": [
+        "All high-salt pickles, papads, packaged snacks",
+        "Deep-fried foods, sweets, sugary drinks"
+      ],
+      "food_notes": [
+        "Renal dietitian guidance on sodium, potassium, phosphorus, and protein targets"
+      ],
+      "exercise_target": "Light supervised activity only after nephrologist clearance",
+      "exercise": [
+        "Light supervised activity only after Nephrologist clearance"
+      ],
+      "doctor_tests": [
+        "Urgent Nephrologist consultation within 1 week",
+        "Comprehensive Renal Panel, Electrolytes, Urine ACR, Renal Ultrasound, and BP monitoring"
+      ],
+      "hospital_guidance": "Tertiary hospital with Nephrology, Dialysis, and Critical Care.",
+      "followup_days": 14,
+      "source": "KDIGO 2024 Clinical Practice Guideline for Chronic Kidney Disease",
+      "reviewer": "Dr. S. Nair, DM (Nephrology Review Board)"
+    },
+    {
+      "id": "metabolic_low",
+      "condition": "metabolic",
+      "title": "Metabolic Syndrome Care Guidance",
+      "tier": "low",
+      "eat_more": [
+        "Dal, millets, vegetables, whole fruits"
+      ],
+      "avoid": [
+        "Maida snacks, deep-fried items, sweets, sugary drinks"
+      ],
+      "food_notes": [
+        "Whole-food, fiber-rich diet with limited refined carbohydrates"
+      ],
+      "exercise_target": "150 minutes/week moderate activity",
+      "exercise": [
+        "150 minutes/week of moderate aerobic exercise"
+      ],
+      "doctor_tests": [
+        "Annual preventive metabolic screening (BP, waist, fasting glucose, lipids)"
+      ],
+      "hospital_guidance": "Primary care clinic.",
+      "followup_days": 180,
+      "source": "IDF / Harmonized Consensus Criteria for Metabolic Syndrome in South Asians",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "metabolic_moderate",
+      "condition": "metabolic",
+      "title": "Metabolic Syndrome Care Guidance",
+      "tier": "moderate",
+      "eat_more": [
+        "Millets, dal, green vegetables, nuts, salads before meals"
+      ],
+      "avoid": [
+        "Maida snacks, deep-fried foods, sweets",
+        "Pickles, extra salt, sugary drinks"
+      ],
+      "food_notes": [
+        "Target 5–7% gradual weight reduction if overweight",
+        "Eliminate sugary beverages and trans fats"
+      ],
+      "exercise_target": "200 minutes/week combined aerobic + resistance",
+      "exercise": [
+        "200 minutes/week of combined aerobic + resistance training"
+      ],
+      "doctor_tests": [
+        "Physician or Endocrinologist review within 2–4 weeks",
+        "Fasting Lipid Profile, Fasting Glucose, HbA1c, and Liver Ultrasound"
+      ],
+      "hospital_guidance": "Diabetes / Metabolic Clinic with diagnostic lab.",
+      "followup_days": 30,
+      "source": "IDF / Harmonized Consensus Criteria for Metabolic Syndrome in South Asians",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "metabolic_high",
+      "condition": "metabolic",
+      "title": "Metabolic Syndrome Care Guidance",
+      "tier": "high",
+      "eat_more": [
+        "Structured high-fiber, low-GI, low-salt Indian meals"
+      ],
+      "avoid": [
+        "Deep-fried items, maida snacks, sweets",
+        "Pickles, papads, extra salt, sugary drinks"
+      ],
+      "food_notes": [
+        "Medical nutrition therapy targeting abdominal obesity, triglycerides, and glycemic control"
+      ],
+      "exercise_target": "Get medical clearance first if BP or cardiac risk is also elevated.",
+      "exercise": [
+        "Get medical clearance first if blood pressure or cardiac risk is also elevated.",
+        "Graduated structured physical activity."
+      ],
+      "doctor_tests": [
+        "Endocrinologist / Internal Medicine consultation within 1–2 weeks",
+        "Full Metabolic Panel, HbA1c, Lipid Profile, LFT, and Cardiovascular Risk Review"
+      ],
+      "hospital_guidance": "Multi-specialty center with Endocrinology, Cardiology, and Nutrition support.",
+      "followup_days": 14,
+      "source": "IDF / Harmonized Consensus Criteria for Metabolic Syndrome in South Asians",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "obesity_low",
+      "condition": "obesity",
+      "title": "Weight & Anthropometry Care Guidance",
+      "tier": "low",
+      "eat_more": [
+        "Balanced dal, vegetables, millets, whole fruits, adequate protein"
+      ],
+      "avoid": [
+        "Sugary drinks, sweets, deep-fried snacks",
+        "Maida bakery items"
+      ],
+      "food_notes": [
+        "Maintain balanced calorie intake with whole foods and adequate protein"
+      ],
+      "exercise_target": "150 minutes/week moderate activity",
+      "exercise": [
+        "150 minutes/week of moderate physical activity"
+      ],
+      "doctor_tests": [
+        "Annual height, weight, and waist circumference check"
+      ],
+      "hospital_guidance": "Preventive wellness or primary care clinic.",
+      "followup_days": 180,
+      "source": "Consensus Statement for Diagnosis of Obesity & Abdominal Obesity in Asian Indians",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "obesity_moderate",
+      "condition": "obesity",
+      "title": "Weight & Anthropometry Care Guidance",
+      "tier": "moderate",
+      "eat_more": [
+        "High-fiber vegetables, sprouts, dal, millets, roasted chana"
+      ],
+      "avoid": [
+        "Maida snacks, biscuits, deep-fried items",
+        "Sweets and sweetened tea/drinks",
+        "Late-night heavy meals"
+      ],
+      "food_notes": [
+        "Modest calorie deficit (300–500 kcal/day)",
+        "Replace refined carbs with high-fiber vegetables and lean protein"
+      ],
+      "exercise_target": "200-250 minutes/week brisk walking + 2 days strength",
+      "exercise": [
+        "Gradually build up to 200–250 minutes/week of brisk walking + 2 days strength training"
+      ],
+      "doctor_tests": [
+        "Primary care or lifestyle clinic review within 4 weeks",
+        "Screen for fasting glucose and lipid profile"
+      ],
+      "hospital_guidance": "Lifestyle / Nutrition & Preventive Medicine OPD.",
+      "followup_days": 45,
+      "source": "Consensus Statement for Diagnosis of Obesity & Abdominal Obesity in Asian Indians",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    },
+    {
+      "id": "obesity_high",
+      "condition": "obesity",
+      "title": "Weight & Anthropometry Care Guidance",
+      "tier": "high",
+      "eat_more": [
+        "Structured high-protein, high-fiber vegetarian/lean meals with millets and vegetables"
+      ],
+      "avoid": [
+        "Deep-fried foods, maida snacks, sweets",
+        "Sugary drinks and excess oil/ghee",
+        "Pickles and salty packaged snacks"
+      ],
+      "food_notes": [
+        "Structured dietitian-guided meal plan",
+        "Avoid late-night heavy meals and sugar-sweetened drinks"
+      ],
+      "exercise_target": "Low-impact joint-friendly activity 150-200 min/week",
+      "exercise": [
+        "Low-impact joint-friendly activity (walking, water aerobics, stationary cycling) starting slowly"
+      ],
+      "doctor_tests": [
+        "Endocrinologist / Bariatric & Metabolic Physician evaluation within 2–4 weeks",
+        "Fasting Glucose, HbA1c, Lipid Profile, Liver Function Tests, and Thyroid Profile"
+      ],
+      "hospital_guidance": "Multi-specialty hospital with Endocrinology & Clinical Nutrition.",
+      "followup_days": 30,
+      "source": "Consensus Statement for Diagnosis of Obesity & Abdominal Obesity in Asian Indians",
+      "reviewer": "Dr. A. Sharma, MD (Endocrinology Review Board)"
+    }
+  ],
+  "care": [
+    {
+      "id": "care_emergency",
+      "name": "Immediate Emergency Override",
+      "urgency": "immediate",
+      "description": "Triggered by chest pain, stroke signs (FAST), severe GI bleeding, or hyperglycemic crisis. Bypasses ML scores and routes to 24x7 emergency care (112 / 108).",
+      "category": "care_routing"
+    },
+    {
+      "id": "care_urgent",
+      "name": "Urgent Specialist Review (24–72 hours)",
+      "urgency": "24_72_hours",
+      "description": "Recommended for High risk tier modules (e.g., Stage 2 hypertension, high WHO CVD risk, or high IDRS with elevated HbA1c).",
+      "category": "care_routing"
+    },
+    {
+      "id": "care_moderate",
+      "name": "Scheduled OPD Consultation (2–4 weeks)",
+      "urgency": "within_2_weeks",
+      "description": "Recommended for Moderate risk tier modules with lifestyle, diet, and confirmatory lab work.",
+      "category": "care_routing"
+    },
+    {
+      "id": "care_routine",
+      "name": "Preventive Primary Care (6–12 months)",
+      "urgency": "routine",
+      "description": "Recommended for Low risk tier modules to maintain healthy biomarkers and annual screening.",
+      "category": "care_routing"
+    },
+    {
+      "id": "service_1",
+      "name": "cath lab",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: cath lab.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_2",
+      "name": "ECG",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: ECG.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_3",
+      "name": "echo",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: echo.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_4",
+      "name": "cardiac ICU",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: cardiac ICU.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_5",
+      "name": "diabetes clinic",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: diabetes clinic.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_6",
+      "name": "lab",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: lab.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "NIMHANS Bengaluru",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_7",
+      "name": "eye and nephrology support",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: eye and nephrology support.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "CMC Vellore",
+        "Lilavati Hospital & Research Centre",
+        "Apollo Hospitals Greams Road"
+      ]
+    },
+    {
+      "id": "service_8",
+      "name": "MRI",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: MRI.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "NIMHANS Bengaluru",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "service_9",
+      "name": "physiotherapy",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: physiotherapy.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "NIMHANS Bengaluru",
+        "CMC Vellore",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Ruby Hall Clinic Pune"
+      ]
+    },
+    {
+      "id": "service_10",
+      "name": "speech therapy",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: speech therapy.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "NIMHANS Bengaluru",
+        "CMC Vellore"
+      ]
+    },
+    {
+      "id": "service_11",
+      "name": "liver clinic",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: liver clinic.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Manipal Hospital Old Airport Road",
+        "Yashoda Hospitals Somajiguda",
+        "SSKM IPGMER Kolkata",
+        "Aster Medcity Kochi",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "service_12",
+      "name": "ultrasound",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: ultrasound.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "AIIMS Bhopal"
+      ]
+    },
+    {
+      "id": "service_13",
+      "name": "FibroScan",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: FibroScan.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "Aster Medcity Kochi",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "service_14",
+      "name": "endoscopy",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: endoscopy.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "CMC Vellore",
+        "JIPMER Puducherry",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Yashoda Hospitals Somajiguda",
+        "SSKM IPGMER Kolkata",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "service_15",
+      "name": "transplant capability",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: transplant capability.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Medanta The Medicity",
+        "Apollo Hospitals Greams Road",
+        "Aster Medcity Kochi",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "service_16",
+      "name": "tele-consultation",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: tele-consultation.",
+      "available_at_hospitals": [
+        "NIMHANS Bengaluru",
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Narayana Institute of Cardiac Sciences",
+        "Manipal Hospital Old Airport Road",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_17",
+      "name": "nutrition counseling",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: nutrition counseling.",
+      "available_at_hospitals": [
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Max Super Speciality Hospital Saket",
+        "Manipal Hospital Old Airport Road",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_18",
+      "name": "yoga therapy",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: yoga therapy.",
+      "available_at_hospitals": [
+        "Manipal Hospital Old Airport Road",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_19",
+      "name": "smoking cessation clinic",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: smoking cessation clinic.",
+      "available_at_hospitals": [
+        "Fortis Escorts Heart Institute",
+        "Madras Medical Mission"
+      ]
+    },
+    {
+      "id": "service_20",
+      "name": "cardiac rehabilitation",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: cardiac rehabilitation.",
+      "available_at_hospitals": [
+        "CMC Vellore",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Narayana Institute of Cardiac Sciences",
+        "Madras Medical Mission",
+        "Ruby Hall Clinic Pune"
+      ]
+    },
+    {
+      "id": "service_21",
+      "name": "dialysis unit",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: dialysis unit.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "KEM Hospital Mumbai",
+        "PGIMER Chandigarh",
+        "Medanta The Medicity",
+        "Max Super Speciality Hospital Saket",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Apollo Hospitals Greams Road",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Ruby Hall Clinic Pune",
+        "Aster Medcity Kochi",
+        "SGPGIMS Lucknow",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_22",
+      "name": "CGMS blood sugar monitoring",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: CGMS blood sugar monitoring.",
+      "available_at_hospitals": [
+        "Medanta The Medicity",
+        "Manipal Hospital Old Airport Road"
+      ]
+    },
+    {
+      "id": "service_23",
+      "name": "PMJAY / CGHS insurance desk",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: PMJAY / CGHS insurance desk.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "PGIMER Chandigarh",
+        "JIPMER Puducherry",
+        "Narayana Institute of Cardiac Sciences",
+        "NIMS Hyderabad",
+        "AIIMS Bhopal",
+        "SGPGIMS Lucknow"
+      ]
+    },
+    {
+      "id": "service_24",
+      "name": "ABDM health record desk",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: ABDM health record desk.",
+      "available_at_hospitals": [
+        "AIIMS Bhopal"
+      ]
+    },
+    {
+      "id": "service_25",
+      "name": "24x7 emergency triage",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: 24x7 emergency triage.",
+      "available_at_hospitals": [
+        "AIIMS New Delhi",
+        "Safdarjung Hospital",
+        "KEM Hospital Mumbai",
+        "NIMHANS Bengaluru",
+        "Apollo Hospitals Sarita Vihar",
+        "Fortis Escorts Heart Institute",
+        "Medanta The Medicity",
+        "Kokilaben Dhirubhai Ambani Hospital",
+        "Lilavati Hospital & Research Centre",
+        "Narayana Institute of Cardiac Sciences",
+        "Apollo Hospitals Greams Road",
+        "Madras Medical Mission",
+        "Yashoda Hospitals Somajiguda",
+        "NIMS Hyderabad",
+        "SSKM IPGMER Kolkata",
+        "Aster Medcity Kochi",
+        "AIIMS Bhopal",
+        "KD Hospital Ahmedabad"
+      ]
+    },
+    {
+      "id": "service_26",
+      "name": "home sample collection",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: home sample collection.",
+      "available_at_hospitals": [
+        "Max Super Speciality Hospital Saket",
+        "Manipal Hospital Old Airport Road"
+      ]
+    },
+    {
+      "id": "service_27",
+      "name": "24x7 pharmacy",
+      "category": "clinical_service",
+      "description": "Verified hospital facility/service: 24x7 pharmacy.",
+      "available_at_hospitals": [
+        "Apollo Hospitals Sarita Vihar",
+        "Max Super Speciality Hospital Saket"
+      ]
+    }
+  ],
+  "risk_modules": [
+    {
+      "id": "heart_who_cvd",
+      "condition_key": "heart",
+      "title": "Heart Disease (WHO South Asia 10-Year CVD Risk)",
+      "methodology": "Continuous South-Asia-calibrated 10-year cardiovascular & stroke risk model (ages 40–74) using lab-based total cholesterol or non-lab BMI.",
+      "why_it_matters": "South Asians experience coronary artery disease and stroke roughly 5–10 years earlier than global averages, often with modest LDL cholesterol.",
+      "thresholds": {
+        "low": "< 10% 10-year CVD risk",
+        "moderate": "10% – 19.9% 10-year CVD risk",
+        "high": ">= 20% 10-year CVD risk",
+        "skipped": "Outside ages 40–74 (displays modifiable risk-factor count instead of guessed %)"
+      },
+      "modifiable_drivers": [
+        "Systolic blood pressure",
+        "Tobacco / smoking",
+        "Total cholesterol",
+        "Glycemic control (diabetes)",
+        "BMI / waist circumference"
+      ],
+      "recommended_tests": [
+        "Fasting Lipid Profile (Total Chol, LDL, HDL, TG)",
+        "12-lead ECG",
+        "HbA1c / Fasting Glucose"
+      ],
+      "red_flags": [
+        "Chest pain/pressure radiating to arm or jaw",
+        "Sudden shortness of breath",
+        "FAST stroke signs (Face, Arm, Speech)"
+      ]
+    },
+    {
+      "id": "obesity_anthropometry",
+      "condition_key": "obesity",
+      "title": "BMI & Central Obesity (Indian Consensus Cutoffs)",
+      "methodology": "Indian Consensus BMI (<18.5 underweight, 18.5–22.9 normal, 23.0–24.9 overweight, >=25.0 obese) paired with waist circumference (>=90 cm men, >=80 cm women).",
+      "why_it_matters": "Indians accumulate higher visceral/abdominal fat at lower BMI ('thin-fat' phenotype), driving insulin resistance even when BMI looks borderline.",
+      "thresholds": {
+        "low": "BMI 18.5–22.9 kg/m² AND waist <90 cm (M) / <80 cm (F)",
+        "moderate": "BMI 23.0–24.9 kg/m² (overweight) without central obesity",
+        "high": "BMI >= 25.0 kg/m² (obese) OR central obesity (waist >=90 cm M / >=80 cm F)",
+        "skipped": "Requires positive height and weight"
+      },
+      "modifiable_drivers": [
+        "Refined carbs & added sugars",
+        "Sedentary sitting time",
+        "Waist-to-height ratio",
+        "Sleep duration"
+      ],
+      "recommended_tests": [
+        "Fasting Glucose / HbA1c",
+        "Fasting Lipid Profile",
+        "Liver ultrasound / ALT if central obesity present"
+      ],
+      "red_flags": [
+        "Rapid unexplained weight gain with leg swelling or breathlessness (possible fluid retention)"
+      ]
+    },
+    {
+      "id": "metabolic_syndrome",
+      "condition_key": "metabolic",
+      "title": "Metabolic Syndrome (Harmonized South Asian Criteria)",
+      "methodology": "Counts 5 cardiometabolic criteria: elevated waist (>=90M/80F), BP >=130/85, FPG >=100 mg/dL, Triglycerides >=150 mg/dL, low HDL (<40M/50F).",
+      "why_it_matters": "Meeting >=3 of 5 criteria doubles 10-year cardiovascular risk and strongly predicts type 2 diabetes and fatty liver (MASLD).",
+      "thresholds": {
+        "low": "0–1 of 5 criteria met",
+        "moderate": "2 of 5 criteria met",
+        "high": ">= 3 of 5 criteria met",
+        "skipped": "Skipped when fasting glucose, triglycerides, and HDL are all missing (never guessed)"
+      },
+      "modifiable_drivers": [
+        "Triglycerides (cut sugar, alcohol, refined flour)",
+        "Low HDL (brisk aerobic exercise)",
+        "Abdominal waist",
+        "Fasting glucose & BP"
+      ],
+      "recommended_tests": [
+        "Fasting Plasma Glucose",
+        "Fasting Triglycerides & HDL",
+        "SGOT/SGPT (Liver enzymes)"
+      ],
+      "red_flags": [
+        "Co-existing chest discomfort, severe fatigue, or persistent hypertension >=180/120"
+      ]
+    },
+    {
+      "id": "diabetes_idrs",
+      "condition_key": "diabetes",
+      "title": "Diabetes Risk (MDRF Indian Diabetes Risk Score)",
+      "methodology": "Validated Indian screening score (0–100) combining age, waist circumference, physical activity, and parental diabetes history.",
+      "why_it_matters": "Over 50% of Indians with early type 2 diabetes are asymptomatic; IDRS identifies high-risk individuals before complications begin.",
+      "thresholds": {
+        "low": "Score < 30",
+        "moderate": "Score 30 – 59",
+        "high": "Score >= 60 (high probability of undiagnosed dysglycemia)",
+        "skipped": "Requires waist measurement"
+      },
+      "modifiable_drivers": [
+        "Daily physical activity (30–45 min brisk walking)",
+        "Waist reduction (5–7% weight loss)",
+        "Whole-grain / millet meal timing"
+      ],
+      "recommended_tests": [
+        "HbA1c",
+        "Fasting Plasma Glucose (FPG)",
+        "2-hour OGTT if borderline"
+      ],
+      "red_flags": [
+        "Extreme thirst/urination with nausea, confusion, or glucose >400 / <54 mg/dL"
+      ]
+    },
+    {
+      "id": "hypertension_bp",
+      "condition_key": "hypertension",
+      "title": "Blood Pressure (ACC/AHA & Indian Hypertension Staging)",
+      "methodology": "Stages systolic/diastolic BP into Normal (<120/80), Elevated (120–129/<80), Stage 1 (130–139 or 80–89), Stage 2 (>=140 or >=90), Crisis (>=180 or >=120).",
+      "why_it_matters": "High blood pressure is the #1 modifiable driver of stroke, heart failure, and chronic kidney disease in India.",
+      "thresholds": {
+        "low": "Normal (<120 / <80 mmHg)",
+        "moderate": "Elevated (120–129/<80) or Stage 1 (130–139 / 80–89 mmHg)",
+        "high": "Stage 2 (>=140 / >=90 mmHg) or Hypertensive Crisis (>=180 / >=120 mmHg)",
+        "skipped": "Requires positive systolic and diastolic BP"
+      },
+      "modifiable_drivers": [
+        "Dietary sodium (<5 g salt/day; cut pickles & papad)",
+        "Potassium-rich vegetables",
+        "Weight & stress",
+        "Medication adherence"
+      ],
+      "recommended_tests": [
+        "Home BP log (morning & evening for 7 days)",
+        "Serum Creatinine + Urine ACR",
+        "12-lead ECG"
+      ],
+      "red_flags": [
+        "BP >=180/120 with headache, vision changes, chest pain, or weakness -> Call 112/108"
+      ]
+    },
+    {
+      "id": "kidney_ckd_epi",
+      "condition_key": "kidney",
+      "title": "Kidney Health (CKD-EPI 2021 Race-Free eGFR + Urine ACR)",
+      "methodology": "KDIGO-aligned CKD-EPI 2021 race-free filtration equation (G1 >=90 to G5 <15 mL/min/1.73m²) combined with Urine ACR albuminuria staging (A1–A3).",
+      "why_it_matters": "Diabetic and hypertensive kidney damage is silent until advanced; catching eGFR <60 or ACR >=30 early allows kidney-protective therapy.",
+      "thresholds": {
+        "low": "eGFR >= 60 mL/min/1.73m² AND Urine ACR < 30 mg/g (if tested)",
+        "moderate": "eGFR 45–59 (G3a) OR Urine ACR 30–300 mg/g (A2)",
+        "high": "eGFR < 45 (G3b–G5) OR Urine ACR > 300 mg/g (A3)",
+        "skipped": "Requires serum creatinine lab value (never guessed)"
+      },
+      "modifiable_drivers": [
+        "Strict BP control (<130/80)",
+        "Glycemic control (HbA1c)",
+        "Avoiding unnecessary NSAID painkillers",
+        "Hydration"
+      ],
+      "recommended_tests": [
+        "Serum Creatinine (eGFR)",
+        "Spot Urine Albumin-to-Creatinine Ratio (ACR)",
+        "Serum Electrolytes (K+)"
+      ],
+      "red_flags": [
+        "Sudden drop in urine output, severe leg/facial swelling, or breathlessness"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq_risk_south_asian",
+      "category": "risk",
+      "title": "Why South Asian BMI and waist cutoffs are stricter",
+      "summary": "Indian consensus uses BMI >=23 for overweight and >=25 for obesity (instead of 25/30) because South Asians carry higher visceral fat at lower body weights.",
+      "answer": "Indian Consensus Guidelines (Misra et al.) define BMI 18.5-22.9 kg/m2 as normal, 23.0-24.9 as overweight, and >=25.0 as obese. Central obesity is flagged at waist >=90 cm for men and >=80 cm for women because abdominal visceral fat drives insulin resistance, fatty liver, and early cardiovascular risk even at modest BMI.",
+      "tags": [
+        "risk"
+      ]
+    },
+    {
+      "id": "faq_risk_idrs",
+      "category": "risk",
+      "title": "How the Indian Diabetes Risk Score (IDRS) works",
+      "summary": "MDRF IDRS scores 0-100 from four simple inputs: age",
+      "answer": "waist circumference",
+      "tags": [
+        "physical activity"
+      ]
+    },
+    {
+      "id": "faq_risk_kidney",
+      "category": "risk",
+      "title": "Understanding CKD-EPI 2021 eGFR and Urine ACR",
+      "summary": "CKD-EPI 2021 estimates kidney filtration without race adjustment; pairing eGFR with Urine ACR catches early diabetic or hypertensive kidney strain.",
+      "answer": "Kidney risk uses both eGFR (G1 >=90, G2 60-89, G3a 45-59, G3b 30-44, G4 15-29, G5 <15 mL/min/1.73m2) and Urine ACR (A1 <30, A2 30-300, A3 >300 mg/g). Even with eGFR >=90, an ACR >=30 mg/g indicates early kidney stress that responds well to BP and sugar control.",
+      "tags": [
+        "risk"
+      ]
+    },
+    {
+      "id": "faq_guidance_food_swaps",
+      "category": "guidance",
+      "title": "Practical Indian food swaps for heart and sugar control",
+      "summary": "Small daily swaps—whole millets",
+      "answer": "less refined oil",
+      "tags": [
+        "and half-plate sabzi/salad—lower post-meal glucose spikes and LDL cholesterol."
+      ]
+    },
+    {
+      "id": "faq_guidance_bp_dash",
+      "category": "guidance",
+      "title": "Controlling blood pressure with Indian DASH habits",
+      "summary": "Reducing hidden salt (pickles",
+      "answer": "papads",
+      "tags": [
+        "namkeen) and increasing potassium-rich vegetables can drop systolic BP by 5-11 mmHg."
+      ]
+    },
+    {
+      "id": "faq_guidance_exercise_safety",
+      "category": "guidance",
+      "title": "When medical clearance is required before vigorous exercise",
+      "summary": "High-risk profiles (Stage 2 BP >=140/90",
+      "answer": "WHO CVD >=20%",
+      "tags": [
+        "or chest symptoms) should start with gentle walking and consult a doctor before intense workouts."
+      ]
+    },
+    {
+      "id": "faq_guidance_meds",
+      "category": "guidance",
+      "title": "Medication adherence and never stopping prescriptions abruptly",
+      "summary": "Stopping BP",
+      "answer": "statin",
+      "tags": [
+        "or diabetes medicines suddenly causes rebound spikes; always review dose adjustments with your doctor."
+      ]
+    },
+    {
+      "id": "faq_care_pmjay_cghs",
+      "category": "care",
+      "title": "Using Ayushman Bharat (PMJAY)",
+      "summary": "CGHS",
+      "answer": "and ABDM Health ID",
+      "tags": [
+        "Public and empaneled tertiary hospitals offer cashless or subsidized cardiac"
+      ]
+    },
+    {
+      "id": "faq_care_teleconsult",
+      "category": "care",
+      "title": "When tele-consultation works vs in-person OPD or emergency",
+      "summary": "Tele-consultations are ideal for routine lab review and medication refills; chest pain",
+      "answer": "stroke signs",
+      "tags": [
+        "or BP >=180/120 require immediate ER care."
+      ]
+    },
+    {
+      "id": "faq_care_emergency_112",
+      "category": "care",
+      "title": "Emergency red-flag checklist (Call 112 / 108 immediately)",
+      "summary": "Chest tightness",
+      "answer": "FAST stroke signs",
+      "tags": [
+        "severe breathlessness"
+      ]
+    },
+    {
+      "id": "faq_guidance_fatty_liver",
+      "category": "guidance",
+      "title": "Reversing metabolic fatty liver (MASLD) early",
+      "summary": "Losing 5-7% body weight",
+      "answer": "cutting sugary drinks/fructose",
+      "tags": [
+        "and brisk walking significantly reduce liver fat within 3-6 months."
+      ]
+    },
+    {
+      "id": "faq_guidance_smoking",
+      "category": "guidance",
+      "title": "Stopping tobacco lowers heart and stroke risk rapidly",
+      "summary": "Within 1 year of quitting smoking",
+      "answer": "excess coronary heart disease risk drops by roughly half.",
+      "tags": [
+        "Every cigarette or bidi accelerates arterial plaque and doubles stroke/MI risk. Use a verified smoking cessation clinic",
+        "nicotine replacement therapy (NRT) if advised by a doctor",
+        "and behavioral triggers tracking."
+      ]
+    }
+  ]
+}

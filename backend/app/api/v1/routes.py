@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 import pandas as pd
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
@@ -33,6 +33,7 @@ from app.models.tables import (
 from app.schemas.api import (
     AssessRequest,
     CareRecommendRequest,
+    ChatRequest,
     ClinicianFeedbackRequest,
     HospitalCreateRequest,
     HospitalVerifyRequest,
@@ -43,6 +44,8 @@ from app.schemas.api import (
 )
 from app.services.assessment.orchestrator import run_full_assessment
 from app.services.care.matcher import recommend_care
+from app.services.chatbot.knowledge_bot import get_chatbot
+from app.services.kb.records import build_knowledge_base_record, get_knowledge_base
 from app.services.ml.predictor import HealthBuddyPredictor
 from app.services.recommend.engine import get_recommendation_plan
 from app.services.reports.pdf_report import generate_assessment_pdf
@@ -584,4 +587,52 @@ def admin_delete_hospital(
     db.add(AuditLog(actor=current_user["sub"], action="delete_hospital", entity=f"hospital:{hospital_id}"))
     db.commit()
     return {"deleted": hospital_id}
+
+
+@router.get("/chat/status")
+def chat_status():
+    """Return ML knowledgebase status for the HealthBuddy chatbot."""
+    bot = get_chatbot()
+    return {
+        "name": "HealthBuddy",
+        "model": "TF-IDF + Cosine Similarity Knowledgebase",
+        "doc_count": len(bot.documents),
+        "trained_at": bot.trained_at,
+    }
+
+
+@router.post("/chat")
+def chat_ask(payload: ChatRequest):
+    """Answer user health questions using the ML-trained clinical knowledgebase and safety overrides."""
+    bot = get_chatbot()
+    return bot.ask(
+        message=payload.message,
+        lang=payload.lang,
+        assessment_context=payload.assessment_context,
+    )
+
+
+@router.post("/chat/retrain")
+def chat_retrain(current_user: Dict[str, Any] = Depends(require_role("admin"))):
+    """Rebuild and persist the HealthBuddy TF-IDF knowledgebase artifact (admin only)."""
+    bot = get_chatbot()
+    return bot.retrain()
+
+
+@router.get("/kb")
+def read_knowledge_base(
+    category: Optional[str] = Query(default=None, pattern="^(hospitals|doctors|guidance|care)$"),
+    q: Optional[str] = Query(default=None, max_length=120),
+):
+    """Return structured Knowledge Base records for hospitals, doctors, guidance, and care."""
+    return get_knowledge_base(category=category, query=q)
+
+
+@router.post("/kb/rebuild")
+def rebuild_knowledge_base(current_user: Dict[str, Any] = Depends(require_role("admin"))):
+    """Rebuild the Knowledge Base JSON record and retrain the HealthBuddy ML chatbot (admin only)."""
+    record = build_knowledge_base_record(save=True)
+    bot_info = get_chatbot().retrain()
+    return {"kb_counts": record["counts"], "chatbot": bot_info}
+
 
