@@ -41,8 +41,12 @@ def recommend_care(
     required_specialists: List[str] = care_cfg["specialists"]
     required_capabilities: List[str] = care_cfg["capabilities"]
 
-    # Strict: only verified hospitals
+    # Strict: only verified hospitals (auto-seed if DB is empty, e.g. serverless cold start)
     verified_hospitals = db.query(Hospital).filter(Hospital.verified.is_(True)).all()
+    if not verified_hospitals:
+        from app.db.session import seed_care_data
+        seed_care_data(db)
+        verified_hospitals = db.query(Hospital).filter(Hospital.verified.is_(True)).all()
 
     scored: List[Dict[str, Any]] = []
     for hosp in verified_hospitals:

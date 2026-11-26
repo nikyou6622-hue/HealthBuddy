@@ -121,4 +121,43 @@ def seed_care_data(db: Session) -> None:
                 added_hosp = True
         if added_hosp:
             db.commit()
+    elif not existing_hospitals:
+        # Serverless fallback (e.g. Vercel where ../data is outside backend root): seed from bundled knowledge_base.json
+        import json
+        from app.core.config import ARTIFACTS_DIR
+        kb_path = ARTIFACTS_DIR / "knowledge_base.json"
+        if kb_path.exists():
+            with open(kb_path, "r", encoding="utf-8") as f:
+                kb_data = json.load(f)
+            for h in kb_data.get("hospitals", []):
+                hname = (h.get("name") or "").strip()
+                if not hname or hname in existing_hospitals:
+                    continue
+                hosp = Hospital(
+                    name=hname,
+                    address=h.get("address", ""),
+                    city=h.get("city", ""),
+                    pincode=h.get("pincode", ""),
+                    lat=h.get("lat"),
+                    lon=h.get("lon"),
+                    emergency_24x7=bool(h.get("emergency_24x7", False)),
+                    insurance_notes=h.get("insurance_notes", ""),
+                    phone=h.get("phone", ""),
+                    website=h.get("website", ""),
+                    specialties_text=", ".join(h.get("specialties", [])),
+                    languages_text=", ".join(h.get("languages", [])),
+                    teleconsult=bool(h.get("teleconsult", False)),
+                    verified=True,
+                    review_status="verified",
+                )
+                for svc_name in h.get("facilities", []):
+                    if svc_name not in svc_map:
+                        new_svc = Service(name=svc_name)
+                        db.add(new_svc)
+                        db.flush()
+                        svc_map[svc_name] = new_svc
+                    hosp.services.append(svc_map[svc_name])
+                db.add(hosp)
+                existing_hospitals.add(hname)
+            db.commit()
 

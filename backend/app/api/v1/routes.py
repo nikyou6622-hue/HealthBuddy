@@ -334,6 +334,9 @@ def care_recommend(
 
 @router.get("/hospitals")
 def list_verified_hospitals(city: Optional[str] = None, db: Session = Depends(get_db)):
+    if db.query(Hospital).count() == 0:
+        from app.db.session import seed_care_data
+        seed_care_data(db)
     q = db.query(Hospital).filter(Hospital.verified.is_(True))
     if city:
         q = q.filter(Hospital.city.ilike(f"%{city.strip()}%"))
