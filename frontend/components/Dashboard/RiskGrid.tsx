@@ -94,7 +94,7 @@ export function RiskGrid({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter risk modules">
+        <div className="flex flex-nowrap overflow-x-auto no-scrollbar sm:flex-wrap gap-1.5 pb-1 sm:pb-0 w-full sm:w-auto" role="group" aria-label="Filter risk modules">
           {(
             [
               ["all", t.filter_all || "All", sortedCards.length],

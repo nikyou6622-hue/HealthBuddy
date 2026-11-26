@@ -176,7 +176,7 @@ export function Sidebar({
       {/* Mobile Fixed Bottom Tab Bar */}
       <nav
         aria-label="Mobile navigation"
-        className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-hb-surface/97 backdrop-blur-md border-t border-hb-border px-2 py-1.5 flex items-center justify-around"
+        className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-hb-surface/97 backdrop-blur-md border-t border-hb-border px-2 pt-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] flex items-center justify-around shadow-md"
       >
         {primaryMobile.map(({ key, label, Icon }) => {
           const isActive = activeNav === key;

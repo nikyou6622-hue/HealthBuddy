@@ -58,7 +58,7 @@ export function SummaryHeader({
         </span>
       </div>
 
-      <div className="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div className="p-4 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-5">
         {/* Left: Title + subtitle + date + pills */}
         <div className="flex-1 min-w-0 relative z-10">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-hb-ink tracking-tight leading-tight mt-1">
@@ -150,7 +150,7 @@ export function SummaryHeader({
           <button
             type="button"
             onClick={onRecheck}
-            className="min-h-[44px] px-5 py-2.5 rounded-full bg-white/90 hover:bg-white text-hb-ink border border-white/80 text-sm font-extrabold inline-flex items-center gap-2 shadow-md focus:outline-none focus:ring-2 focus:ring-hb-accent focus:ring-offset-2 transition-colors duration-150"
+            className="min-h-[44px] w-full sm:w-auto px-5 py-2.5 rounded-full bg-white/90 hover:bg-white text-hb-ink border border-white/80 text-sm font-extrabold inline-flex items-center justify-center gap-2 shadow-md focus:outline-none focus:ring-2 focus:ring-hb-accent focus:ring-offset-2 transition-colors duration-150"
           >
             <RefreshCw className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
             <span>{t.btn_recheck || "Re-check my health"}</span>

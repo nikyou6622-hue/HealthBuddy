@@ -219,7 +219,7 @@ export function HealthBuddyChat({
           aria-modal="true"
           aria-label="HealthBuddy ML Assistant"
           data-no-print="true"
-          className="fixed bottom-4 right-4 z-50 w-[calc(100vw-2rem)] sm:w-[410px] h-[560px] max-h-[82vh] rounded-lg bg-hb-canvas border border-hb-border shadow-md flex flex-col overflow-hidden"
+          className="fixed inset-x-2 bottom-2 sm:inset-auto sm:bottom-4 sm:right-4 z-50 w-auto sm:w-[410px] h-[85dvh] sm:h-[560px] sm:max-h-[82vh] rounded-2xl bg-hb-canvas border border-hb-border shadow-md flex flex-col overflow-hidden"
         >
           <div className="bg-hb-surface px-4 py-3 border-b border-hb-border flex items-center justify-between gap-2">
             <div className="flex items-center gap-2.5">

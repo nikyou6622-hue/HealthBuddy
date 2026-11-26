@@ -87,7 +87,7 @@ export function AppShell({
 
       <DisclaimerBanner text={disclaimerText} collapsedLabel={disclaimerCollapsedLabel} />
 
-      <div className="flex-1 max-w-[1360px] w-full mx-auto flex flex-col lg:flex-row gap-6 px-4 py-5 pb-24 lg:pb-8 relative z-10">
+      <div className="flex-1 max-w-[1360px] w-full mx-auto flex flex-col lg:flex-row gap-4 lg:gap-6 px-3 py-3 sm:px-4 sm:py-5 pb-28 lg:pb-8 relative z-10">
         <Sidebar
           navItems={navItems}
           activeNav={activeNav}
