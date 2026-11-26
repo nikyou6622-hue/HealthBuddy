@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ExternalLink, MapPin } from "lucide-react";
 
 interface HospitalItem {
@@ -15,8 +15,18 @@ export function HospitalMap({ hospitals }: { hospitals: HospitalItem[] }) {
   const mappable = hospitals.filter((h) => h.lat != null && h.lon != null);
   const [selectedId, setSelectedId] = useState<number | null>(mappable[0]?.id ?? null);
 
+  useEffect(() => {
+    if (mappable.length > 0) {
+      setSelectedId(mappable[0].id);
+    }
+  }, [mappable[0]?.id]);
+
   if (mappable.length === 0) {
-    return null;
+    return (
+      <div className="rounded-2xl bg-hb-surface border border-hb-border p-5 text-xs text-hb-muted shadow-sm">
+        Hospital coordinates are loading or unavailable for the current filter.
+      </div>
+    );
   }
 
   const active = mappable.find((h) => h.id === selectedId) || mappable[0];
@@ -28,21 +38,22 @@ export function HospitalMap({ hospitals }: { hospitals: HospitalItem[] }) {
   const osmLink = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=14/${lat}/${lon}`;
 
   return (
-    <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
-      <div className="p-3.5 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2 text-sm font-bold">
-          <MapPin className="w-4 h-4 text-sky-600" />
+    <div className="rounded-2xl bg-hb-surface border border-hb-border overflow-hidden shadow-sm">
+      <div className="p-3.5 border-b border-hb-border flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2 text-sm font-extrabold text-hb-ink">
+          <MapPin className="w-4 h-4 text-hb-accentInk" aria-hidden="true" />
           <span>Verified Hospital Map (OpenStreetMap)</span>
         </div>
         <div className="flex flex-wrap gap-1.5">
           {mappable.slice(0, 5).map((h) => (
             <button
               key={h.id}
+              type="button"
               onClick={() => setSelectedId(h.id)}
-              className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition ${
+              className={`px-2.5 py-1 rounded-full text-xs font-bold border transition ${
                 h.id === active.id
-                  ? "bg-sky-600 text-white"
-                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
+                  ? "bg-hb-cta text-hb-ctaInk border-hb-cta"
+                  : "bg-hb-subtle text-hb-muted border-hb-border hover:text-hb-ink"
               }`}
             >
               {h.name.split(" ").slice(0, 2).join(" ")}
@@ -53,18 +64,18 @@ export function HospitalMap({ hospitals }: { hospitals: HospitalItem[] }) {
       <iframe
         title={`Map of ${active.name}`}
         src={osmEmbed}
-        className="w-full h-64 border-0"
+        className="w-full h-64 sm:h-72 border-0"
         loading="lazy"
       />
-      <div className="px-4 py-2.5 bg-slate-50 dark:bg-slate-800/60 flex items-center justify-between text-xs text-slate-500">
+      <div className="px-4 py-2.5 bg-hb-subtle border-t border-hb-border flex flex-wrap items-center justify-between gap-2 text-xs text-hb-muted">
         <span>
-          Focused on <strong>{active.name}</strong> ({active.city})
+          Focused on <strong className="text-hb-ink">{active.name}</strong> ({active.city})
         </span>
         <a
           href={osmLink}
           target="_blank"
           rel="noreferrer"
-          className="text-sky-600 font-bold inline-flex items-center gap-1 hover:underline"
+          className="text-hb-accentInk font-bold inline-flex items-center gap-1 hover:underline"
         >
           Open in OpenStreetMap <ExternalLink className="w-3.5 h-3.5" />
         </a>
@@ -72,4 +83,3 @@ export function HospitalMap({ hospitals }: { hospitals: HospitalItem[] }) {
     </div>
   );
 }
-

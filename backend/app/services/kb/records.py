@@ -194,6 +194,8 @@ def build_knowledge_base_record(save: bool = True) -> Dict[str, Any]:
                         "address": row.get("address", ""),
                         "city": row.get("city", ""),
                         "pincode": row.get("pincode", ""),
+                        "lat": float(row["lat"]) if row.get("lat") else None,
+                        "lon": float(row["lon"]) if row.get("lon") else None,
                         "phone": row.get("phone", ""),
                         "website": row.get("website", ""),
                         "emergency_24x7": str(row.get("emergency_24x7", "")).lower() == "true",

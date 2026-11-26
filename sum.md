@@ -28,7 +28,7 @@ It helps a person understand their health risks in plain language, see what to e
      - **Exercise:** Recommended weekly targets + searchable **Exercise & Yoga Library (55 routines)** with high-risk safety sorting and medical clearance flags.
      - **Doctor & Lab Tests (KB):** Specific lab tests to discuss with your doctor and clinical FAQs.
      - **Follow-Up:** Recommended re-check dates.
-   - **Care & Verified Hospitals (`#sec-care`):** Interactive map + list of matched verified hospitals (with city search, **24x7 Emergency** / **Government** / **Private** filters, phone numbers, insurance schemes like PMJAY/CGHS, and teleconsultation info), plus a Specialist Directory and Hospital Services guide.
+   - **Care & Verified Hospitals (`#sec-care` & Find Care tab):** Interactive **Hospital Map** (with clickable hospital pins, OpenStreetMap view, and "Open map" focus) + list of matched verified hospitals (with city search, **24x7 Emergency** / **Government** / **Private** filters, phone numbers, insurance schemes like PMJAY/CGHS, and teleconsultation info), plus a Specialist Directory and Hospital Services guide.
    - **Secondary ML Screening (`#sec-ml`):** Optional, clearly labeled non-diagnostic ML screening (Parkinson's voice metrics, Liver lab panel) with confidence flags and model performance metrics.
 
 3. **Other Built-In Views:**
