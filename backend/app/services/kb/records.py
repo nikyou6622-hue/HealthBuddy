@@ -294,9 +294,59 @@ def build_knowledge_base_record(save: bool = True) -> Dict[str, Any]:
 
     risk_modules = list(RISK_MODULE_KNOWLEDGE)
 
+    code_labels = {
+        "o": "ok",
+        "w": "watch",
+        "l": "limit",
+        "a": "avoid",
+        "d": "ask_dietitian",
+    }
+    foods: List[Dict[str, Any]] = []
+    foods_csv = CARE_DATA_DIR / "foods.csv"
+    if foods_csv.exists():
+        with open(foods_csv, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                foods.append(
+                    {
+                        "id": (row.get("id") or "").strip(),
+                        "name": (row.get("name") or "").strip(),
+                        "hindi": (row.get("hindi") or "").strip(),
+                        "group": (row.get("group") or "").strip(),
+                        "advice": (row.get("advice") or "").strip(),
+                        "codes": {
+                            "diabetes": code_labels.get((row.get("diabetes_code") or "").strip(), "watch"),
+                            "hypertension": code_labels.get((row.get("hypertension_code") or "").strip(), "watch"),
+                            "heart": code_labels.get((row.get("heart_code") or "").strip(), "watch"),
+                            "obesity": code_labels.get((row.get("obesity_code") or "").strip(), "watch"),
+                            "kidney": code_labels.get((row.get("kidney_code") or "").strip(), "ask_dietitian"),
+                        },
+                        "note": (row.get("note") or "").strip(),
+                    }
+                )
+
+    exercises: List[Dict[str, Any]] = []
+    exercises_csv = CARE_DATA_DIR / "exercises.csv"
+    if exercises_csv.exists():
+        with open(exercises_csv, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                exercises.append(
+                    {
+                        "id": (row.get("id") or "").strip(),
+                        "name": (row.get("name") or "").strip(),
+                        "hindi": (row.get("hindi") or "").strip(),
+                        "category": (row.get("category") or "").strip(),
+                        "intensity": (row.get("intensity") or "").strip(),
+                        "conditions_safe": [c.strip() for c in (row.get("conditions_safe") or "").split(",") if c.strip()],
+                        "medical_clearance_required": str(row.get("medical_clearance_required", "")).lower() == "true",
+                        "duration_or_reps": (row.get("duration_or_reps") or "").strip(),
+                        "benefits": (row.get("benefits") or "").strip(),
+                        "cautions": (row.get("cautions") or "").strip(),
+                    }
+                )
+
     record = {
         "name": "HealthBuddy Clinical Knowledge Base",
-        "version": "3.1.0",
+        "version": "3.3.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "counts": {
             "hospitals": len(hospitals),
@@ -305,7 +355,9 @@ def build_knowledge_base_record(save: bool = True) -> Dict[str, Any]:
             "care": len(care),
             "risk_modules": len(risk_modules),
             "faqs": len(faqs),
-            "total": len(hospitals) + len(doctors) + len(guidance) + len(care) + len(risk_modules) + len(faqs),
+            "foods": len(foods),
+            "exercises": len(exercises),
+            "total": len(hospitals) + len(doctors) + len(guidance) + len(care) + len(risk_modules) + len(faqs) + len(foods) + len(exercises),
         },
         "hospitals": hospitals,
         "doctors": doctors,
@@ -313,6 +365,8 @@ def build_knowledge_base_record(save: bool = True) -> Dict[str, Any]:
         "care": care,
         "risk_modules": risk_modules,
         "faqs": faqs,
+        "foods": foods,
+        "exercises": exercises,
     }
 
     if save:
@@ -333,11 +387,11 @@ def get_knowledge_base(category: Optional[str] = None, query: Optional[str] = No
         except Exception:
             record = None
 
-    if record is None or "risk_modules" not in record or "faqs" not in record:
+    if record is None or "risk_modules" not in record or "faqs" not in record or "foods" not in record or "exercises" not in record:
         record = build_knowledge_base_record(save=True)
 
     q = (query or "").strip().lower()
-    categories = ["hospitals", "doctors", "guidance", "care", "risk_modules", "faqs"]
+    categories = ["hospitals", "doctors", "guidance", "care", "risk_modules", "faqs", "foods", "exercises"]
     selected_cats = [category] if category in categories else categories
 
     filtered: Dict[str, List[Dict[str, Any]]] = {}

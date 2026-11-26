@@ -5,11 +5,13 @@ import {
   BookOpen,
   Building2,
   CheckCircle2,
+  Dumbbell,
   HeartPulse,
   Phone,
   Search,
   ShieldCheck,
   Stethoscope,
+  Utensils,
 } from "lucide-react";
 import { apiFetch } from "@/lib/api";
 
@@ -18,7 +20,7 @@ interface KnowledgeBaseViewProps {
   onAskHealthBuddy: () => void;
 }
 
-type KbCategory = "all" | "hospitals" | "doctors" | "guidance" | "care";
+type KbCategory = "all" | "hospitals" | "doctors" | "guidance" | "care" | "foods" | "exercises";
 
 export function KnowledgeBaseView({ t, onAskHealthBuddy }: KnowledgeBaseViewProps) {
   const [category, setCategory] = useState<KbCategory>("all");
@@ -113,6 +115,8 @@ export function KnowledgeBaseView({ t, onAskHealthBuddy }: KnowledgeBaseViewProp
               ["doctors", "Doctors & Specialists", counts.doctors],
               ["guidance", "Guidance", counts.guidance],
               ["care", "Care & Services", counts.care],
+              ["foods", "Indian Foods", counts.foods || 0],
+              ["exercises", "Exercises & Yoga", counts.exercises || 0],
             ] as const
           ).map(([key, label, count]) => (
             <button
@@ -293,6 +297,66 @@ export function KnowledgeBaseView({ t, onAskHealthBuddy }: KnowledgeBaseViewProp
                         {c.available_at_hospitals.slice(0, 3).join(", ")}
                       </p>
                     )}
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+          {/* INDIAN FOODS */}
+          {kb.foods?.length > 0 && (
+            <section className="space-y-3">
+              <h3 className="text-base font-extrabold text-hb-ink inline-flex items-center gap-2">
+                <Utensils className="w-4 h-4 text-hb-accent" aria-hidden="true" />
+                <span>Indian Food Knowledge Base ({kb.foods.length})</span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {kb.foods.slice(0, category === "foods" ? 60 : 12).map((f: any) => (
+                  <article key={f.id} className="rounded-lg bg-hb-surface border border-hb-border p-3.5 shadow-sm space-y-1.5">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <div className="font-extrabold text-xs text-hb-ink">{f.name}</div>
+                        <div className="text-[11px] text-hb-muted">{f.hindi} · {f.group}</div>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full bg-hb-subtle border border-hb-border text-[10px] font-bold uppercase text-hb-ink shrink-0">
+                        {(f.advice || "").replace("_", " ")}
+                      </span>
+                    </div>
+                    <p className="text-xs text-hb-muted leading-snug">{f.note}</p>
+                    {f.codes && (
+                      <div className="flex flex-wrap gap-1 pt-1 border-t border-hb-border text-[10px] text-hb-muted">
+                        <span>DM: <strong className="text-hb-ink">{f.codes.diabetes}</strong></span>
+                        <span>· HTN: <strong className="text-hb-ink">{f.codes.hypertension}</strong></span>
+                        <span>· Heart: <strong className="text-hb-ink">{f.codes.heart}</strong></span>
+                        <span>· CKD: <strong className="text-hb-ink">{f.codes.kidney}</strong></span>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* EXERCISES & YOGA */}
+          {kb.exercises?.length > 0 && (
+            <section className="space-y-3">
+              <h3 className="text-base font-extrabold text-hb-ink inline-flex items-center gap-2">
+                <Dumbbell className="w-4 h-4 text-hb-accent" aria-hidden="true" />
+                <span>Exercise &amp; Yoga Knowledge Base ({kb.exercises.length})</span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {kb.exercises.slice(0, category === "exercises" ? 60 : 12).map((ex: any) => (
+                  <article key={ex.id} className="rounded-lg bg-hb-surface border border-hb-border p-3.5 shadow-sm space-y-1.5">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <div className="font-extrabold text-xs text-hb-ink">{ex.name}</div>
+                        <div className="text-[11px] text-hb-muted">{ex.hindi} · {ex.duration_or_reps}</div>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full bg-hb-subtle border border-hb-border text-[10px] font-bold uppercase text-hb-ink shrink-0">
+                        {ex.intensity}
+                      </span>
+                    </div>
+                    <p className="text-xs text-hb-ink leading-snug">{ex.benefits}</p>
+                    <p className="text-[11px] text-hb-muted leading-snug pt-1 border-t border-hb-border">{ex.cautions}</p>
                   </article>
                 ))}
               </div>

@@ -1,5 +1,23 @@
-export const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+export function getApiBase(): string {
+  if (typeof window === "undefined") {
+    return (
+      process.env.BACKEND_URL ||
+      process.env.NEXT_PUBLIC_API_URL ||
+      "http://127.0.0.1:8000"
+    );
+  }
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  // Standalone local Next.js dev server (without `vercel dev` proxy)
+  if (window.location.port === "3006" || window.location.port === "3005") {
+    return "http://127.0.0.1:8000";
+  }
+  // On Vercel / vercel dev, `/api/(.*)` is routed to the backend service on the same origin
+  return "";
+}
+
+export const API_BASE = getApiBase();
 
 export async function apiFetch<T>(
   path: string,
@@ -13,7 +31,9 @@ export async function apiFetch<T>(
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
   }
-  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  const base = getApiBase();
+  const url = base ? new URL(path, base).toString() : path;
+  const res = await fetch(url, { ...options, headers });
   if (!res.ok) {
     const errBody = await res.json().catch(() => ({}));
     if (Array.isArray(errBody.detail)) {
@@ -26,4 +46,3 @@ export async function apiFetch<T>(
   }
   return res.json();
 }
-

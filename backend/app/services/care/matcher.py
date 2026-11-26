@@ -32,7 +32,7 @@ def recommend_care(
     user_lon: Optional[float] = None,
     teleconsult_only: bool = False,
     language: Optional[str] = None,
-    limit: int = 5,
+    limit: int = 20,
 ) -> Dict[str, Any]:
     """Match specialist types, suggested tests, urgency timeline, and verified hospitals."""
     care_cfg = DISEASE_CARE_MAPPING.get(disease, DISEASE_CARE_MAPPING["heart_disease"])

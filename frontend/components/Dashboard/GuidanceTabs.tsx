@@ -10,6 +10,7 @@ import {
   CalendarClock,
   CheckCircle2,
   Dumbbell,
+  Search,
   Stethoscope,
   Utensils,
 } from "lucide-react";
@@ -24,6 +25,8 @@ interface GuidanceTabsProps {
   followups: { condition: string; tier: string; due_date: string }[];
   kbGuidance?: any[];
   kbFaqs?: any[];
+  kbFoods?: any[];
+  kbExercises?: any[];
   lang: "en" | "hi";
   t: Record<string, string>;
   onSeeFullPlan: () => void;
@@ -40,12 +43,17 @@ export function GuidanceTabs({
   followups,
   kbGuidance = [],
   kbFaqs = [],
+  kbFoods = [],
+  kbExercises = [],
   lang,
   t,
   onSeeFullPlan,
   onDownloadPdf,
 }: GuidanceTabsProps) {
   const [tab, setTab] = useState<"food" | "exercise" | "tests" | "followup">("food");
+  const [foodQuery, setFoodQuery] = useState("");
+  const [foodFilter, setFoodFilter] = useState<"all" | "ok" | "avoid">("all");
+  const [exerciseQuery, setExerciseQuery] = useState("");
 
   const activeTier = getConditionTier(activeCondition);
   const matchedKbGuide =
@@ -187,6 +195,112 @@ export function GuidanceTabs({
               </ul>
             </div>
           </div>
+
+          {/* Searchable Indian Food Checker from Knowledge Base */}
+          {kbFoods.length > 0 && (
+            <div className="rounded-xl bg-hb-subtle/70 border border-hb-border p-4 space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-hb-ink">
+                    Indian Food Guide ({kbFoods.length} foods — tailored for {activeCondition}: {activeTier} risk)
+                  </h3>
+                  <p className="text-[11px] text-hb-muted">
+                    Sorted for your {activeCondition} lab result ({activeTier} tier) — search English or Hindi names
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex gap-1">
+                    {(
+                      [
+                        ["all", "All"],
+                        ["ok", "OK for me"],
+                        ["avoid", "Limit / Avoid"],
+                      ] as const
+                    ).map(([fk, flbl]) => (
+                      <button
+                        key={fk}
+                        type="button"
+                        onClick={() => setFoodFilter(fk)}
+                        className={`px-2.5 py-1 rounded-full text-[11px] font-bold border transition-colors ${
+                          foodFilter === fk
+                            ? "bg-hb-cta text-hb-ctaInk border-hb-cta"
+                            : "bg-hb-surface text-hb-muted border-hb-border hover:text-hb-ink"
+                        }`}
+                      >
+                        {flbl}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="relative min-w-[200px] flex-1 max-w-xs">
+                    <Search className="w-3.5 h-3.5 text-hb-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <input
+                      type="search"
+                      value={foodQuery}
+                      onChange={(e) => setFoodQuery(e.target.value)}
+                      placeholder="Search rice, roti, dal, fruit..."
+                      aria-label="Search Indian food guide"
+                      className="w-full min-h-[36px] pl-8 pr-3 py-1 rounded-full bg-hb-surface border border-hb-border text-xs text-hb-ink focus:outline-none focus:ring-2 focus:ring-hb-accent"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 max-h-64 overflow-y-auto pr-1">
+                {kbFoods
+                  .filter((f: any) => {
+                    const condKey = activeCondition === "metabolic" ? "diabetes" : activeCondition;
+                    const code: string = f.codes?.[condKey] || f.advice || "watch";
+                    if (foodFilter === "ok" && code !== "ok" && code !== "eat_more") return false;
+                    if (foodFilter === "avoid" && code !== "avoid" && code !== "limit" && code !== "ask_dietitian") return false;
+                    const q = foodQuery.trim().toLowerCase();
+                    if (!q) return true;
+                    return (
+                      (f.name || "").toLowerCase().includes(q) ||
+                      (f.hindi || "").toLowerCase().includes(q) ||
+                      (f.group || "").toLowerCase().includes(q) ||
+                      (f.note || "").toLowerCase().includes(q)
+                    );
+                  })
+                  .sort((a: any, b: any) => {
+                    const condKey = activeCondition === "metabolic" ? "diabetes" : activeCondition;
+                    const order: Record<string, number> = { ok: 0, eat_more: 0, watch: 1, moderate: 1, ask_dietitian: 2, limit: 3, avoid: 4 };
+                    const ca = a.codes?.[condKey] || a.advice || "watch";
+                    const cb = b.codes?.[condKey] || b.advice || "watch";
+                    return (order[ca] ?? 2) - (order[cb] ?? 2);
+                  })
+                  .slice(0, 18)
+                  .map((f: any) => {
+                    const condKey = activeCondition === "metabolic" ? "diabetes" : activeCondition;
+                    const code: string = f.codes?.[condKey] || f.advice || "watch";
+                    const badgeClass =
+                      code === "ok" || code === "eat_more"
+                        ? "bg-hb-lowBg text-hb-lowInk border-hb-lowBorder"
+                        : code === "avoid" || code === "limit"
+                        ? "bg-hb-highBg text-hb-highInk border-hb-highBorder"
+                        : "bg-hb-modBg text-hb-modInk border-hb-modBorder";
+                    return (
+                      <div
+                        key={f.id}
+                        className="rounded-xl bg-hb-surface border border-hb-border p-3 space-y-1"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <div className="text-xs font-extrabold text-hb-ink truncate">{f.name}</div>
+                            <div className="text-[11px] text-hb-muted truncate">{f.hindi}</div>
+                          </div>
+                          <span
+                            className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase border shrink-0 ${badgeClass}`}
+                          >
+                            {code.replace("_", " ")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-hb-muted leading-snug">{f.note}</p>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -222,6 +336,83 @@ export function GuidanceTabs({
               </div>
             ))}
           </div>
+
+          {kbExercises.length > 0 && (
+            <div className="rounded-xl bg-hb-subtle/70 border border-hb-border p-4 space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-hb-ink">
+                    Exercise &amp; Yoga Library ({kbExercises.length} routines)
+                  </h3>
+                  <p className="text-[11px] text-hb-muted">
+                    Search aerobic, yoga, strength, or rehab routines with safety cautions
+                  </p>
+                </div>
+                <div className="relative min-w-[220px] flex-1 max-w-xs">
+                  <Search className="w-3.5 h-3.5 text-hb-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <input
+                    type="search"
+                    value={exerciseQuery}
+                    onChange={(e) => setExerciseQuery(e.target.value)}
+                    placeholder="Search walking, yoga, pranayama..."
+                    aria-label="Search exercise library"
+                    className="w-full min-h-[36px] pl-8 pr-3 py-1 rounded-full bg-hb-surface border border-hb-border text-xs text-hb-ink focus:outline-none focus:ring-2 focus:ring-hb-accent"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 max-h-64 overflow-y-auto pr-1">
+                {kbExercises
+                  .filter((ex: any) => {
+                    const condKey = activeCondition === "metabolic" ? "diabetes" : activeCondition;
+                    const matchesCond =
+                      !ex.conditions_safe?.length || ex.conditions_safe.includes(condKey);
+                    const q = exerciseQuery.trim().toLowerCase();
+                    if (!q) return matchesCond;
+                    return (
+                      (ex.name || "").toLowerCase().includes(q) ||
+                      (ex.hindi || "").toLowerCase().includes(q) ||
+                      (ex.category || "").toLowerCase().includes(q) ||
+                      (ex.benefits || "").toLowerCase().includes(q)
+                    );
+                  })
+                  .sort((a: any, b: any) => {
+                    // When lab report risk is high, prioritize low-intensity & no-clearance-required routines first
+                    if (activeTier === "high") {
+                      const ca = a.medical_clearance_required ? 1 : 0;
+                      const cb = b.medical_clearance_required ? 1 : 0;
+                      if (ca !== cb) return ca - cb;
+                    }
+                    return 0;
+                  })
+                  .slice(0, 15)
+                  .map((ex: any) => (
+                    <div
+                      key={ex.id}
+                      className="rounded-xl bg-hb-surface border border-hb-border p-3 space-y-1"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <div className="text-xs font-extrabold text-hb-ink truncate">{ex.name}</div>
+                          <div className="text-[11px] text-hb-muted truncate">{ex.hindi} · {ex.duration_or_reps}</div>
+                        </div>
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase border shrink-0 ${
+                            ex.medical_clearance_required
+                              ? "bg-hb-highBg text-hb-highInk border-hb-highBorder"
+                              : "bg-hb-lowBg text-hb-lowInk border-hb-lowBorder"
+                          }`}
+                        >
+                          {ex.intensity}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-hb-ink leading-snug">{ex.benefits}</p>
+                      <p className="text-[10px] text-hb-muted leading-snug">{ex.cautions}</p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

@@ -55,6 +55,7 @@ export function CareSection({
         <div className="lg:col-span-7">
           <HospitalList
             hospitals={listData}
+            allHospitals={hospitals}
             specialistTypes={specialistTypes}
             urgency={urgency}
             t={t}

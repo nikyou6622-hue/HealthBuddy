@@ -188,18 +188,25 @@ def test_knowledge_base_records_endpoint():
         r = client.get("/api/v1/kb")
         assert r.status_code == 200
         data = r.json()
-        assert data["counts"]["hospitals"] >= 20
+        assert data["counts"]["hospitals"] >= 60
         assert data["counts"]["doctors"] >= 15
         assert data["counts"]["guidance"] >= 18
-        assert data["counts"]["care"] >= 25
+        assert data["counts"]["care"] >= 35
         assert data["counts"]["risk_modules"] >= 6
-        assert data["counts"]["faqs"] >= 10
+        assert data["counts"]["faqs"] >= 25
+        assert data["counts"]["foods"] >= 250
+        assert data["counts"]["exercises"] >= 50
+        assert data["counts"]["total"] >= 500
 
         filtered = client.get("/api/v1/kb?category=doctors&q=Cardiologist")
         assert filtered.status_code == 200
         fdata = filtered.json()
         assert len(fdata["doctors"]) >= 1
         assert len(fdata["hospitals"]) == 0
+
+        foods_res = client.get("/api/v1/kb?category=foods&q=barley")
+        assert foods_res.status_code == 200
+        assert len(foods_res.json()["foods"]) >= 1
 
 
 

@@ -106,6 +106,151 @@ const INPUT_CLS =
 
 const LABEL_CLS = "block text-xs font-bold uppercase tracking-wider text-[#6B5B2E] mb-1.5";
 
+export const LAB_TEST_PRESETS: {
+  id: string;
+  label: string;
+  badge: string;
+  patch: Partial<WizardDraft>;
+}[] = [
+  {
+    id: "healthy_baseline",
+    label: "1. Healthy Baseline (42F, Bengaluru)",
+    badge: "Low Risk",
+    patch: {
+      age: 42,
+      sex: "female",
+      heightCm: 162,
+      weightKg: 56,
+      waistCm: 74,
+      systolicBp: 116,
+      diastolicBp: 74,
+      city: "Bengaluru",
+      smoker: false,
+      physicalActivity: "vigorous",
+      familyDiabetes: "none",
+      fpg: "88",
+      hba1c: "5.2",
+      ogtt2h: "112",
+      totalChol: "168",
+      ldl: "92",
+      hdl: "56",
+      triglycerides: "95",
+      creatinine: "0.78",
+      urineAcr: "10",
+    },
+  },
+  {
+    id: "prediabetes_metabolic",
+    label: "2. Prediabetes + Metabolic (46M, New Delhi)",
+    badge: "Moderate / High",
+    patch: {
+      age: 46,
+      sex: "male",
+      heightCm: 171,
+      weightKg: 74,
+      waistCm: 94,
+      systolicBp: 134,
+      diastolicBp: 84,
+      city: "New Delhi",
+      smoker: false,
+      physicalActivity: "mild",
+      familyDiabetes: "one_parent",
+      fpg: "114",
+      hba1c: "6.1",
+      ogtt2h: "162",
+      totalChol: "212",
+      ldl: "136",
+      hdl: "37",
+      triglycerides: "185",
+      creatinine: "0.95",
+      urineAcr: "22",
+    },
+  },
+  {
+    id: "heart_hypertension",
+    label: "3. Heart + Stage 2 BP (58M Smoker, Mumbai)",
+    badge: "High CVD",
+    patch: {
+      age: 58,
+      sex: "male",
+      heightCm: 172,
+      weightKg: 80,
+      waistCm: 99,
+      systolicBp: 154,
+      diastolicBp: 96,
+      city: "Mumbai",
+      smoker: true,
+      physicalActivity: "sedentary",
+      familyDiabetes: "none",
+      familyHeartDisease: true,
+      fpg: "102",
+      hba1c: "5.8",
+      ogtt2h: "",
+      totalChol: "248",
+      ldl: "162",
+      hdl: "35",
+      triglycerides: "210",
+      creatinine: "1.15",
+      urineAcr: "38",
+    },
+  },
+  {
+    id: "diabetes_kidney",
+    label: "4. Diabetes + Kidney Strain (62F, Jaipur)",
+    badge: "CKD + DM",
+    patch: {
+      age: 62,
+      sex: "female",
+      heightCm: 156,
+      weightKg: 65,
+      waistCm: 90,
+      systolicBp: 146,
+      diastolicBp: 90,
+      city: "Jaipur",
+      smoker: false,
+      physicalActivity: "mild",
+      familyDiabetes: "both",
+      fpg: "164",
+      hba1c: "7.9",
+      ogtt2h: "228",
+      totalChol: "228",
+      ldl: "142",
+      hdl: "42",
+      triglycerides: "195",
+      creatinine: "1.75",
+      urineAcr: "165",
+    },
+  },
+  {
+    id: "high_risk_multi",
+    label: "5. Multi-Risk Senior (66M, Chennai)",
+    badge: "Urgent Review",
+    patch: {
+      age: 66,
+      sex: "male",
+      heightCm: 168,
+      weightKg: 84,
+      waistCm: 105,
+      systolicBp: 166,
+      diastolicBp: 98,
+      city: "Chennai",
+      smoker: true,
+      physicalActivity: "sedentary",
+      familyDiabetes: "both",
+      familyHeartDisease: true,
+      fpg: "188",
+      hba1c: "8.4",
+      ogtt2h: "256",
+      totalChol: "262",
+      ldl: "174",
+      hdl: "32",
+      triglycerides: "265",
+      creatinine: "2.15",
+      urineAcr: "340",
+    },
+  },
+];
+
 export function AssessmentWizard({
   t,
   token,
@@ -577,6 +722,31 @@ export function AssessmentWizard({
               <SkipForward className="w-4 h-4" />
               <span>Skip, I don&apos;t have lab reports</span>
             </button>
+          </div>
+
+          {/* 5 Quick Test Lab Report Inputs */}
+          <div className="rounded-xl bg-[#FFF9E3] border border-[#EFE4BE] p-3.5 space-y-2">
+            <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#6B5B2E]">
+              Quick Test Lab Report Inputs (5 Sample Profiles)
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {LAB_TEST_PRESETS.map((preset) => (
+                <button
+                  key={preset.id}
+                  type="button"
+                  onClick={() => {
+                    setErrorMsg(null);
+                    onDraftChange({ ...draft, ...preset.patch });
+                  }}
+                  className="min-h-[36px] px-3 py-1.5 rounded-full bg-white hover:bg-[#FFC83D]/30 border border-[#EFE4BE] text-xs font-bold text-[#2B2208] inline-flex items-center gap-1.5 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <span>{preset.label}</span>
+                  <span className="px-1.5 py-0.5 rounded-full bg-[#FFF3C4] text-[10px] font-extrabold text-[#78350F]">
+                    {preset.badge}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

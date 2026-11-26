@@ -621,7 +621,7 @@ def chat_retrain(current_user: Dict[str, Any] = Depends(require_role("admin"))):
 
 @router.get("/kb")
 def read_knowledge_base(
-    category: Optional[str] = Query(default=None, pattern="^(hospitals|doctors|guidance|care)$"),
+    category: Optional[str] = Query(default=None, pattern="^(hospitals|doctors|guidance|care|risk_modules|faqs|foods|exercises)$"),
     q: Optional[str] = Query(default=None, max_length=120),
 ):
     """Return structured Knowledge Base records for hospitals, doctors, guidance, and care."""

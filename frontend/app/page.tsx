@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import en from "@/locales/en.json";
 import hi from "@/locales/hi.json";
-import { apiFetch, API_BASE } from "@/lib/api";
+import { apiFetch, getApiBase } from "@/lib/api";
 import { DisclaimerBanner } from "@/components/banners/DisclaimerBanner";
 import { AppShell } from "@/components/layout/AppShell";
 import { NavItemDef } from "@/components/layout/Sidebar";
@@ -348,7 +348,9 @@ export default function HealthBuddyPage() {
   };
 
   const downloadPdf = async () => {
-    const res = await fetch(`${API_BASE}/api/v1/reports/pdf`, {
+    const base = getApiBase();
+    const endpointUrl = base ? new URL("/api/v1/reports/pdf", base).toString() : "/api/v1/reports/pdf";
+    const res = await fetch(endpointUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -704,6 +706,8 @@ export default function HealthBuddyPage() {
             followups={assessData.followups || []}
             kbGuidance={kbData?.guidance || []}
             kbFaqs={kbData?.faqs || []}
+            kbFoods={kbData?.foods || []}
+            kbExercises={kbData?.exercises || []}
             lang={lang}
             t={t}
             onSeeFullPlan={() => setNav("plan")}
@@ -790,6 +794,23 @@ export default function HealthBuddyPage() {
           onComplete={(result: any) => {
             setAssessData({ ...result, isIllustrative: false, assessed_at: new Date().toISOString() });
             if (result?.care) setCareData(result.care);
+            // Auto-focus Guidance on the highest-risk computed condition from the lab report
+            const modToCond: Record<string, string> = {
+              heart_who_cvd: "heart",
+              diabetes_idrs: "diabetes",
+              glucose_classification: "diabetes",
+              hypertension_bp: "hypertension",
+              kidney_ckd_epi: "kidney",
+              metabolic_syndrome: "metabolic",
+              obesity_anthropometry: "obesity",
+            };
+            const rank: Record<string, number> = { high: 0, moderate: 1, low: 2 };
+            const bestMod = (result?.modules || [])
+              .filter((m: any) => m.status === "computed" && modToCond[m.module] && rank[m.category] !== undefined)
+              .sort((a: any, b: any) => rank[a.category] - rank[b.category])[0];
+            if (bestMod && modToCond[bestMod.module]) {
+              setActiveCondition(modToCond[bestMod.module]);
+            }
             setNav("dashboard");
           }}
         />

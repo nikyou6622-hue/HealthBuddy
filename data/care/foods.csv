@@ -1,0 +1,292 @@
+id,name,hindi,group,advice,diabetes_code,hypertension_code,heart_code,obesity_code,kidney_code,note
+food_1,Parboiled rice,उबला (पारबॉइल्ड) चावल,cereals,moderate,w,o,o,o,d,Keep the portion small and add dal and vegetables
+food_2,Red rice,लाल चावल,cereals,moderate,w,o,o,o,d,Colour does not make it low in carbohydrate; keep the portion modest
+food_3,Black rice,काला चावल,cereals,moderate,w,o,o,o,d,Keep the portion modest and pair with dal and vegetables
+food_4,Barley (jau),जौ,cereals,eat_more,o,o,o,o,d,"Good in soups, dalia or mixed into roti flour"
+food_5,Maize roti (makki ki roti),मक्के की रोटी,cereals,moderate,w,o,o,o,d,An ICMR-NIN study found maize roti has a high glycaemic index; cook with little oil
+food_6,Missi roti (besan and wheat),मिस्सी रोटी,cereals,moderate,w,o,o,o,d,Make with little oil and skip the butter
+food_7,Tandoori roti (whole wheat),तंदूरी रोटी,cereals,moderate,w,o,o,o,d,Ask for whole wheat and no butter brush
+food_8,Plain whole wheat paratha (little oil),सादा गेहूँ पराठा,cereals,limit,w,o,w,w,d,"Use a teaspoon of oil, not layers of ghee"
+food_9,Kulcha (maida),कुलचा,cereals,limit,l,w,l,l,d,Refined flour; keep it occasional
+food_10,Rice noodles,चावल के नूडल्स,cereals,limit,l,w,w,l,d,Mostly refined starch; add plenty of vegetables
+food_11,Whole wheat pasta,होल व्हीट पास्ता,cereals,moderate,w,o,o,o,d,Use a vegetable-based sauce with little oil
+food_12,Maida pasta,मैदा पास्ता,cereals,limit,l,w,l,l,d,Refined flour; watch cheese and cream sauces
+food_13,Cornflakes (plain),कॉर्नफ्लेक्स,cereals,limit,l,w,w,w,d,Ultra-processed; salt and sugar are often added
+food_14,Muesli with added sugar,चीनी वाली मूसली,cereals,limit,l,w,l,l,d,Read the label for added sugar
+food_15,Appam,अप्पम,cereals,moderate,w,o,o,o,d,Fermented rice batter; pair with vegetable stew
+food_16,Puttu,पुट्टू,cereals,moderate,w,o,o,o,d,Steamed; keep the coconut layer light
+food_17,Rice gruel (kanji),चावल की कांजी,cereals,moderate,w,w,o,o,d,Thin and easy to digest; adds little fibre
+food_18,Idiyappam (string hoppers),इडियप्पम,cereals,moderate,w,o,o,o,d,Steamed; pair with vegetables or dal
+food_19,Rice flakes (thick poha) dry roasted,भुना मोटा पोहा,cereals,moderate,w,o,o,o,d,Roast without oil and add vegetables
+food_20,Wheat vermicelli upma,गेहूँ सेवई उपमा,dishes,moderate,w,o,o,o,d,Add vegetables; use little oil
+food_21,Bajra roti,बाजरे की रोटी,millets,moderate,w,o,o,o,d,An ICMR-NIN study found bajra roti has a high glycaemic index; watch the portion
+food_22,Jowar roti (bhakri),ज्वार की भाकरी,millets,moderate,w,o,o,o,d,An ICMR-NIN study found jowar roti has a high glycaemic index; pair with dal
+food_23,Ragi dosa,रागी डोसा,millets,moderate,w,o,o,o,d,Fermented; use little oil
+food_24,Ragi porridge (unsweetened),रागी की लपसी (बिना चीनी),millets,moderate,w,o,o,o,d,Skip added sugar and jaggery
+food_25,Millet khichdi,मिलेट खिचड़ी,dishes,moderate,w,o,o,o,d,Add vegetables and dal
+food_26,Browntop millet (korale),कोरले,millets,moderate,w,o,o,o,d,Soak before cooking; keep the portion modest
+food_27,Sprouted ragi flour,अंकुरित रागी आटा,millets,moderate,w,o,o,o,d,Do not treat as a low-glycaemic food
+food_28,Dalia khichdi (broken wheat),दलिया खिचड़ी,dishes,eat_more,o,o,o,o,d,Add vegetables and dal for protein
+food_29,Sattu (roasted gram flour) drink,सत्तू का शरबत,pulses,moderate,o,w,o,o,d,Have it plain with lemon; skip sugar and extra salt
+food_30,Kala chana (black chickpea) curry,काले चने की सब्ज़ी,pulses,eat_more,o,o,o,o,d,Cook with little oil
+food_31,Moth bean (matki) sprouts,मोठ/मटकी स्प्राउट्स,pulses,eat_more,o,o,o,o,d,Boil or steam and add lemon
+food_32,Green moong dal khichdi,मूंग दाल खिचड़ी,dishes,eat_more,o,o,o,o,d,Light meal with vegetables
+food_33,Horse gram (kulthi),कुलथी,pulses,eat_more,o,o,o,o,d,Cook well; use as dal or soup
+food_34,Dried green peas (matar),सूखी मटर,pulses,eat_more,o,o,o,o,d,Boil and skip heavy masalas
+food_35,Mixed dal (panchmel),पंचमेल दाल,pulses,eat_more,o,o,o,o,d,Use little tempering oil and salt
+food_36,Lentil soup (masoor),मसूर का सूप,dishes,eat_more,o,o,o,o,d,Low salt with vegetables added
+food_37,Soybean (boiled whole),उबला साबुत सोयाबीन,pulses,moderate,o,o,o,o,w,Good protein; kidney disease needs dietitian advice
+food_38,Tofu,टोफू,pulses,moderate,o,o,o,o,w,Choose plain; avoid heavily fried or salted versions
+food_39,Soy milk (unsweetened),बिना चीनी का सोया दूध,beverages,moderate,o,o,o,o,w,Check the label for added sugar and salt
+food_40,Chana dal chilla,चना दाल चीला,dishes,eat_more,o,o,o,o,d,Make with little oil and vegetables
+food_41,Moong dal chilla,मूंग दाल चीला,dishes,eat_more,o,o,o,o,d,Make with little oil and vegetables
+food_42,Besan chilla,बेसन चीला,dishes,moderate,w,o,o,o,d,Add grated vegetables; little oil
+food_43,Chickpea salad,चने का सलाद,dishes,eat_more,o,o,o,o,d,"Add onion, tomato, cucumber and lemon"
+food_44,Rajma sundal,राजमा सुंडल,dishes,eat_more,o,o,o,o,d,South Indian style; little coconut and oil
+food_45,Sundal (boiled chickpea snack),सुंडल,snacks,eat_more,o,o,o,o,d,Boiled and lightly tempered
+food_46,Dal palak,दाल पालक,dishes,eat_more,o,o,o,o,d,Spinach is high in potassium; kidney disease needs dietitian advice
+food_47,Amaranth leaves (chaulai),चौलाई का साग,vegetables,eat_more,o,o,o,o,d,Cook lightly with little oil
+food_48,Pumpkin leaves,कद्दू के पत्ते,vegetables,eat_more,o,o,o,o,d,Cook lightly
+food_49,Taro leaves (arbi ke patte),अरबी के पत्ते,vegetables,moderate,o,o,o,o,w,Cook well; avoid deep frying (patra)
+food_50,Drumstick leaves,सहजन के पत्ते,vegetables,eat_more,o,o,o,o,d,Cook lightly with little oil
+food_51,Snake gourd (chichinda),चिचिंडा,vegetables,eat_more,o,o,o,o,d,Cook with little oil
+food_52,Ash gourd (petha / safed kaddu),पेठा (सफ़ेद कद्दू),vegetables,eat_more,o,o,o,o,d,Plain vegetable; avoid the sugar-coated petha sweet
+food_53,Sponge gourd (nenua),नेनुआ,vegetables,eat_more,o,o,o,o,d,Cook with little oil
+food_54,Raw papaya (vegetable),कच्चा पपीता,vegetables,eat_more,o,o,o,o,d,Cook as a vegetable with little oil
+food_55,Raw mango (kairi),कच्चा आम,vegetables,moderate,o,o,w,o,d,Use for chutney with little salt and no sugar
+food_56,Banana stem (kela thanda),केले का तना,vegetables,eat_more,o,o,o,o,w,Cook as a vegetable
+food_57,Banana flower (kela phool),केले का फूल,vegetables,eat_more,o,o,o,o,w,Cook as a vegetable
+food_58,Lotus stem (kamal kakdi),कमल ककड़ी,vegetables,moderate,o,o,o,o,w,Cook; avoid deep fried
+food_59,Turnip (shalgam),शलजम,vegetables,eat_more,o,o,o,o,d,Cook with little oil
+food_60,Knol khol (kohlrabi),गाँठ गोभी,vegetables,eat_more,o,o,o,o,d,Cook or eat raw in salad
+food_61,Zucchini,ज़ुकीनी,vegetables,eat_more,o,o,o,o,d,Cook with little oil
+food_62,Spring onion,हरा प्याज़,vegetables,eat_more,o,o,o,o,d,Raw or cooked
+food_63,Baby corn,बेबी कॉर्न,vegetables,eat_more,o,o,o,o,d,Steam or stir-fry with little oil
+food_64,Sweet corn kernels (boiled),उबला स्वीट कॉर्न,vegetables,moderate,w,o,o,o,d,Skip butter and salt
+food_65,Red cabbage,लाल पत्ता गोभी,vegetables,eat_more,o,o,o,o,d,Raw in salad or lightly cooked
+food_66,Lettuce,सलाद पत्ता,vegetables,eat_more,o,o,o,o,d,Raw in salad with lemon
+food_67,Celery,अजवाइन की डंडी (सेलेरी),vegetables,eat_more,o,o,o,o,d,Raw or in soup; check salt in packaged versions
+food_68,Bok choy,बोक चॉय,vegetables,eat_more,o,o,o,o,d,Cook lightly
+food_69,Asparagus,एस्पेरेगस,vegetables,eat_more,o,o,o,o,d,Steam or stir-fry
+food_70,Fenugreek seeds (methi dana) soaked,भीगे मेथी दाने,condiments,moderate,o,o,o,o,w,"A food, not a treatment; do not stop medicines"
+food_71,Ridge gourd peel chutney,तोरी के छिलके की चटनी,condiments,moderate,o,o,w,o,d,Make with little oil and salt
+food_72,Bottle gourd kofta (fried),लौकी कोफ्ता (तला),dishes,limit,w,l,l,l,d,Fried balls and rich gravy; prefer steamed or baked
+food_73,Mixed vegetable curry (little oil),मिक्स वेज सब्ज़ी,dishes,eat_more,o,o,o,o,d,Use little oil and salt
+food_74,Stuffed capsicum (baked),भरवां शिमला मिर्च,dishes,eat_more,o,o,o,o,d,Bake or cook with little oil
+food_75,Baingan bharta (little oil),बैंगन भर्ता,dishes,eat_more,o,o,o,o,d,Roast the brinjal and cook with little oil
+food_76,Aloo gobi,आलू गोभी,dishes,moderate,w,o,o,o,d,Watch oil and potato portion
+food_77,Matar paneer,मटर पनीर,dishes,moderate,w,w,w,w,d,"Watch oil, cream and salt"
+food_78,Palak paneer,पालक पनीर,dishes,moderate,w,w,w,w,d,Use less cream and oil; spinach is high in potassium
+food_79,Mushroom matar,मशरूम मटर,dishes,moderate,w,o,o,o,d,Use little oil
+food_80,Gatte ki sabzi,गट्टे की सब्ज़ी,dishes,limit,w,w,w,w,d,Besan dumplings in oily gravy; keep occasional
+food_81,Undhiyu,उंधियू,dishes,limit,w,w,w,w,d,Often oily; keep the portion small
+food_82,Avial,अवियल,dishes,moderate,w,o,o,o,d,Coconut-based; keep coconut and oil modest
+food_83,Poriyal (dry vegetable stir-fry),पोरियल,dishes,eat_more,o,o,o,o,d,South Indian style; little coconut and oil
+food_84,Kootu,कूटू,dishes,eat_more,o,o,o,o,d,Vegetables with dal
+food_85,Mixed vegetable stew,वेज स्टू,dishes,moderate,w,o,o,o,d,Use light coconut milk
+food_86,"Guava (ripe, with skin)",अमरूद,fruits,eat_more,o,o,o,o,d,Eat whole rather than as juice
+food_87,Apple with skin,छिलके सहित सेब,fruits,eat_more,o,o,o,o,d,Eat whole
+food_88,Plum (aloo bukhara),आलूबुखारा,fruits,eat_more,o,o,o,o,w,Eat whole
+food_89,Peach,आड़ू,fruits,eat_more,o,o,o,o,w,Eat whole
+food_90,Kiwi,कीवी,fruits,eat_more,o,o,o,o,w,Eat whole
+food_91,Strawberries,स्ट्रॉबेरी,fruits,eat_more,o,o,o,o,d,Eat fresh; skip sweetened syrups
+food_92,Blueberries,ब्लूबेरी,fruits,eat_more,o,o,o,o,d,Eat fresh
+food_93,Cherries,चेरी,fruits,moderate,o,o,o,o,w,Eat fresh; avoid canned in syrup
+food_94,Apricot (fresh),खुबानी,fruits,eat_more,o,o,o,o,w,Eat fresh
+food_95,Dried apricot,सूखी खुबानी,fruits,limit,l,w,w,l,d,Concentrated sugar and potassium
+food_96,"Fig (anjeer), fresh",ताज़ा अंजीर,fruits,moderate,w,o,o,o,d,Small portion
+food_97,Dried fig,सूखा अंजीर,fruits,limit,l,w,w,l,d,Concentrated sugar; small portion
+food_98,Jackfruit (ripe),पका कटहल,fruits,moderate,w,o,o,w,d,Sweet; keep the portion small
+food_99,Raw jackfruit (kathal) vegetable,कच्चा कटहल,vegetables,moderate,o,o,o,o,w,Cook with little oil
+food_100,Star fruit (kamrakh),कमरख,fruits,limit,o,o,o,a,d,Avoid in kidney disease unless the dietitian agrees
+food_101,Sugarcane (chewed),गन्ना,fruits,limit,l,w,w,w,d,High in sugar
+food_102,Tender coconut malai,नारियल की मलाई,fruits,moderate,o,o,w,w,d,Small portion; high in fat
+food_103,Wood apple (bael) pulp,बेल का गूदा,fruits,moderate,w,o,o,o,d,Eat plain without sugar
+food_104,Bael sherbet (sweetened),मीठा बेल शरबत,beverages,limit,l,w,w,w,d,Skip added sugar
+food_105,Phalsa,फालसा,fruits,moderate,w,o,o,o,d,Eat fresh in small amounts
+food_106,Karonda,करौंदा,fruits,moderate,w,o,o,o,d,Often used in pickle; watch salt and oil
+food_107,Ber (Indian jujube),बेर,fruits,moderate,w,o,o,o,d,Small portion
+food_108,Tamarillo / tree tomato,पेड़ टमाटर,fruits,moderate,w,o,o,o,d,Eat fresh
+food_109,Dragon fruit,ड्रैगन फ्रूट,fruits,moderate,w,o,o,o,d,Eat whole in small portions
+food_110,Avocado,एवोकाडो,fruits,moderate,o,o,w,w,d,Healthy fats but high in calories and potassium
+food_111,Pomelo (chakotra),चकोतरा,fruits,moderate,w,o,o,o,d,Eat whole
+food_112,Fruit salad (no sugar),बिना चीनी का फल सलाद,snacks,moderate,w,o,o,o,d,Eat as a small bowl; skip cream and syrup
+food_113,Whole-milk curd (dahi),साबुत दूध का दही,dairy,moderate,o,o,w,w,d,Small portion; fine as a home-set curd
+food_114,Low-fat curd,कम वसा का दही,dairy,eat_more,o,o,o,o,d,Check the label for added sugar
+food_115,Greek-style (strained) curd,छना हुआ दही,dairy,moderate,o,o,o,o,w,Choose plain; high in protein
+food_116,Flavoured yoghurt,फ्लेवर्ड दही,dairy,limit,l,w,w,l,d,Added sugar; choose plain
+food_117,"Plain lassi (salted, little)",नमकीन लस्सी,dairy,moderate,o,w,w,w,d,Keep salt low
+food_118,Low-fat paneer,कम वसा का पनीर,dairy,moderate,o,o,o,o,w,Choose small portions
+food_119,Cottage cheese (chhena),छेना,dairy,moderate,o,o,o,o,w,Plain; skip sugar-soaked sweets
+food_120,Skimmed milk,स्किम्ड दूध,dairy,eat_more,o,o,o,o,d,Kidney disease needs dietitian advice
+food_121,Milk powder (full cream),फुल क्रीम दूध पाउडर,dairy,limit,w,w,l,l,d,Read the label; high in calories
+food_122,Condensed milk,कंडेंस्ड मिल्क,dairy,avoid,a,l,a,l,d,Very high in sugar
+food_123,Cheese slice,चीज़ स्लाइस,dairy,limit,o,w,l,l,d,High in salt and saturated fat
+food_124,Boiled egg white,उबले अंडे का सफ़ेद भाग,nonveg,eat_more,o,o,o,o,d,Lean protein
+food_125,Whole egg omelette (little oil),ऑमलेट (कम तेल),nonveg,moderate,o,w,o,w,d,Cook with little oil; skip extra salt
+food_126,Egg curry,अंडा करी,nonveg,moderate,w,w,w,w,d,Watch oil and salt
+food_127,"Fish curry, coconut-heavy",नारियल वाली मछली करी,nonveg,moderate,w,w,w,w,d,Use less coconut and oil
+food_128,"Grilled fish (tandoori style, light)",ग्रिल्ड मछली,nonveg,eat_more,o,o,o,o,d,Use little oil and salt
+food_129,Sardine / mackerel (oily fish),सार्डिन / बांगड़ा,nonveg,eat_more,o,o,o,o,d,"Cook by steaming, grilling or light curry"
+food_130,Rohu / catla fish curry,रोहू / कतला करी,nonveg,eat_more,o,o,o,o,d,Light curry with little oil
+food_131,Hilsa (ilish),हिल्सा (इलिश),nonveg,moderate,o,w,o,w,d,Oily fish; watch the portion and frying
+food_132,Crab,केकड़ा,nonveg,moderate,o,w,w,w,d,Watch salt and butter
+food_133,Squid,स्क्विड,nonveg,limit,o,w,l,l,w,Often fried; choose grilled
+food_134,"Chicken curry (skinless, little oil)",चिकन करी (कम तेल),nonveg,moderate,o,w,o,w,d,Remove skin; little oil
+food_135,Chicken tikka (grilled),चिकन टिक्का,nonveg,moderate,o,w,w,w,d,"Marinade can be salty; grill, do not fry"
+food_136,Chicken liver,चिकन कलेजी,nonveg,limit,o,w,l,l,d,High in cholesterol
+food_137,"Chicken soup (home, low salt)",घर का चिकन सूप,nonveg,moderate,o,o,o,o,w,Skim fat and use little salt
+food_138,Mutton curry,मटन करी,nonveg,limit,w,w,l,l,d,Small portion and trim visible fat
+food_139,Mutton keema,मटन कीमा,nonveg,limit,w,w,l,l,d,Small portion; little oil
+food_140,Pork,सूअर का मांस,nonveg,limit,w,w,l,l,d,Trim fat; small portion
+food_141,Beef,बीफ़,nonveg,limit,w,w,l,l,d,Small portion; where eaten
+food_142,Canned tuna in brine,ब्राइन में डिब्बाबंद ट्यूना,nonveg,limit,o,w,l,l,d,High in salt; drain and rinse
+food_143,Fish roe,मछली के अंडे,nonveg,limit,o,w,l,l,d,High in cholesterol and salt
+food_144,Almond butter (unsweetened),बिना चीनी का बादाम मक्खन,fats_nuts,moderate,o,w,w,w,d,Small portion; high in calories
+food_145,Peanut butter (unsweetened),बिना चीनी का मूंगफली मक्खन,fats_nuts,moderate,o,w,w,w,d,Choose no added sugar or salt
+food_146,Peanut butter (sweetened),मीठा मूंगफली मक्खन,fats_nuts,limit,l,w,l,l,d,Added sugar and salt
+food_147,Pistachios (unsalted),बिना नमक के पिस्ता,fats_nuts,moderate,o,w,w,w,d,A small handful
+food_148,Pistachios (salted),नमकीन पिस्ता,fats_nuts,limit,o,w,l,l,d,Salt adds up
+food_149,Hazelnuts,हेज़लनट,fats_nuts,moderate,o,w,w,w,d,A small handful
+food_150,Brazil nuts,ब्राज़ील नट,fats_nuts,limit,o,w,w,w,d,Small amount only
+food_151,Melon seeds (magaz),मगज़,fats_nuts,moderate,o,w,w,w,d,Used in gravies; watch quantity
+food_152,Watermelon seeds roasted,भुने तरबूज़ के बीज,fats_nuts,moderate,o,w,w,w,d,Roast without salt
+food_153,Poppy seeds (khus khus),खसखस,fats_nuts,moderate,o,w,w,w,d,Used in small amounts
+food_154,Flaxseed powder,अलसी पाउडर,fats_nuts,eat_more,o,o,o,o,d,A teaspoon in curd or roti flour
+food_155,Sesame oil (til oil),तिल का तेल,fats_nuts,moderate,o,w,w,w,d,Use small amounts; vary oils
+food_156,Palm oil,पाम ऑयल,fats_nuts,limit,w,l,l,l,d,"Prefer mustard, groundnut or rice bran in small amounts"
+food_157,Cooking spray / brush of oil,तेल का स्प्रे,fats_nuts,eat_more,o,o,o,o,d,Helps cut oil used at home
+food_158,Desi ghee (one teaspoon),देसी घी (एक चम्मच),fats_nuts,moderate,o,w,w,w,d,Small portion only
+food_159,Margarine / bakery shortening,मार्जरीन / बेकरी शॉर्टनिंग,fats_nuts,avoid,a,l,a,l,d,May contain trans fat; check the label
+food_160,Roasted peanuts (salted),नमकीन भुनी मूंगफली,snacks,limit,o,w,l,l,d,Salt and calories add up
+food_161,Roasted foxnut (makhana) with spices,मसाला मखाना,snacks,moderate,o,w,w,w,d,Check salt; avoid packaged flavoured versions
+food_162,Roasted chana dal,भुनी चना दाल,snacks,moderate,o,w,w,w,d,Unsalted is better
+food_163,Roasted soy nuts,भुना सोया,snacks,moderate,o,w,w,w,d,Unsalted
+food_164,Roasted seeds mix,भुने बीज मिक्स,snacks,moderate,o,w,w,w,d,Small handful
+food_165,Chana jor garam,चना जोर गरम,snacks,moderate,o,w,w,w,d,Watch salt and masala
+food_166,Moong dal namkeen,मूंग दाल नमकीन,snacks,limit,o,w,l,l,d,Fried and salty
+food_167,Sev,सेव,snacks,limit,l,w,l,l,d,Fried besan
+food_168,Bhel puri,भेल पूरी,snacks,limit,l,w,w,w,d,Fried puffed items and chutneys; watch salt and sugar
+food_169,Sev puri,सेव पूरी,snacks,limit,l,w,l,l,d,Fried and salty
+food_170,Pani puri,पानी पूरी,snacks,limit,l,w,w,w,d,Fried shells; hygiene matters
+food_171,Dahi puri,दही पूरी,snacks,limit,l,w,w,w,d,Fried shells and sweet chutney
+food_172,Aloo tikki,आलू टिक्की,snacks,limit,l,w,l,l,d,Shallow or deep fried potato; prefer air-fried
+food_173,Dabeli,दाबेली,snacks,limit,l,w,l,l,d,Sweet chutney and fried peanuts
+food_174,Medu vada,मेदु वड़ा,snacks,limit,o,w,l,l,d,Deep fried
+food_175,Masala dosa,मसाला डोसा,dishes,moderate,w,w,w,w,d,Potato filling and oil; watch the portion
+food_176,Rava dosa,रवा डोसा,dishes,limit,l,w,w,w,d,Refined semolina and more oil
+food_177,Set dosa,सेट डोसा,dishes,moderate,w,o,o,o,d,Eat with sambar and vegetables
+food_178,Uttapam (vegetable),वेज उत्तपम,dishes,moderate,w,o,o,o,d,Add vegetables; little oil
+food_179,Pesarattu (green gram dosa),पेसरट्टू,dishes,eat_more,o,o,o,o,d,Whole green gram; little oil
+food_180,Idli (ragi or oats),रागी / ओट्स इडली,dishes,eat_more,o,o,o,o,d,Eat with sambar
+food_181,Steamed vegetable idli,वेज इडली,dishes,eat_more,o,o,o,o,d,Steamed
+food_182,Bisi bele bath,बिसी बेले बाथ,dishes,moderate,w,w,w,w,d,Watch ghee and salt
+food_183,Curd rice,दही चावल,dishes,moderate,w,w,o,o,d,Small portion; add vegetables
+food_184,Lemon rice,नींबू चावल,dishes,moderate,w,w,w,w,d,Little oil; add vegetables
+food_185,Tamarind rice (puliyodarai),पुलियोदरै,dishes,limit,w,w,w,w,d,High in oil and salt
+food_186,Coconut rice,नारियल चावल,dishes,limit,w,w,l,l,d,High in fat
+food_187,Pongal,पोंगल,dishes,moderate,w,w,w,w,d,Ghee and salt add up
+food_188,Sabudana khichdi,साबूदाना खिचड़ी,dishes,limit,l,w,w,w,d,Starchy and often oily; small portion
+food_189,Vegetable daliya (savoury),नमकीन सब्ज़ी दलिया,dishes,eat_more,o,o,o,o,d,Good fibre
+food_190,Misal pav,मिसल पाव,dishes,limit,w,w,w,w,d,"Oil, salt and refined pav"
+food_191,Usal (sprouted bean curry),उसल,dishes,moderate,w,o,o,o,d,Little oil
+food_192,Thalipeeth,थालीपीठ,dishes,moderate,w,o,o,o,d,Multigrain; use little oil
+food_193,Methi thepla (little oil),मेथी थेपला,dishes,moderate,w,o,o,o,d,Little oil; pair with curd
+food_194,Handvo,हांडवो,dishes,moderate,w,o,o,o,d,Baked or lightly pan-cooked
+food_195,Khandvi,खांडवी,dishes,moderate,w,o,o,w,d,Light but watch oil in tempering
+food_196,Fafda,फाफड़ा,snacks,limit,l,w,l,l,d,Fried besan snack
+food_197,Khaman,खमन,dishes,moderate,w,o,o,o,d,Steamed; watch sugar syrup
+food_198,Sambar vada,सांभर वड़ा,dishes,limit,w,w,l,l,d,Deep fried vada soaked in sambar
+food_199,Litti chokha,लिट्टी चोखा,dishes,moderate,w,w,w,w,d,Baked litti; limit ghee
+food_200,Bhindi masala,भिंडी मसाला,dishes,moderate,w,o,o,o,d,Little oil
+food_201,Kadhi pakora,कढ़ी पकौड़ा,dishes,limit,w,w,l,l,d,Fried pakoras in curd gravy
+food_202,"Kadhi (plain, without pakora)",सादी कढ़ी,dishes,moderate,w,w,w,w,d,Little oil and salt
+food_203,Chana masala,चना मसाला,dishes,moderate,w,o,o,w,d,Little oil and salt
+food_204,Rajma masala,राजमा मसाला,dishes,moderate,w,o,o,o,d,Little oil and salt
+food_205,Dal tadka,दाल तड़का,dishes,moderate,o,w,w,w,d,Tempering in a teaspoon of oil
+food_206,Dal fry,दाल फ्राई,dishes,moderate,o,w,w,w,d,Watch oil and salt
+food_207,Sarson ka saag,सरसों का साग,dishes,moderate,w,o,o,o,d,Use little ghee or butter
+food_208,Pindi chole,पिंडी छोले,dishes,moderate,w,o,o,o,d,Little oil
+food_209,Kerala fish curry (meen curry),केरल मछली करी,dishes,moderate,o,w,w,w,d,Use less coconut and oil
+food_210,Prawn curry,झींगा करी,dishes,limit,o,w,l,l,d,High in cholesterol; small portion
+food_211,Egg fried rice,एग फ्राइड राइस,dishes,limit,l,w,l,l,d,"Oil, salt and sauces"
+food_212,Veg fried rice,वेज फ्राइड राइस,dishes,limit,l,w,l,l,d,"Oil, salt and sauces"
+food_213,Hakka noodles,हक्का नूडल्स,dishes,limit,l,w,l,l,d,Refined noodles and sauces
+food_214,Manchurian (gravy or dry),मंचूरियन,dishes,avoid,a,l,a,l,d,Deep fried and salty sauces
+food_215,Chilli paneer,चिली पनीर,dishes,limit,l,w,l,l,d,Fried and salty sauce
+food_216,Tandoori paneer tikka,पनीर टिक्का,dishes,moderate,o,w,w,w,d,Grilled; watch marinade salt
+food_217,Tandoori vegetables,तंदूरी सब्ज़ियाँ,dishes,eat_more,o,o,o,o,d,Grilled; light marinade
+food_218,Shami kebab,शामी कबाब,dishes,limit,w,w,l,l,d,Often fried
+food_219,Seekh kebab,सीख कबाब,dishes,limit,w,w,l,l,d,Grilled is better than fried
+food_220,Haleem,हलीम,dishes,limit,w,w,l,l,d,Rich and high in fat and salt
+food_221,Nihari,निहारी,dishes,limit,w,w,l,l,d,"Rich, oily and salty"
+food_222,Korma,कोरमा,dishes,limit,w,w,l,l,d,"Cream, nuts and oil"
+food_223,Pulao with cashew and ghee,काजू घी पुलाव,dishes,limit,l,w,l,l,d,High in fat
+food_224,Boondi raita,बूंदी रायता,dishes,moderate,w,w,w,w,d,Fried boondi adds fat and salt
+food_225,Mixed vegetable raita,मिक्स वेज रायता,dishes,eat_more,o,o,o,o,d,Low salt
+food_226,"Mint chutney (home, little salt)",पुदीना चटनी,condiments,eat_more,o,o,o,o,d,Make fresh with little salt
+food_227,Coconut chutney,नारियल की चटनी,condiments,moderate,o,w,w,w,d,Small portion
+food_228,Tamarind chutney (sweet),मीठी इमली चटनी,condiments,limit,l,w,w,w,d,High in sugar
+food_229,Tomato chutney (home),टमाटर चटनी,condiments,moderate,o,w,w,w,d,Little oil and salt
+food_230,Pickle in oil,तेल वाला अचार,condiments,avoid,l,a,l,l,d,High in salt and oil
+food_231,Papad (roasted),भुना पापड़,snacks,limit,o,w,w,w,d,Salty; skip fried
+food_232,Mayonnaise,मेयोनेज़,condiments,limit,w,w,l,l,d,High in fat
+food_233,Salad dressing (bottled),बोतलबंद सलाद ड्रेसिंग,condiments,limit,w,w,l,l,d,"Salt, sugar and fat"
+food_234,Chilli sauce / hot sauce,चिली सॉस,condiments,limit,o,w,w,w,d,High in salt
+food_235,Schezwan sauce,शेज़वान सॉस,condiments,avoid,o,w,a,l,d,High in salt and oil
+food_236,Stock cube / bouillon,स्टॉक क्यूब,condiments,avoid,o,a,w,a,d,Very high in salt
+food_237,Instant soup mix,इंस्टेंट सूप मिक्स,condiments,avoid,o,w,a,l,d,High in salt
+food_238,Garam masala,गरम मसाला,condiments,eat_more,o,o,o,o,d,Use for flavour in place of salt
+food_239,Black pepper,काली मिर्च,condiments,eat_more,o,o,o,o,d,Use for flavour
+food_240,Cinnamon (dalchini),दालचीनी,condiments,moderate,o,o,o,o,d,"A spice, not a treatment for diabetes"
+food_241,Cardamom (elaichi),इलायची,condiments,eat_more,o,o,o,o,d,Use for flavour
+food_242,Carom seeds (ajwain),अजवाइन,condiments,eat_more,o,o,o,o,d,Use for flavour
+food_243,Asafoetida (hing),हींग,condiments,eat_more,o,o,o,o,d,Check the label for added salt
+food_244,Fennel seeds (saunf),सौंफ,condiments,eat_more,o,o,o,o,d,Use for flavour
+food_245,Mustard seeds,सरसों के दाने,condiments,eat_more,o,o,o,o,d,Use for tempering
+food_246,Lemon juice,नींबू का रस,condiments,eat_more,o,o,o,o,d,Use to add flavour in place of salt
+food_247,Vinegar,सिरका,condiments,moderate,o,o,o,o,d,Use for flavour
+food_248,"Coconut water (packaged, sweetened)",मीठा पैकेज्ड नारियल पानी,beverages,limit,l,w,w,w,d,Check the label for sugar
+food_249,Sugarcane juice with ginger,अदरक वाला गन्ने का रस,beverages,avoid,a,l,w,w,d,High in sugar
+food_250,Bael or kokum sherbet (unsweetened),बिना चीनी का बेल / कोकम शरबत,beverages,moderate,o,o,o,o,d,Skip sugar
+food_251,"Jaljeera (home, little salt)",जलजीरा,beverages,moderate,o,w,w,w,d,Use little salt and no sugar
+food_252,Aam panna (sugar-free),बिना चीनी का आम पन्ना,beverages,moderate,w,o,o,o,d,Skip sugar
+food_253,Thandai,ठंडाई,beverages,limit,l,w,l,l,d,"Sugar, milk fat and nuts"
+food_254,Masala chai with sugar,चीनी वाली मसाला चाय,beverages,limit,l,w,w,w,d,Added sugar adds up with each cup
+food_255,Filter coffee with sugar,चीनी वाली फ़िल्टर कॉफ़ी,beverages,limit,l,w,w,w,d,Added sugar; limit cups
+food_256,"Herbal tea (tulsi, ginger)",तुलसी-अदरक की चाय,beverages,eat_more,o,o,o,o,d,Without sugar
+food_257,Black coffee,ब्लैक कॉफ़ी,beverages,moderate,o,o,w,w,d,Limit total caffeine
+food_258,Hot chocolate / malt drinks,हॉट चॉकलेट / माल्ट ड्रिंक,beverages,limit,l,w,l,l,d,Added sugar
+food_259,Protein shake (commercial),कमर्शियल प्रोटीन शेक,beverages,avoid,w,w,w,w,d,ICMR-NIN advises against protein supplements unless a doctor advises
+food_260,Kombucha (sweetened),कोम्बुचा,beverages,limit,l,w,w,w,d,Check the sugar content
+food_261,Beer,बीयर,beverages,avoid,a,a,a,a,d,Alcohol raises BP and weight; best avoided
+food_262,Whisky / rum / vodka,व्हिस्की / रम / वोदका,beverages,avoid,a,a,a,a,d,Best avoided
+food_263,Wine,वाइन,beverages,avoid,a,a,a,a,d,Best avoided
+food_264,Gur ki chai,गुड़ की चाय,beverages,limit,l,w,w,w,d,Jaggery is still sugar
+food_265,Date syrup,खजूर सिरप,sweets,limit,l,w,w,w,d,Concentrated sugar
+food_266,Coconut sugar,नारियल चीनी,sweets,limit,l,w,w,w,d,Still sugar
+food_267,Brown sugar,ब्राउन शुगर,sweets,avoid,a,l,w,w,d,Not healthier than white sugar
+food_268,Artificial sweetener tablets,आर्टिफिशियल स्वीटनर,sweets,moderate,o,o,o,o,w,Use sparingly; discuss with a doctor if used daily
+food_269,Sandesh,संदेश,sweets,limit,l,w,w,w,d,Sugar and milk; small piece occasionally
+food_270,Mysore pak,मैसूर पाक,sweets,avoid,a,l,a,l,d,Ghee and sugar
+food_271,Soan papdi,सोन पापड़ी,sweets,avoid,a,l,a,l,d,Sugar and fat
+food_272,Peda,पेड़ा,sweets,limit,l,w,l,l,d,Khoa and sugar
+food_273,Kaju katli,काजू कतली,sweets,limit,l,w,l,l,d,Sugar; small piece occasionally
+food_274,Besan laddu,बेसन लड्डू,sweets,limit,l,w,l,l,d,Ghee and sugar
+food_275,Gajar halwa,गाजर हलवा,sweets,limit,l,w,l,l,d,"Sugar, ghee and khoa"
+food_276,Rabri,रबड़ी,sweets,avoid,a,l,a,l,d,Sweetened thickened milk
+food_277,Kulfi,कुल्फी,sweets,limit,l,w,l,l,d,Sugar and milk fat
+food_278,Payasam,पायसम,sweets,limit,l,w,l,l,d,Sugar and ghee
+food_279,Modak (steamed),उकडीचे मोदक,sweets,limit,l,w,w,w,d,Jaggery and coconut; keep occasional
+food_280,Puran poli,पूरन पोली,sweets,limit,l,w,l,l,d,Jaggery and ghee
+food_281,Chikki (peanut and jaggery),चिक्की,sweets,limit,l,w,l,l,d,Jaggery
+food_282,Date and nut ball (no added sugar),खजूर-मेवा लड्डू,sweets,moderate,w,w,w,w,d,Small piece; dates are sweet
+food_283,Dark chocolate (70% or more),डार्क चॉकलेट,sweets,moderate,w,w,w,w,d,Small piece only
+food_284,Cake / pastry,केक / पेस्ट्री,sweets,avoid,a,l,a,l,d,"Sugar, refined flour and fat"
+food_285,Doughnut,डोनट,sweets,avoid,a,l,a,l,d,Fried and sugary
+food_286,Rusk (sweet),मीठा रस्क,snacks,limit,l,w,l,l,d,Refined flour and sugar
+food_287,Digestive biscuit,डाइजेस्टिव बिस्कुट,snacks,limit,l,w,w,w,d,Check sugar and fat on the label
+food_288,Marie biscuit,मैरी बिस्कुट,snacks,limit,l,w,w,w,d,Refined flour and sugar
+food_289,Energy bar,एनर्जी बार,snacks,limit,l,w,w,w,d,Often high in sugar
+food_290,Granola bar,ग्रेनोला बार,snacks,limit,l,w,w,w,d,Often high in sugar and fat
+food_291,Frozen yoghurt,फ्रोज़न योगर्ट,sweets,limit,l,w,w,w,d,Added sugar

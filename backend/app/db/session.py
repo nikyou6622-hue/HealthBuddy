@@ -48,32 +48,49 @@ def seed_default_users(db: Session) -> None:
 
 
 def seed_care_data(db: Session) -> None:
-    """Seed specialties, services, and verified hospitals from CSVs."""
+    """Idempotently seed specialties, services, and verified hospitals from CSVs."""
     spec_csv = CARE_DATA_DIR / "specialties.csv"
-    if spec_csv.exists() and db.query(Specialty).count() == 0:
+    existing_specs = {s.name for s in db.query(Specialty).all()}
+    if spec_csv.exists():
+        added_spec = False
         with open(spec_csv, newline="", encoding="utf-8") as f:
             for row in csv.DictReader(f):
-                db.add(Specialty(name=row["name"].strip(), subspecialty=row.get("subspecialty", "").strip()))
-        db.commit()
+                sname = row["name"].strip()
+                if sname and sname not in existing_specs:
+                    db.add(Specialty(name=sname, subspecialty=row.get("subspecialty", "").strip()))
+                    existing_specs.add(sname)
+                    added_spec = True
+        if added_spec:
+            db.commit()
 
     svc_csv = CARE_DATA_DIR / "services.csv"
     svc_map = {s.name: s for s in db.query(Service).all()}
-    if svc_csv.exists() and not svc_map:
+    if svc_csv.exists():
+        added_svc = False
         with open(svc_csv, newline="", encoding="utf-8") as f:
             for row in csv.DictReader(f):
-                s = Service(name=row["name"].strip())
-                db.add(s)
-                svc_map[s.name] = s
-        db.commit()
-        svc_map = {s.name: s for s in db.query(Service).all()}
+                sname = row["name"].strip()
+                if sname and sname not in svc_map:
+                    s = Service(name=sname)
+                    db.add(s)
+                    svc_map[sname] = s
+                    added_svc = True
+        if added_svc:
+            db.commit()
+            svc_map = {s.name: s for s in db.query(Service).all()}
 
     hosp_csv = CARE_DATA_DIR / "hospitals.csv"
-    if hosp_csv.exists() and db.query(Hospital).count() == 0:
+    existing_hospitals = {h.name for h in db.query(Hospital).all()}
+    if hosp_csv.exists():
+        added_hosp = False
         with open(hosp_csv, newline="", encoding="utf-8") as f:
             for row in csv.DictReader(f):
+                hname = row["name"].strip()
+                if not hname or hname in existing_hospitals:
+                    continue
                 is_verified = row.get("verified", "false").strip().lower() == "true"
                 hosp = Hospital(
-                    name=row["name"].strip(),
+                    name=hname,
                     address=row["address"].strip(),
                     city=row["city"].strip(),
                     pincode=row["pincode"].strip(),
@@ -100,5 +117,8 @@ def seed_care_data(db: Session) -> None:
                         svc_map[svc_name] = new_svc
                     hosp.services.append(svc_map[svc_name])
                 db.add(hosp)
-        db.commit()
+                existing_hospitals.add(hname)
+                added_hosp = True
+        if added_hosp:
+            db.commit()
 

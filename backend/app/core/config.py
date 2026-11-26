@@ -1,5 +1,6 @@
 """Application settings for HealthBuddy v3.0."""
 
+import os
 from pathlib import Path
 from typing import List
 from pydantic_settings import BaseSettings
@@ -12,12 +13,18 @@ CLINICAL_DATA_DIR = DATA_DIR / "clinical"
 CARE_DATA_DIR = DATA_DIR / "care"
 ARTIFACTS_DIR = BACKEND_DIR / "artifacts"
 
+_DEFAULT_DB_PATH = (
+    "/tmp/healthbuddy.db"
+    if os.environ.get("VERCEL")
+    else (BACKEND_DIR / "healthbuddy.db").as_posix()
+)
+
 
 class Settings(BaseSettings):
     APP_NAME: str = "HealthBuddy"
     APP_VERSION: str = "3.0.0"
     ENVIRONMENT: str = "development"
-    DATABASE_URL: str = f"sqlite:///{(BACKEND_DIR / 'healthbuddy.db').as_posix()}"
+    DATABASE_URL: str = f"sqlite:///{_DEFAULT_DB_PATH}"
     JWT_SECRET_KEY: str = "healthbuddy-dev-secret-change-in-production"
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60

@@ -312,6 +312,59 @@ def build_knowledge_documents() -> List[KBDocument]:
                     tags=faq.get("tags", []),
                 )
             )
+        for food in kb_record.get("foods", []):
+            fname = food.get("name", "")
+            fhindi = food.get("hindi", "")
+            fgroup = food.get("group", "")
+            fadvice = food.get("advice", "")
+            fnote = food.get("note", "")
+            codes = food.get("codes", {})
+            cond_summary = ", ".join(
+                f"{k}: {v.replace('_', ' ')}" for k, v in codes.items()
+            )
+            docs.append(
+                KBDocument(
+                    doc_id=f"kb_{food.get('id', fname)}",
+                    category="nutrition",
+                    condition="food",
+                    tier=fadvice,
+                    title=f"Food Guide: {fname} ({fhindi})",
+                    text=f"food eat diet nutrition {fname} {fhindi} {fgroup} {fadvice} {fnote} diabetes hypertension heart obesity kidney",
+                    answer=(
+                        f"{fname} ({fhindi}) — Group: {fgroup}, General advice: {fadvice.replace('_', ' ')}.\n"
+                        f"Condition guidance: {cond_summary}.\n"
+                        f"Note: {fnote}."
+                    ),
+                    source="HealthBuddy Indian Food Knowledge Base (ICMR-NIN aligned)",
+                    reviewer="Clinical Review Board",
+                    tags=["food", "diet", fgroup, fadvice],
+                )
+            )
+        for ex in kb_record.get("exercises", []):
+            ename = ex.get("name", "")
+            ehindi = ex.get("hindi", "")
+            ecat = ex.get("category", "")
+            eint = ex.get("intensity", "")
+            conds = ", ".join(ex.get("conditions_safe", []))
+            clearance = "Medical clearance advised for high-risk profiles." if ex.get("medical_clearance_required") else "Generally safe to start gently."
+            docs.append(
+                KBDocument(
+                    doc_id=f"kb_{ex.get('id', ename)}",
+                    category="exercise",
+                    condition="exercise",
+                    tier=eint,
+                    title=f"Exercise Guide: {ename} ({ehindi})",
+                    text=f"exercise workout yoga pranayama {ename} {ehindi} {ecat} {eint} {conds} {ex.get('benefits', '')} {ex.get('cautions', '')}",
+                    answer=(
+                        f"{ename} ({ehindi}) — {ecat.title()} ({eint} intensity), Duration: {ex.get('duration_or_reps', '')}.\n"
+                        f"Benefits: {ex.get('benefits', '')}.\n"
+                        f"Cautions: {ex.get('cautions', '')} ({clearance})"
+                    ),
+                    source="HealthBuddy Exercise & Yoga Knowledge Base",
+                    reviewer="Clinical Review Board",
+                    tags=["exercise", ecat, eint],
+                )
+            )
     except Exception:
         pass
 
