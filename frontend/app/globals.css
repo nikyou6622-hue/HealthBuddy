@@ -42,38 +42,38 @@
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --hb-canvas: #141210;
-  --hb-surface: #1E1B18;
-  --hb-subtle: #292521;
-  --hb-border: #3A342D;
+  --hb-canvas: #0B1120;
+  --hb-surface: #111827;
+  --hb-subtle: #1E293B;
+  --hb-border: #2A364B;
 
-  --hb-ink: #F5F5F4;
-  --hb-ink-muted: #A8A29E;
+  --hb-ink: #F8FAFC;
+  --hb-ink-muted: #94A3B8;
 
-  --hb-accent: #F59E0B;
-  --hb-accent-ink: #FCD34D;
-  --hb-accent-soft: #451A03;
+  --hb-accent: #FBBF24;
+  --hb-accent-ink: #FDE68A;
+  --hb-accent-soft: rgba(251, 191, 36, 0.14);
   --hb-cta-bg: #F59E0B;
-  --hb-cta-ink: #1C1917;
+  --hb-cta-ink: #0F172A;
 
-  --hb-low-bg: #064E3B;
-  --hb-low-ink: #A7F3D0;
-  --hb-low-border: #059669;
+  --hb-low-bg: rgba(16, 185, 129, 0.14);
+  --hb-low-ink: #6EE7B7;
+  --hb-low-border: rgba(16, 185, 129, 0.38);
 
-  --hb-mod-bg: #451A03;
-  --hb-mod-ink: #FDE68A;
-  --hb-mod-border: #D97706;
+  --hb-mod-bg: rgba(245, 158, 11, 0.14);
+  --hb-mod-ink: #FCD34D;
+  --hb-mod-border: rgba(245, 158, 11, 0.40);
 
-  --hb-high-bg: #450A0A;
-  --hb-high-ink: #FECACA;
-  --hb-high-border: #DC2626;
+  --hb-high-bg: rgba(239, 68, 68, 0.16);
+  --hb-high-ink: #FCA5A5;
+  --hb-high-border: rgba(239, 68, 68, 0.42);
 
-  --hb-skip-bg: #1E293B;
+  --hb-skip-bg: rgba(148, 163, 184, 0.12);
   --hb-skip-ink: #CBD5E1;
-  --hb-skip-border: #475569;
+  --hb-skip-border: rgba(148, 163, 184, 0.30);
 
-  --hb-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --hb-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.45);
+  --hb-shadow-sm: 0 4px 16px -4px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  --hb-shadow-md: 0 14px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 body {
@@ -94,7 +94,12 @@ body {
 }
 
 [data-theme="dark"] .bg-warm-canvas {
-  background-image: none;
+  background-color: var(--hb-canvas);
+  background-image:
+    radial-gradient(circle at 90% 8%, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.03) 28%, transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(20, 184, 166, 0.10) 0%, rgba(56, 189, 248, 0.03) 30%, transparent 60%),
+    radial-gradient(circle at 50% 35%, rgba(30, 41, 59, 0.45) 0%, transparent 100%);
+  background-attachment: fixed;
 }
 
 @media (prefers-reduced-motion: reduce) {

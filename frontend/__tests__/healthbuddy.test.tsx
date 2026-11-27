@@ -10,6 +10,7 @@ import { ConditionCard } from "@/components/Results/ConditionCard";
 import { KpiCard } from "@/components/Dashboard/KpiCard";
 import { PlanTabs } from "@/components/Plan/PlanTabs";
 import { AssessmentWizard, DEFAULT_WIZARD_DRAFT } from "@/components/Wizard/AssessmentWizard";
+import { PersonalizedPlanCard } from "@/components/Dashboard/PersonalizedPlanCard";
 import HealthBuddyPage from "@/app/page";
 
 describe("HealthBuddy Frontend Tests", () => {
@@ -193,5 +194,107 @@ describe("HealthBuddy Frontend Tests", () => {
     const langBtns = screen.getAllByRole("button", { name: /हिन्दी|Toggle language/i });
     fireEvent.click(langBtns[0]);
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(hi.header_title);
+  });
+
+  it("renders PersonalizedPlanCard states: loading, error, emergency, low-confidence, tabs, and Why popover", () => {
+    const onRetry = vi.fn();
+    const onAddLabs = vi.fn();
+    const { rerender } = render(
+      <PersonalizedPlanCard data={null} modelInfo={null} loading={true} error={null} lang="en" t={en} onRetry={onRetry} onAddLabs={onAddLabs} />
+    );
+    expect(screen.getByText(/Personalized Plan/i)).toBeInTheDocument();
+
+    rerender(
+      <PersonalizedPlanCard data={null} modelInfo={null} loading={false} error="Backend down" lang="en" t={en} onRetry={onRetry} onAddLabs={onAddLabs} />
+    );
+    fireEvent.click(screen.getByRole("button", { name: /Retry/i }));
+    expect(onRetry).toHaveBeenCalled();
+
+    rerender(
+      <PersonalizedPlanCard
+        data={{
+          emergency: { emergency: true, message: "Call 112 immediately" },
+          categories: { foods: [], exercises: [], hospitals: [], specialties: [], care: [] },
+          confidence: "high",
+          missing_inputs: [],
+          model_version: "safety-override",
+          followup_days: 0,
+          disclaimer: "Educational only.",
+        }}
+        modelInfo={null}
+        loading={false}
+        error={null}
+        lang="en"
+        t={en}
+        onRetry={onRetry}
+        onAddLabs={onAddLabs}
+      />
+    );
+    expect(screen.getByText(/Call 112 immediately/i)).toBeInTheDocument();
+
+    rerender(
+      <PersonalizedPlanCard
+        data={{
+          emergency: null,
+          categories: {
+            foods: [
+              {
+                id: "food_1",
+                category: "foods",
+                name: "Ragi",
+                hindi: "रागी",
+                rank: 1,
+                score: 0.92,
+                status_label: "eat_more",
+                needs_medical_clearance: false,
+                reasons: [{ en: "High fiber", hi: "उच्च फाइबर" }],
+                confidence: "low_confidence",
+                safety_notes: "",
+                meta: {},
+              },
+            ],
+            exercises: [
+              {
+                id: "ex_1",
+                category: "exercises",
+                name: "Brisk Walk",
+                hindi: "तेज चलना",
+                rank: 1,
+                score: 0.88,
+                status_label: "low",
+                needs_medical_clearance: true,
+                reasons: [{ en: "Safe cardio", hi: "सुरक्षित व्यायाम" }],
+                confidence: "low_confidence",
+                safety_notes: "",
+                meta: {},
+              },
+            ],
+            hospitals: [],
+            specialties: [],
+            care: [],
+          },
+          confidence: "low_confidence",
+          missing_inputs: ["HbA1c", "Urine ACR"],
+          model_version: "reco-hgbr-v1.0",
+          followup_days: 14,
+          disclaimer: "Educational only.",
+        }}
+        modelInfo={null}
+        loading={false}
+        error={null}
+        lang="en"
+        t={en}
+        onRetry={onRetry}
+        onAddLabs={onAddLabs}
+      />
+    );
+    expect(screen.getByText(/Ragi/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Low confidence/i).length).toBeGreaterThanOrEqual(1);
+    fireEvent.click(screen.getByRole("button", { name: /Why\?/i }));
+    expect(screen.getByText(/High fiber/i)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("tab", { name: /Exercise/i }));
+    expect(screen.getByText(/Brisk Walk/i)).toBeInTheDocument();
+    expect(screen.getByText(/Medical clearance advised/i)).toBeInTheDocument();
   });
 });

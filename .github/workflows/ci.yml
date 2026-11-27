@@ -30,9 +30,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Install and build Next.js frontend
+      - name: Install and test/build Next.js frontend
         run: |
           cd frontend
           npm ci
+          npx tsc --noEmit
+          npm test
           npm run build
 

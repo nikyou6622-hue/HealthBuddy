@@ -77,5 +77,20 @@
   "theme_light": "लाइट",
   "theme_dark": "डार्क",
   "retry": "पुनः प्रयास करें",
-  "lang_toggle": "EN"
+  "lang_toggle": "EN",
+  "sticky_reco": "व्यक्तिगत योजना",
+  "reco_title": "व्यक्तिगत योजना (ML #3)",
+  "reco_subtitle": "आपकी लैब रिपोर्ट, जोखिम स्तर और सुरक्षा नियमों के आधार पर हाइब्रिड रैंकर",
+  "reco_tab_foods": "खान-पान",
+  "reco_tab_exercises": "व्यायाम",
+  "reco_tab_hospitals": "अस्पताल",
+  "reco_tab_specialties": "डॉक्टर व जांच",
+  "reco_tab_care": "फॉलो-अप",
+  "reco_why": "क्यों?",
+  "reco_clearance": "चिकित्सक की सलाह आवश्यक",
+  "reco_low_confidence_banner": "कम विश्वास: बेहतर व्यक्तिगत सुझाव के लिए अधिक लैब मान जोड़ें।",
+  "reco_empty_title": "इसे व्यक्तिगत बनाने के लिए लैब मान जोड़ें",
+  "reco_add_labs_btn": "लैब मान जोड़ें (चरण 3)",
+  "reco_model_details": "मॉडल विवरण व सीमाएं",
+  "reco_helpful_thanks": "फीडबैक सहेजा गया"
 }

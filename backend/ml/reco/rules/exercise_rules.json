@@ -1,0 +1,17 @@
+{
+  "intensity_order": {
+    "low": 0,
+    "moderate": 1,
+    "vigorous": 2
+  },
+  "bp_stage_max_safe_intensity": {
+    "normal": 2,
+    "elevated": 2,
+    "stage_1": 1,
+    "stage_2": 0,
+    "crisis": 0
+  },
+  "high_risk_clearance_penalty": 2.5,
+  "safe_condition_bonus": 1.0
+}
+

@@ -32,9 +32,9 @@ It helps a person understand their health risks in plain language, see what to e
    - **Secondary ML Screening (`#sec-ml`):** Optional, clearly labeled non-diagnostic ML screening (Parkinson's voice metrics, Liver lab panel) with confidence flags and model performance metrics.
 
 3. **Other Built-In Views:**
-   - **Knowledge Base:** Searchable directory of all **514 clinical records** across hospitals, doctors, foods, exercises, guidance, and care services.
-   - **My Plan / History / Reports / Settings:** Full condition diet/exercise plans, login & saved assessment history, printable clinical summary + **Download PDF**, and Dark Mode / Hindi-English language toggle.
-   - **Ask HealthBuddy Chatbot:** Floating AI assistant drawer (also works as a full-width bottom sheet on mobile phones).
+   - **Knowledge Base:** Searchable directory of all **514 clinical records** across hospitals, doctors, foods, exercises, guidance, and care services (plus **44 additional clinical/chatbot Q&A entries**, making **558 indexed documents** in the search assistant).
+   - **My Plan / History / Reports / Settings:** Full condition diet/exercise plans, login & saved assessment history, printable clinical summary + **Download PDF** (including Top 5 Personalized Plan ML #3 items per category), and Dark Mode / Hindi-English language toggle.
+   - **Ask HealthBuddy Search Assistant:** Floating knowledge-based search assistant drawer (also works as a full-width bottom sheet on mobile phones).
 
 ---
 
@@ -69,15 +69,16 @@ It helps a person understand their health risks in plain language, see what to e
 
 ## 5. Where Machine Learning Is Used (Exact Places in the App & Code)
 
-HealthBuddy uses Machine Learning in **two main places**, while keeping the 6 primary health scores strictly rule-based and medical-guideline-driven:
+HealthBuddy uses Machine Learning in **three main places**, while keeping the 6 primary health scores strictly rule-based and medical-guideline-driven:
 
 | Feature / UI Location | ML Concept Used | Exact Backend File | What It Does in Simple Words |
 |---|---|---|---|
 | **Secondary ML Screening (`#sec-ml` card on Dashboard)** | `LogisticRegression` (Heart, Diabetes, Liver) & `RandomForestClassifier` (Parkinson's) | `backend/app/services/ml/predictor.py` + `backend/ml/train.py` | Runs optional secondary risk screening when specialized lab/voice features are provided, and returns a risk band instead of a diagnosis. |
-| **Model Training & Preprocessing** | `ColumnTransformer`, `SimpleImputer` (median), `StandardScaler`, `StratifiedKFold` CV | `backend/ml/preprocessing.py` + `backend/ml/train.py` | Cleans missing values, scales numbers, and benchmarks 4 models (`LogisticRegression`, `RandomForest`, `DecisionTree`, `KNN`) without data leakage. |
-| **"Why?" Top Factors & Confidence Flag (`#sec-ml`)** | Feature weights (`feature_importances_` / `coef_`), uncertainty bounds (`0.35–0.65`) | `backend/app/services/ml/predictor.py` | Explains the top 5 reasons behind an ML score in plain English and warns `low_confidence` if inputs are out of range or borderline. |
-| **Model Performance Table (`#sec-ml`)** | Confusion matrix metrics (Sensitivity, Specificity, PPV, NPV, ROC-AUC, F1) | `backend/app/services/ml/predictor.py` + `backend/ml/evaluate.py` | Shows how accurate and reliable each trained ML model was on test data. |
-| **Ask HealthBuddy AI Chatbot (Floating chat button & drawer)** | `TfidfVectorizer` (1–2 word n-grams) + **Cosine Similarity** | `backend/app/services/chatbot/knowledge_bot.py` | Searches **558 clinical documents** (foods, exercises, hospitals, risk guides, FAQs) to answer questions in English or Hindi, personalized to your risk tiers. |
+| **Personalized Plan (ML #3) (`#sec-reco` card on Dashboard)** | Hybrid Content-Based (`TfidfVectorizer` 1–2 grams) + Pointwise Learning-to-Rank (`HistGradientBoostingRegressor`) + Post-Model Safety Layer | `backend/app/services/reco/engine.py` + `backend/app/services/reco/safety_filter.py` + `backend/ml/reco/train.py` | Ranks Foods, Exercises, Verified Hospitals, Doctor Specialties/Tests, and Follow-ups using patient+item+interaction features, explains top 3 reasons via ablation, and enforces strict safety rules after ML scoring. |
+| **Model Training & Preprocessing** | `ColumnTransformer`, `SimpleImputer` (median + missing indicators), `StandardScaler`, `StratifiedKFold` / `GroupShuffleSplit` CV | `backend/ml/preprocessing.py` + `backend/ml/train.py` + `backend/ml/reco/train.py` | Cleans missing values, scales numbers, and benchmarks models without patient data leakage. |
+| **"Why?" Top Factors & Confidence Flag (`#sec-ml` & `#sec-reco`)** | Feature weights (`coef_` / `feature_importances_`), feature-group ablation, uncertainty bounds (`0.35–0.65`) | `backend/app/services/ml/predictor.py` + `backend/app/services/reco/engine.py` | Explains the top reasons behind a prediction/recommendation in plain EN/HI and warns `low_confidence` if inputs are out of range, >50% labs missing, or borderline. |
+| **Model Performance Tables (`#sec-ml` & `#sec-reco`)** | Confusion matrix metrics (ROC-AUC, F1, Sensitivity/Specificity) & Ranking metrics (NDCG@5/10, Precision@5/10, MAP, Safety Violation Rate) | `backend/app/services/ml/predictor.py` + `backend/ml/reco/evaluate.py` | Shows how accurate and safe each trained ML model was on held-out test data. |
+| **Ask HealthBuddy Knowledge-Based Search Assistant (Floating chat button & drawer)** | `TfidfVectorizer` (1–2 word n-grams) + **Cosine Similarity** (no LLM) | `backend/app/services/chatbot/knowledge_bot.py` | Searches **558 clinical documents** (the 514 KB records + 44 Q&A/guideline snippets) to answer questions in English or Hindi, personalized to your risk tiers. |
 | **6 Primary Risk Cards (`#sec-risk`: Heart, Diabetes IDRS, BP, BMI, Metabolic, Kidney)** | **No ML** (Deterministic clinical formulas & Indian guidelines) | `backend/app/services/calculators/*.py` | Uses trusted medical equations (WHO CVD chart, MDRF IDRS, CKD-EPI 2021, Indian BMI) so missing labs are safely marked **Skipped (`—`)** rather than guessed. |
 
 ---

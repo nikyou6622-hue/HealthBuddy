@@ -615,6 +615,23 @@ class HealthBuddyChatbot:
         sources = list(dict.fromkeys(d.source for d in top_docs[:3] if d.source))
         topics = list(dict.fromkeys(d.title for d in top_docs[:3]))
 
+        # Optional ML #3 retrieval source behind RECO_IN_CHATBOT=false flag
+        import os
+        if os.environ.get("RECO_IN_CHATBOT", "false").lower() == "true" and isinstance(assessment_context, dict):
+            try:
+                from app.services.reco.engine import generate_personalized_recommendations
+                reco_res = generate_personalized_recommendations(assessment_context, lang=lang, top_k=2)
+                if not reco_res.get("emergency"):
+                    top_foods = [x["name"] for x in reco_res.get("categories", {}).get("foods", [])[:2]]
+                    top_ex = [x["name"] for x in reco_res.get("categories", {}).get("exercises", [])[:2]]
+                    if top_foods or top_ex:
+                        parts.append(
+                            f"**Personalized ML #3 Highlights**\nFoods: {', '.join(top_foods) or '—'} | Exercise: {', '.join(top_ex) or '—'}"
+                        )
+                        sources.append("HealthBuddy Personalized Recommender (ML #3)")
+            except Exception:
+                pass
+
         return {
             "reply": "\n\n".join(parts),
             "emergency": False,

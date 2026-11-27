@@ -122,11 +122,37 @@ class ReportPdfRequest(BaseModel):
     modules: List[Dict[str, Any]] = []
     plan: Optional[Dict[str, Any]] = None
     followups: List[Dict[str, Any]] = []
+    personalized_plan: Optional[Dict[str, Any]] = None
 
 
 class ChatRequest(BaseModel):
     message: str = Field(..., min_length=1, max_length=2000)
     lang: str = Field(default="en", pattern="^(en|hi)$")
     assessment_context: Optional[Dict[str, Any]] = None
+
+
+class RecoRequest(AssessRequest):
+    lang: str = Field(default="en", pattern="^(en|hi)$")
+    top_k: int = Field(default=8, ge=1, le=30)
+    pregnancy: bool = False
+
+
+class RecoFeedbackRequest(BaseModel):
+    item_id: str = Field(..., min_length=1, max_length=120)
+    category: str = Field(..., pattern="^(foods|exercises|hospitals|specialties|care)$")
+    helpful: bool
+    consent_data_storage: bool = False
+
+
+class RecoResponse(BaseModel):
+    emergency: Optional[Dict[str, Any]] = None
+    top_condition: Optional[str] = None
+    top_tier: Optional[str] = None
+    followup_days: int = 21
+    categories: Dict[str, List[Dict[str, Any]]]
+    confidence: str
+    missing_inputs: List[str] = []
+    model_version: str
+    disclaimer: str
 
 

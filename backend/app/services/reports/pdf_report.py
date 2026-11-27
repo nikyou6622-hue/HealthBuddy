@@ -89,6 +89,24 @@ def generate_assessment_pdf(payload: Dict[str, Any]) -> bytes:
             c.drawString(60, y, f"- Exercise: {item[:85]}")
             y -= 13
 
+    if payload.get("personalized_plan"):
+        pplan = payload["personalized_plan"]
+        cats = pplan.get("categories") or {}
+        if y < 180:
+            c.showPage()
+            y = height - 50
+        y -= 10
+        c.setFont("Helvetica-Bold", 12)
+        c.drawString(50, y, f"Personalized Plan (ML #3 — {pplan.get('model_version', 'v1')})")
+        y -= 16
+        c.setFont("Helvetica", 9)
+        for cat_key, cat_lbl in [("foods", "Top Foods"), ("exercises", "Top Exercises"), ("hospitals", "Top Hospitals"), ("specialties", "Specialists"), ("care", "Care & Follow-up")]:
+            items = cats.get(cat_key) or []
+            if items:
+                names = ", ".join(str(x.get("name", "")) for x in items[:5])
+                c.drawString(60, y, f"- {cat_lbl}: {names[:88]}")
+                y -= 13
+
     if payload.get("followups"):
         y -= 10
         c.setFont("Helvetica-Bold", 12)

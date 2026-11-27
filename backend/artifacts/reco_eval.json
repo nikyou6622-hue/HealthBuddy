@@ -1,0 +1,97 @@
+{
+  "model_version": "reco-hgbr-v1.0-20261127",
+  "trained_at": "2026-11-27T02:24:52.016738+00:00",
+  "n_profiles": 20000,
+  "train_pairs": 192000,
+  "test_pairs": 48000,
+  "artifact_size_mb": 0.196,
+  "models": {
+    "hist_gradient_boosting": {
+      "ndcg_at_5": 0.9986,
+      "ndcg_at_10": 0.9995,
+      "precision_at_5": 0.9727,
+      "precision_at_10": 0.6328,
+      "recall_at_10": 0.9999,
+      "map": 0.9999,
+      "hit_rate_at_10": 1.0,
+      "catalog_coverage": 1.0,
+      "safety_violation_rate_pre_filter": 0.2383,
+      "safety_violation_rate_post_filter": 0.0
+    },
+    "baseline_cosine_similarity": {
+      "ndcg_at_5": 0.5797,
+      "ndcg_at_10": 0.7258,
+      "precision_at_5": 0.7126,
+      "precision_at_10": 0.5792,
+      "recall_at_10": 0.9203,
+      "map": 0.7559,
+      "hit_rate_at_10": 1.0,
+      "catalog_coverage": 1.0,
+      "safety_violation_rate_pre_filter": 0.3074,
+      "safety_violation_rate_post_filter": 0.0
+    },
+    "baseline_rule_table": {
+      "ndcg_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "precision_at_5": 0.9728,
+      "precision_at_10": 0.6328,
+      "recall_at_10": 0.9999,
+      "map": 1.0,
+      "hit_rate_at_10": 1.0,
+      "catalog_coverage": 0.9978,
+      "safety_violation_rate_pre_filter": 0.2381,
+      "safety_violation_rate_post_filter": 0.0
+    }
+  },
+  "top_permutation_importances": [
+    {
+      "feature": "condition_match",
+      "importance": 0.75169
+    },
+    {
+      "feature": "nutrient_conflict",
+      "importance": 0.51424
+    },
+    {
+      "feature": "clearance_conflict",
+      "importance": 0.27545
+    },
+    {
+      "feature": "cat_idx",
+      "importance": 0.25917
+    },
+    {
+      "feature": "hosp_emergency",
+      "importance": 0.16531
+    },
+    {
+      "feature": "food_status_ord",
+      "importance": 0.06758
+    },
+    {
+      "feature": "high_sodium",
+      "importance": 0.03364
+    },
+    {
+      "feature": "tfidf_cosine",
+      "importance": 0.02973
+    },
+    {
+      "feature": "high_sugar",
+      "importance": 0.02741
+    },
+    {
+      "feature": "emergency_fit",
+      "importance": 0.0246
+    },
+    {
+      "feature": "bp_tier_ord",
+      "importance": 0.01817
+    },
+    {
+      "feature": "diabetes_tier_ord",
+      "importance": 0.01809
+    }
+  ],
+  "limitations": "Labels are derived from clinical rule tables and synthetic Indian population profiles, not real longitudinal patient outcomes. The ranker smooths and generalizes those rules across missing-lab combinations and is strictly educational."
+}

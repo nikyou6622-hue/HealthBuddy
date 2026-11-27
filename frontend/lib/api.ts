@@ -1,3 +1,57 @@
+export interface RecoReason {
+  en: string;
+  hi: string;
+}
+
+export interface RecoItem {
+  id: string;
+  category: "foods" | "exercises" | "hospitals" | "specialties" | "care";
+  name: string;
+  hindi: string;
+  rank: number;
+  score: number;
+  status_label: string;
+  needs_medical_clearance: boolean;
+  reasons: RecoReason[];
+  confidence: "high" | "medium" | "low_confidence";
+  safety_notes: string;
+  meta: Record<string, any>;
+}
+
+export interface RecoResponse {
+  emergency: Record<string, any> | null;
+  top_condition?: string | null;
+  top_tier?: string | null;
+  followup_days: number;
+  categories: {
+    foods: RecoItem[];
+    exercises: RecoItem[];
+    hospitals: RecoItem[];
+    specialties: RecoItem[];
+    care: RecoItem[];
+  };
+  confidence: "high" | "medium" | "low_confidence";
+  missing_inputs: string[];
+  model_version: string;
+  disclaimer: string;
+}
+
+export interface RecoModelInfo {
+  model_version: string;
+  trained_at?: string | null;
+  n_profiles?: number;
+  artifact_size_mb?: number;
+  models: Record<string, Record<string, number>>;
+  limitations: string;
+}
+
+export interface RecoFeedbackPayload {
+  item_id: string;
+  category: "foods" | "exercises" | "hospitals" | "specialties" | "care";
+  helpful: boolean;
+  consent_data_storage?: boolean;
+}
+
 export function getApiBase(): string {
   if (typeof window === "undefined") {
     return (

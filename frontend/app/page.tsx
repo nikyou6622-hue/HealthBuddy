@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import en from "@/locales/en.json";
 import hi from "@/locales/hi.json";
-import { apiFetch, getApiBase } from "@/lib/api";
+import { apiFetch, getApiBase, RecoModelInfo, RecoResponse } from "@/lib/api";
 import { DisclaimerBanner } from "@/components/banners/DisclaimerBanner";
 import { AppShell } from "@/components/layout/AppShell";
 import { NavItemDef } from "@/components/layout/Sidebar";
@@ -32,6 +32,7 @@ import { NextSteps } from "@/components/Dashboard/NextSteps";
 import { TrendsChart, TrendPoint } from "@/components/Dashboard/TrendsChart";
 import { CareSection } from "@/components/Dashboard/CareSection";
 import { GuidanceTabs } from "@/components/Dashboard/GuidanceTabs";
+import { PersonalizedPlanCard } from "@/components/Dashboard/PersonalizedPlanCard";
 import { MlScreeningCard } from "@/components/Dashboard/MlScreeningCard";
 import { ConditionCardData } from "@/components/Results/ConditionCard";
 import { PlanTabs } from "@/components/Plan/PlanTabs";
@@ -94,6 +95,11 @@ export default function HealthBuddyPage() {
   const [modelsMeta, setModelsMeta] = useState<Record<string, any>>({});
   const [benchmarks, setBenchmarks] = useState<any[]>([]);
 
+  const [recoData, setRecoData] = useState<RecoResponse | null>(null);
+  const [recoModelInfo, setRecoModelInfo] = useState<RecoModelInfo | null>(null);
+  const [recoLoading, setRecoLoading] = useState<boolean>(false);
+  const [recoError, setRecoError] = useState<string | null>(null);
+
   const [token, setToken] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [emailInput, setEmailInput] = useState("patient@healthbuddy.local");
@@ -116,11 +122,54 @@ export default function HealthBuddyPage() {
     document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
+  const fetchReco = async (draft: WizardDraft, currentLang: "en" | "hi" = lang) => {
+    setRecoLoading(true);
+    setRecoError(null);
+    const num = (v: string | number | undefined) =>
+      v !== undefined && v !== "" && !Number.isNaN(Number(v)) ? Number(v) : undefined;
+    try {
+      const res = await apiFetch<RecoResponse>("/api/v1/reco/personalized", {
+        method: "POST",
+        body: JSON.stringify({
+          age: draft.age ?? 48,
+          sex: draft.sex || "male",
+          height_cm: draft.heightCm ?? 168,
+          weight_kg: draft.weightKg ?? 72,
+          waist_cm: draft.waistCm ?? 92,
+          systolic_bp: draft.systolicBp ?? 135,
+          diastolic_bp: draft.diastolicBp ?? 85,
+          physical_activity: draft.physicalActivity || "mild",
+          smoker: Boolean(draft.smoker),
+          alcohol_drinks_per_week: draft.alcoholDrinksPerWeek ?? 0,
+          family_diabetes: draft.familyDiabetes || "none",
+          family_heart_disease: Boolean(draft.familyHeartDisease),
+          fpg: num(draft.fpg),
+          hba1c: num(draft.hba1c),
+          total_cholesterol: num(draft.totalChol),
+          ldl: num(draft.ldl),
+          hdl: num(draft.hdl),
+          triglycerides: num(draft.triglycerides),
+          serum_creatinine: num(draft.creatinine),
+          urine_acr: num(draft.urineAcr),
+          city: draft.city || "New Delhi",
+          red_flags: draft.redFlags || {},
+          lang: currentLang,
+          top_k: 8,
+        }),
+      });
+      setRecoData(res);
+    } catch {
+      setRecoError("Could not load personalized recommendations.");
+    } finally {
+      setRecoLoading(false);
+    }
+  };
+
   const loadInitialData = async () => {
     setDataLoading(true);
     setDataError(null);
     try {
-      const [hospRes, careRes, modelsRes, benchRes, kbRes] = await Promise.all([
+      const [hospRes, careRes, modelsRes, benchRes, kbRes, recoInfoRes] = await Promise.all([
         apiFetch<{ hospitals: any[] }>("/api/v1/hospitals"),
         apiFetch<any>("/api/v1/care/recommend", {
           method: "POST",
@@ -129,12 +178,15 @@ export default function HealthBuddyPage() {
         apiFetch<{ diseases: Record<string, any> }>("/api/v1/models/info"),
         apiFetch<{ matrix: any[] }>("/api/v1/models/benchmarks"),
         apiFetch<any>("/api/v1/kb").catch(() => null),
+        apiFetch<RecoModelInfo>("/api/v1/reco/model-info").catch(() => null),
       ]);
       setHospitals(hospRes.hospitals || []);
       setCareData(careRes);
       setModelsMeta(modelsRes.diseases || {});
       setBenchmarks(benchRes.matrix || []);
       if (kbRes) setKbData(kbRes);
+      if (recoInfoRes) setRecoModelInfo(recoInfoRes);
+      fetchReco(DEFAULT_WIZARD_DRAFT, "en");
     } catch {
       setDataError("Some backend services are currently unavailable.");
     } finally {
@@ -363,6 +415,7 @@ export default function HealthBuddyPage() {
         followups: assessData.followups || [],
         specialist_types: careData?.specialist_types || [],
         matched_hospitals: careData?.matched_hospitals || hospitals.slice(0, 3),
+        personalized_plan: recoData || null,
       }),
     });
     const blob = await res.blob();
@@ -598,6 +651,12 @@ export default function HealthBuddyPage() {
                   badge: activeCondition,
                 },
                 {
+                  id: "sec-reco",
+                  label: t.sticky_reco || "Personalized",
+                  Icon: Sparkles,
+                  badge: "ML #3",
+                },
+                {
                   id: "sec-care",
                   label: t.sticky_care || "Care",
                   Icon: Building2,
@@ -714,6 +773,21 @@ export default function HealthBuddyPage() {
             onDownloadPdf={downloadPdf}
           />
 
+          {/* Personalized Plan (ML #3) */}
+          <PersonalizedPlanCard
+            data={recoData}
+            modelInfo={recoModelInfo}
+            loading={recoLoading}
+            error={recoError}
+            lang={lang}
+            t={t}
+            onRetry={() => fetchReco(wizardDraft)}
+            onAddLabs={() => {
+              setWizardInitialStep(3);
+              setNav("assess");
+            }}
+          />
+
           {/* Side-by-Side Verified Care & Interactive Map */}
           <CareSection
             hospitals={hospitals}
@@ -811,6 +885,7 @@ export default function HealthBuddyPage() {
             if (bestMod && modToCond[bestMod.module]) {
               setActiveCondition(modToCond[bestMod.module]);
             }
+            fetchReco(wizardDraft);
             setNav("dashboard");
           }}
         />

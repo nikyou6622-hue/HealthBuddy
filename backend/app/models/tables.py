@@ -164,3 +164,14 @@ class FollowUp(Base):
     due_date = Column(String(32), nullable=False)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
 
+
+class RecoFeedback(Base):
+    __tablename__ = "reco_feedback"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
+    item_id = Column(String(120), nullable=False, index=True)
+    category = Column(String(64), nullable=False, index=True)
+    helpful = Column(Boolean, nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+

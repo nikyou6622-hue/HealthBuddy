@@ -1,0 +1,24 @@
+{
+  "condition_to_specialties": {
+    "heart": ["Cardiologist", "Interventional Cardiologist", "Preventive Cardiologist"],
+    "diabetes": ["Endocrinologist", "Diabetologist"],
+    "hypertension": ["Cardiologist", "General Physician", "Nephrologist"],
+    "obesity": ["Endocrinologist", "Clinical Dietitian", "Bariatric & Metabolic Specialist"],
+    "metabolic": ["Endocrinologist", "Diabetologist", "Clinical Dietitian"],
+    "kidney": ["Nephrologist", "General Physician"]
+  },
+  "condition_to_services": {
+    "heart": ["cath lab", "ECG", "echo", "cardiac ICU", "cardiac rehabilitation"],
+    "diabetes": ["diabetes clinic", "lab", "CGMS blood sugar monitoring", "diabetic foot clinic", "retinal fundus screening"],
+    "hypertension": ["ECG", "ambulatory BP monitoring (ABPM)", "lab", "24x7 emergency triage"],
+    "obesity": ["nutrition counseling", "yoga therapy", "physiotherapy", "tele-consultation"],
+    "metabolic": ["diabetes clinic", "liver clinic", "FibroScan", "nutrition counseling"],
+    "kidney": ["dialysis unit", "eye and nephrology support", "renal nutrition & CKD clinic", "lab"]
+  },
+  "followup_days_by_tier": {
+    "high": 7,
+    "moderate": 21,
+    "low": 180
+  }
+}
+

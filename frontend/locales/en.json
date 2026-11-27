@@ -77,5 +77,20 @@
   "theme_light": "Light",
   "theme_dark": "Dark",
   "retry": "Retry",
-  "lang_toggle": "हिन्दी"
+  "lang_toggle": "हिन्दी",
+  "sticky_reco": "Personalized",
+  "reco_title": "Personalized Plan (ML #3)",
+  "reco_subtitle": "Hybrid content + gradient-boosted ranker tailored to your labs, risk tiers & safety guardrails",
+  "reco_tab_foods": "Food",
+  "reco_tab_exercises": "Exercise",
+  "reco_tab_hospitals": "Hospitals",
+  "reco_tab_specialties": "Doctor & Tests",
+  "reco_tab_care": "Follow-up",
+  "reco_why": "Why?",
+  "reco_clearance": "Medical clearance advised",
+  "reco_low_confidence_banner": "Low confidence: add more lab values or check out-of-range inputs for sharper personalization.",
+  "reco_empty_title": "Add lab values to personalize this",
+  "reco_add_labs_btn": "Add Lab Values (Step 3)",
+  "reco_model_details": "Model details & limitations",
+  "reco_helpful_thanks": "Feedback saved"
 }

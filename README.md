@@ -531,13 +531,20 @@ npm start -- -p 3006
 ```
 - Open [http://localhost:3006](http://localhost:3006) in your browser.
 
-### 3. Test Suites
+### 3. Train ML #3 Personalized Recommender (Optional, artifacts committed)
 ```bash
-# Run Backend Pytest Suite (16 boundary & integration tests)
-cd backend && pytest -v
+# From repo root:
+backend/.venv/bin/python -m backend.ml.reco.train
+```
+Generates `backend/artifacts/reco_model.joblib`, `reco_eval.json`, and `reco_meta.json` (see [docs/RECO_MODEL_CARD.md](docs/RECO_MODEL_CARD.md)).
 
-# Run Frontend Vitest Suite (5 component & navigation tests)
-cd frontend && npm test
+### 4. Test Suites
+```bash
+# Run Backend Pytest Suite
+cd backend && PYTHONPATH=. .venv/bin/pytest -v
+
+# Run Frontend TypeScript & Vitest Suite
+cd frontend && npx tsc --noEmit && npm test
 ```
 
 ---

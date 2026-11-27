@@ -27,6 +27,7 @@ from app.models.tables import (
     FollowUp,
     Hospital,
     PredictionRecord,
+    RecoFeedback,
     RecommendationLog,
     User,
 )
@@ -36,6 +37,9 @@ from app.schemas.api import (
     ChatRequest,
     ClinicianFeedbackRequest,
     HospitalCreateRequest,
+    RecoFeedbackRequest,
+    RecoRequest,
+    RecoResponse,
     HospitalVerifyRequest,
     LoginRequest,
     PredictRequest,
@@ -637,5 +641,40 @@ def rebuild_knowledge_base(current_user: Dict[str, Any] = Depends(require_role("
     record = build_knowledge_base_record(save=True)
     bot_info = get_chatbot().retrain()
     return {"kb_counts": record["counts"], "chatbot": bot_info}
+
+
+@router.post("/reco/personalized", response_model=RecoResponse)
+def personalized_recommendations(req: RecoRequest):
+    """ML Component #3: Personalized ranked recommendations across 5 categories with safety filter."""
+    from app.services.reco.engine import generate_personalized_recommendations
+
+    payload = req.model_dump()
+    return generate_personalized_recommendations(payload, lang=req.lang, top_k=req.top_k)
+
+
+@router.get("/reco/model-info")
+def reco_model_info():
+    """Return offline NDCG/Precision/Safety metrics and limitations for ML #3."""
+    from app.services.reco.engine import get_reco_model_info
+
+    return get_reco_model_info()
+
+
+@router.post("/reco/feedback")
+def submit_reco_feedback(
+    req: RecoFeedbackRequest,
+    db: Session = Depends(get_db),
+    current_user: Optional[User] = Depends(get_current_user_optional),
+):
+    """Store helpful/not-helpful feedback in reco_feedback (no PII; user_id only if consent given)."""
+    fb = RecoFeedback(
+        user_id=current_user.id if (current_user and req.consent_data_storage) else None,
+        item_id=req.item_id,
+        category=req.category,
+        helpful=req.helpful,
+    )
+    db.add(fb)
+    db.commit()
+    return {"status": "recorded", "item_id": req.item_id, "category": req.category, "helpful": req.helpful}
 
 

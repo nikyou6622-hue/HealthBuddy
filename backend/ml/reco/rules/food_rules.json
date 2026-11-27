@@ -1,0 +1,24 @@
+{
+  "code_to_grade": {
+    "o": 3.0,
+    "w": 2.0,
+    "l": 1.0,
+    "a": 0.0,
+    "d": 0.5
+  },
+  "advice_bonus": {
+    "eat_more": 0.4,
+    "moderate": 0.1,
+    "limit": -0.3,
+    "avoid": -0.8
+  },
+  "nutrient_keywords": {
+    "high_sugar": ["sugar", "jaggery", "syrup", "sweet", "halwa", "rabri", "mysore pak", "cake", "doughnut", "kulfi", "gulab", "sugarcane", "condensed milk", "chocolate"],
+    "high_sodium": ["salt", "pickle", "achaar", "papad", "namkeen", "sev", "brine", "stock cube", "schezwan", "chilli sauce", "instant soup", "cheese"],
+    "high_fiber": ["dal", "sprouts", "oats", "barley", "jau", "dalia", "vegetables", "leaves", "saag", "guava", "apple", "flaxseed", "chickpea", "chana", "moong", "rajma"],
+    "high_sat_fat": ["ghee", "butter", "cream", "fried", "pakora", "vada", "korma", "nihari", "haleem", "margarine", "shortening", "coconut-heavy", "mutton", "pork"],
+    "high_potassium": ["spinach", "palak", "banana", "coconut", "avocado", "dried apricot", "dried fig", "potato", "aloo", "star fruit", "kamrakh"],
+    "high_protein": ["soybean", "tofu", "paneer", "egg", "chicken", "fish", "mutton", "prawn", "dal", "chana", "rajma", "protein shake"]
+  }
+}
+
